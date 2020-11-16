@@ -1,0 +1,31 @@
+<meta charset="utf-8" emacsmode="-*- markdown -*-">
+<link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/slate.css?">
+
+**Collision Detection/Avoidance and Motion Planning**
+[Back to bibliography index](main.md.html)
+
+Collision Avoidance
+==============================================================
+- **Reciprocal n-body Collision Avoidance [#van2008reciprocal]**
+    - They describe an algorithm that guarantees collision-free velocities for multiple robots navigating the same space. They use velocity obstacles, computational geometry (minkowsky sum), and linear programming to do this. Their algorithm can work for thousands of agents because it runs in O(n) time. It requres agents to have perfect knowledge of the environment and the other agents (velocity and radius). It allows for a preferred and maximum velocity of each agent as part of the constraints for the linear programming problem. It is a decentralized (agent-centric) algorithm, so it is fully parallelizable!
+
+- **Motion Planning in Dynamic Environments Using the Relative Velocity Paradigm [#fiorini1993motion]**
+    - This is the original velocity obstacle paper. Not much more to say other than they defined velocity obstacles and showed how to use them.
+
+<!-- Subsection
+--------------------------------------------------------------
+- **TITLE [#CITE]**
+    - NOTES
+
+### Subsubsection
+- **TITLE [#CITE]**
+    - NOTES -->
+
+
+**Bibliography**:
+[#van2008reciprocal]: Van den Berg, Jur, Ming Lin, and Dinesh Manocha. "Reciprocal velocity obstacles for real-time multi-agent navigation." In 2008 IEEE International Conference on Robotics and Automation, pp. 1928-1935. IEEE, 2008.
+
+[#fiorini1993motion]: Fiorini, Paolo, and Zvi Shiller. "Motion planning in dynamic environments using the relative velocity paradigm." In [1993] Proceedings IEEE International Conference on Robotics and Automation, pp. 560-565. IEEE, 1993.
+
+<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>

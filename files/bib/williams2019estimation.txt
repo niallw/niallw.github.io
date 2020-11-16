@@ -1,0 +1,10 @@
+@article{williams2019estimation,
+  title={Estimation of Rotation Gain Thresholds Considering FOV, Gender, and Distractors},
+  author={Williams, Niall L and Peck, Tabitha C},
+  journal={IEEE transactions on visualization and computer graphics},
+  volume={25},
+  number={11},
+  pages={3158--3168},
+  year={2019},
+  publisher={IEEE}
+}

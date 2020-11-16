@@ -1,0 +1,122 @@
+<meta charset="utf-8" emacsmode="-*- markdown -*-">
+<link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/slate.css?">
+
+**Perception**
+
+[Back to notes main page](../main.md.html)
+
+<!-- Main section
+==============================================================
+
+Subsection
+--------------------------------------------------------------
+
+### Subsubsection -->
+
+Visual Perception
+==============================================================
+The Eye
+--------------------------------------------------------------
+![Figure [eye]: A diagram of the eye](img/eye.png)
+
+Visual perception is the main way that humans interpret their surroundings and collect information to decide what actions to take.
+Light reflected from objects enters through the pupil in the form of rays.
+These light rays hit the retina, where messages travel from the retina to the brain along the optical nerve.
+
+The retina consists of photoreceptive cells called rods and cones.
+Cones are responsible for color vision.
+Humans have 3 different kinds of cones, corresponding to red, green, and blue color receptors.
+Most cones are found at or near the fovea and not many are found in the peripheral regions of the retina.
+Objects are seen most sharply at the fovea.
+Rods cannot distinguish colors, but work well in low, monochrome light.
+Rods become flushed out and stop working if the light intensity is too high.
+There are no rods in the fovea.
+
+### Binocular Vision
+Binocular vision is the type of vision that allows us to perceive our environment in 3D.
+It happens because we have two eyes.
+Two eyes affords us many advantages, including:
+- Wide FOV: Each eye has a limited horizontal and veritcal FOV. By having two eyes located at different positions on the head, we can combine the FOVs of both eyes to have a larger binocular FOV.
+- Stereopsis: This refers to depth perception. Two eyes at difference places is called binocular disparity(parallax), and it is the reason why we are able to perceive objects at different depths.
+Binocular vision is helpful for precise tasks like locomotion, navigation, and catching.
+
+### Field of View
+Field of view (FOV) is the observable region of space that an observer can see through their eye(s).
+FOV is typically used in the context of a viewing device (like a camera).
+However, it is convenient to talk about human vision in terms of FOV, in which case we pretend that the retina is the viewing device, and the FOV is defined by the visual angle subtended by the extents of the visual field during stable observation (no eye movements).
+
+Field of view has a vertical, horizontal, and diagonal measurement.
+The horizontal and veritcal FOV of humans is roughly 210 degrees and 150 degrees respectively [#traquair1957clinical].
+Because we have two eyes that are relatively close together, part of the eyes' visual fields overlap.
+This region of overlap covers about 114 degrees horizontally in our visual field [#howard1995binocular].
+Thus, we only gain the advantages of binocular vision within this FOV, and anything on the periphery of this field is seen through monocular vision.
+
+The formula to calculate visual angle is as follows:
+
+$V = 2 atan\left(\frac{S}{2D}\right)$
+
+Where $V$ is the visual angle, $S$ is the size of the object, and $D$ is the distance of the object from the observer.
+
+### Optical Flow
+Optical flow refers to the pattern of perceived motion of the surrounding environment that is projected onto the human observer’s retina.
+Optical flow patterns serve as a visual signal of self-motion for the human observer. 
+Note that in order to experience optical flow, we need to perceive a textured/varied environment.
+If we are viewing an environment with uniform color and lighting, we will not experience any optical flow during movement since all regions of the environment appear the exact same.
+It is the movement of the environment that creates optical flow.
+Numerous studies have shown that optical flowinfluences the observer’s locomotion control depending on the speed and direction of opticalflow
+
+### Dominance of Vision
+It has been shown that when the information recieved from different perceptual channels conflict, visual stimuli are more dominant.
+That is, the brain places more importance on the visual stimuli than any other stimuli when they disagree.
+You have probably experienced this yourself with the moving train illusion. 
+In this illusion, you are sitting in a sationary train beside another train. 
+As the other train starts to move away, you briefly feel as though it is your train that is moving.
+This illusory feeling of motion is called vection and typically occurs when the observer perceives some optical flow that would not be produced by their current body movements.
+This visual dominance is the basis of [redirected walking](../vr/index.md.html#redirectedwalking).
+
+### Miscellaneous
+Vergence is the simultaneous movement of two eyes with the objective of acquiring or maintaining single binocular vision.
+That is, it is the process of moving your eyes to focus on a particular object.
+Vergence is closely related to accomodation (maintain focus to see a clear image), and the vergence-accomodation conflict is a large area of research in the field of visual display technology.
+
+A saccade is a rapid eye movement between fixed points. During a saccade, your brain does not process the visual stimuli received. That is, you are essentially blind during the saccade. This is called saccadic masking or supression. The gap in visual perception caused by this blindness is not noticable to the observer. Saccades occur at a speed of about 500 degrees/s.
+
+Strabismus is the medical condition in which the eyes of a person are offset (they cannot align their eyes).
+It is commonly known as cross-eyed.
+
+IPD == IO when the observer is looking at an object an infinite distance away. In practice, IPD essentially equals IOD when the observer is looking at an object far away. This is because the eyes become close to parallel when converging to the far away object, so the pupils are directly on the front of the eyeball, and they line up with the center of the eyeball (IOD). When people talk about IPD, they almost certainly are actually referring to IOD.
+
+### Vocabulary
+- Interpupillary distance (IPD): The distance between the pupils.
+- Interocular distance (IOD): The distance between the centers of the eyeballs.
+- Optical axis: The straight line that passes through the center of the lens.
+- Visual axis: The straight line that passes through the center of the pupil and the center of the fovea.
+
+Nonvisual Perception
+==============================================================
+Propriception refers to a person's relative sense of movement and position of their body.
+It is the sense that tells you, for example, when your arms are above your head or when your legs are moving.
+
+Vestibular perception is perception related to balance.
+
+Haptic perception is related to the feelings of touch and force feedback.
+
+I think we all know what auditory perception is.
+<!-- Main section
+==============================================================
+
+Main section
+==============================================================
+
+Main section
+============================================================== -->
+
+Bibliography
+==============================================================
+[#traquair1957clinical]: Traquair, H. M., & Scott, G. I. (1957). Clinical perimetry. London.
+
+[#howard1995binocular]: Howard, I. P., & Rogers, B. J. (1995). Binocular vision and stereopsis. Oxford University Press, USA.
+
+
+<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>

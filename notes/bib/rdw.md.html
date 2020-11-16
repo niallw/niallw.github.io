@@ -1,0 +1,265 @@
+<meta charset="utf-8" emacsmode="-*- markdown -*-">
+<link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/slate.css?">
+
+**Redirected Walking**
+[Back to bibliography index](main.md.html)
+
+Thresholds
+==============================================================
+- **Reorientation during Body Turns [#bruder2009body-turns]**
+    - This is basically just a precursor to the Steinicke 2010 study.
+
+- **Impact of Gender on Discrimination between Real and Virtual Stimuli [#bruder2009impact]**
+    - No statistical significance found for genders and threshold gains. 40 FOV.
+
+- **Redirecting Walking and Driving for Natural Navigationin Immersive Virtual Environments [#bruder2012driving]**
+    - NOTES
+
+- **Self-Motion Illusions in Immersive Virtual Reality Environments [#bruder2011self-motion]**
+    - You can apply various visual illusions in the periphery to change users' perception of self-motion. This can be used to make a scene appear to be unstable (force certain vection) or can be used to make the scene feel more stable, which can offset feelings of instability that come from RDW gains. Has lots of good references about optical flow
+
+- **Revisiting Detection Thresholds for Redirected Walking: Combining Translation and Curvature Gains [#grechkin2016revisiting]**
+    - This paper revisits detection thresholds, specifically translation and curvature gains. It says that you can apply both at the same time without any problems or changes to the gains. It also re-evaluates curvature thresholds in a different way from Steincike and basically points out that basically something is up, because their thresholds for curvature were way different, and another paper also had very different gains. So either someone is doing something wrong, or the method of estimation plays a big role in the thresholds.
+
+- **Individualized Calibration of Rotation Gain Thresholds for Redirected Walking [#hutton2018individualized]**
+    - They compared 2 methods of estimating perceptual thresholds for RDW rotation gains. The 2 methods were adaptive staircase and PEST (parameter estimation through sequential testing). They found that PEST was better at estimating thresholds than the staircase method. they also found that the estimated thresholds between the two methods were very varied, which suggests that the method of estimation has a significant effect on the resulting threshold values.
+
+- **Sensitivity to Scene Motion for Phases of Head Yaws [#jerald2008sensitivity]**
+    - This is basically a generalized version of RDW thresholds studies. It's well done and has lots of details about the process. Their results say that users can tolerate scene rotations up to 11.2% with the direction of the user’s rotation and 5.2% against the direction of the user’s rotation (threshold gains estimated in [#steinicke2009estimation] correspond to 49% rotation with and 20% against the user’s rotation direction).
+
+- **Detection thresholds in audio-visual redirected walking [#meyer2016detection]**
+    - NOTES
+
+- **Velocity-Dependent Dynamic Curvature Gain for Redirected Walking [#neth2012velocity]**
+    - NOTES
+
+- **Individual Differences and Impact of Gender on Curvature Redirection Thresholds [#nguyen2018individual]**
+    - NOTES
+
+- **Estimation of Detection Thresholds for Audiovisual Rotation Gains [#nilsson2016estimation]**
+    - NOTES
+
+- **Disguising Rotational Gain for Redirected Walking in Virtual Reality:  Effect of Visual Density [#paludan2016disguising]**
+    - NOTES
+
+- **You Spin my Head Right Round: Threshold of Limited Immersion for Rotation Gains in Redirected Walking [#schmitz2018you]**
+    - NOTES
+
+- **Estimation of Detection Thresholds for Acoustic Based Redirected Walking Techniques [#serafin2013estimation]**
+    - Estimation of detection thresholds for AUDIO STIMULUS ONLY. Rotation thresholds were smaller than those Steinicke found.
+
+- **Analyses of Human Sensitivity to Redirected Walking [#steinicke2008analysis]**
+    - NOTES
+
+- **Estimation of Detection Thresholds for Redirected Walking Techniques [#steinicke2009estimation]**
+    - This paper estimated detection thresholds for all 3 movement gains. They used 2AFC and psychometric analysis to estimate the thresholds. This is the classic RDW thresholds paper that I replicated for my 2019 publication.
+
+- **Updating orientation in large virtual environments using scaled translational gain [#williams2006updating]**
+    - NOTES
+
+Distractors
+==============================================================
+- **Supporting Free Walking in a Large Virtual Environment:  Imperceptible Redirected Walking with an Immersive Distractor [#chen2017supporting]**
+    - Implementation of redirected walking and IRD (Peck) to see how effective IRD is in open VEs. Used a dragon fighting game. The results show that at leas 70% of users were effectively redirected towards the center of the tracking space by the distractor, without the need for intervention from the researcher.
+
+- **Evaluation of Reorientation Techniques for Walking in Large Virtual Environments [#peck2009evaluation]**
+    - NOTES
+
+- **Improved Redirection with Distractors: A Large-Scale-Real-Walking Locomotion Interface and its Effect on Navigation in Virtual Environments [#peck2010improved]**
+    - Navigational ability using IRDs is no worse than when using RDW or real walking.
+
+- **An Evaluation of Navigational Ability Comparing Redirected Free Exploration with Distractors to Walking-in-Place and Joystick Locomotion Interfaces [#peck2011evaluation]**
+    - NOTES
+
+Steering Algorithms
+==============================================================
+Single User
+--------------------------------------------------------------
+- **An enhanced steering algorithm for redirected walking in virtual environments [#azmandian2014enhanced]**
+    - NOTES
+
+- **Reinforcement Learning as a tool to make people move to a specific location in Immersive Virtual Reality [#rovira2017reinforcement]**
+    - NOTES
+
+- **A Steering Algorithm for Redirected Walking Using Reinforcement Learning [#strauss2020steering]**
+    - They used RL to train a policy for a steering algorithm for RDW. Their learned policy is very slightly better than S2C. It hardly uses curvature gains in the learned policy. They trained on simulated path data. Paths were largely straight lines. Physical tracked space was 5.79m x 5.79m. They had some arbitrary random conditions to create the virtual path, which I think can be greatly improved upon. Essentially, this work shows that RL can be used to learn a useful steering algorithm, and more work is needed to develop a dataset of virtual paths and try different reward functions.
+
+- **Physical Space Requirements for Redirected Walking: How Size and Shape Affect Performance [#azmandian2015physical]**
+    - This paper studied the effects of tracking space size and shape on the effectiveness of different RDW steering algorithms. They tested a large range of tracked space sizes from 5x5 meters to 60x60 meters. They tested 3 different shapes of tracked spaces (square, medium length rectangle, and long rectangle). They tested 5 different steering algorithms (S2C, S2O, No steering, and S2C/S2O with translation gains). Their virtual paths were divided into 4 categories (office building, small exploration, large exploration, and long straight walk). They found that there is a siginificant effect of tracking size and shape on the effectiveness of different algorithms. As tracking size increases, steering algo effectiveness improves. Square tracked spaces were better for all steering algos, but some still performed okay in rectangular areas. They claim that the minimum acceptable tracking space size is 6 x 6m for a 10% relative effectiveness of steering algorithm (which is kinda bad in my opinion). Take-away is that collisions/resets are basically unavoidable due to the requirements of tracking space size, and effort should be put into integrating natural resetting techniques like distractors.
+
+- **A General Reactive Algorithm for Redirected Walking using Artificial Potential Functions [#jerald2019general]**
+    - This paper presents an algorithm for steering and resetting users in VR with RDW. The study is only looking at single-user. They compare 3 resetting algorithms (improved reset to center, reset to gradient, step-forward reset to gradient). They found that step-forward reset was better than reset to gradient, and it performed as well as improved reset to center. They also compared 2 steering algorithms: S2C (with translation gains) and P2R (their artificial potential function steering). They found that P2R performed as well as S2C in a square space with no obstacles, and performed better than S2C in nonconvex environments or environments with obstacles.
+
+Multi-User
+--------------------------------------------------------------
+- **Multi-User Redirected Walking and Resetting Using Artificial Potential Fields [#bachmann2019multi]**
+    - They introduce artificial potential fields as an improved steering algorithm for multi-user RDW. APF assigns a force vector to all obstacles/people in the tracked space, and these vectors get weighted and summed to inform the algorithm of the best direction to steer a user. They show siginificant improvements over steer-to-center for multiple evaluation metrics including number of resets and average walking distance between resets. Tracking size was 45m x 25m. They did not include translation gains in their study.
+
+- **Effects of Tracking Area Shape and Size on Artificial Potential Field Redirected Walking [#messinger2019effects]**
+    - They improve upon the APF RDW algorithm from [#bachmann2019multi] and show the effects of tracking size and shape on the performance of APF. The results showed that their APF algorithm always outperforms other algorithms like steer-to-center for all tracked space sizes, or they are equal in performance. The minimum tracking size tested was 10m x 10m. They did not include translation gains in their study. They note that this algorithm is not well-suited for single-user RDW setups, but is promising for large, arcade-like arenas.
+
+- **Redirected Smooth Mappings for Multiuser Real Walking in Virtual Reality [#dong2019redirected]**
+    - NOTES
+
+- **An evaluation of strategies for two-user redirected walking in shared physical spaces [#azmandian2017evaluation]**
+    - This paper investigates the effects of steering algorithm heuristics and tracked space divisions for multi-user RDW. They look at collision avoidance techniques based on work from Holm's masters thesis. They extend the work of Holm using techniques that resolve deadlocks when two users are stopped to avoid collision (starvation resolution), a relative velocity heuristic, and collision avoidance strategies (rather than just redirecting users to a physical location and ignoring collisions). They also studied the effect of different physical space subdivisions. Their algorithms are all a variation of S2C, so they test (1) using the same steering center for both users (2) using different, offset steering centers for each user, and (3) dividing the physical space into smaller subspaces such that no users' spaces overlap. Their work uses simulated user paths. The physical tracked space had sizes of 10x5, 30x15, and 25x50 meters. Their results showed that the baseline (no collision prevention) performed better than everything else (!!). Their collision avoidance heuristics improved on Holm's work. Their takeaway is that the type of tracked space (size and shape) and the VE path are very important for the steering algo's performance.
+
+Other
+==============================================================
+- **Arch-Explore:A Natural User Interface for Immersive Architectural Walkthroughs [#bruder2009arch]**
+    - NOTES
+
+- **Reorientation in Virtual Environments using Interactive Portals [#freitag2014portals]**
+    - Portals to redirect users in VR. It works at least a little bit.
+
+- **Effects and Applicability of Rotation Gain in CAVE-like Environments [#freitag2015cave]**
+    - NOTES
+
+- **Redirected Walking to Explore Virtual Environments: Assessing the Potential for Spatial Interference [#hodgson2011redirected]**
+    - NOTES
+
+- **Comparing Four Approaches to Generalized Redirected Walking: Simulation and Live User Data [#hodgson2013comparing]**
+    - NOTES
+
+- **Seven League Boots: A New Metaphor for Augmented Locomotion through Moderately Large Scale Immersive Virtual Environments [#interrante2007seven]**
+    - Applied scaling based on the predicted direction of the user. Found results that suggest sevel league boots is better than the other locomotion interfaces (flying, walking with uniform gain, walking with no gains but sudden relocation) for walking down straight, long corridors.
+
+- **Perceptual stability during head movement in virtual reality [#jaekl2002perceptual]**
+    - Talked about user sensitivity to moving scenes during head rotations and translations. Noted that users perceive the scene as stable more easily when it moves in the direction of the rotation, and that they hardly tolerate any movement in the opposite direction.
+
+- **Flotation Simulation in a Cable-driven Virtual Environment--A Study with Parasailing [#kang2018floatation]**
+    - NOTES
+
+- **Combining Passive Haptics with Redirected Walking [#kohli2005combining]**
+    - NOTES
+
+- **Walking in Virtual Reality: Perceptually-inspired Interaction Techniques for Locomotion in Immersive Environments [#langbehn2019walking]**
+    - NOTES
+
+- **15 Years of Research on Redirected Walking in Immersive Virtual Environments [#nilsson201815]**
+    - Gives a historical overview of RDW from start to today. Outlines the current problems with RDW and suggests avenues for future work.
+
+- **Redirected Walking [#razzaque2005redirected]**
+    - The original RDW paper. First practical demonstration of RDW in use. Rotation gains only.
+
+- **Moving Towards Generally Applicable Redirected Walking [#steinicke2008moving]**
+    - Essentially version 1 of [#steinicke2009estimation]. This paper mentions optical flow and its influence on gains. [#steinicke2009estimation] paper mentions it briefly as well and cites some papers about OF. This paper also mentioned the side-to-side head motions during translation (which I don't remember being mentioned in [#steinicke2009estimation]).
+
+- **Leveraging Change Blindness for Redirection in Virtual Environments [#suma2011leveraging]**
+    - Modifying the VE architecture when people are not looking at the modified portin is effective at redirecting users. This is useful to let people explore large environments in a limited tracked workspace. Currently it is not alrgorithmically generally applicable, and is mostly restricted to indoor environments.
+
+- **A Taxonomy for Deploying Redirection Techniques in Immersive Virtual Environments [#suma2012taxonomy]**
+    - Categorizes different RDW techniques based on their ability to be noticed and continuity. Divides them into groups like discrete/continuous or subtle/overt
+
+- **Flexible spaces: Dynamic layout generation for infinite walking in virtual environments [#vasylevska2013flexible]**
+    - Instead of applying transformation based on user movements to the world, you can change the structure of the world as the user explores the VE. These flexible environments are useful in VEs where the content of the VE is more important than the spacial layout, since the spacial layout will be altered. Advantage is that it avoids the visual-vestibular conflicts that arise from high gains in typical RDW.
+
+- **Exploring Large Virtual Environments with an HMD when Physical Space is Limited [#williams2007exploring]**
+    - NOTES
+
+- **Redirected Walking in Virtual Reality [#langbehn2019redirected]**
+    - A review of RDW.
+
+
+Bibliography
+==============================================================
+[#azmandian2014enhanced]: Azmandian, Mahdi, Rhys Yahata, Mark Bolas, and Evan Suma. "An enhanced steering algorithm for redirected walking in virtual environments." In 2014 IEEE Virtual Reality (VR), pp. 65-66. IEEE, 2014.
+
+[#bruder2009arch]: Bruder, Gerd, Frank Steinicke, and Klaus H. Hinrichs. "Arch-explore: A natural user interface for immersive architectural walkthroughs." In 2009 IEEE Symposium on 3D User Interfaces, pp. 75-82. IEEE, 2009.
+
+[#bruder2009impact]: Bruder, Gerd, Frank Steinicke, Klaus H. Hinrichs, Harald Frenz, and Markus Lappe. "Impact of gender on discrimination between real and virtual stimuli." In Workshop on Perceptual Illusions in Virtual Environments, pp. 10-15. 2009.
+
+[#bruder2009body-turns]: Bruder, Gerd, Frank Steinicke, Klaus H. Hinrichs, and Markus Lappe. "Reorientation During Body Turns." In EGVE/ICAT/EuroVR, pp. 145-152. 2009.
+
+[#bruder2012driving]: Bruder, Gerd, Victoria Interrante, Lane Phillips, and Frank Steinicke. "Redirecting walking and driving for natural navigation in immersive virtual environments." IEEE transactions on visualization and computer graphics 18, no. 4 (2012): 538-545.
+
+[#bruder2011self-motion]: Bruder, Gerd, Frank Steinicke, and Phil Wieland. "Self-motion illusions in immersive virtual reality environments." In 2011 IEEE Virtual Reality Conference, pp. 39-46. IEEE, 2011.
+
+[#chen2017supporting]: Chen, Haiwei, and Henry Fuchs. "Supporting free walking in a large virtual environment: imperceptible redirected walking with an immersive distractor." In Proceedings of the Computer Graphics International Conference, p. 22. ACM, 2017.
+
+[#freitag2014portals]: Freitag, Sebastian, Dominik Rausch, and Torsten Kuhlen. "Reorientation in virtual environments using interactive portals." In 2014 IEEE Symposium on 3D User Interfaces (3DUI), pp. 119-122. IEEE, 2014.
+
+[#freitag2015cave]: Freitag, Sebastian, Benjamin Weyers, and Torsten Kuhlen. "Effects and applicability of rotation gain in CAVE-like environments." In 2015 IEEE Virtual Reality (VR), pp. 179-180. IEEE, 2015.
+
+[#grechkin2016revisiting]: Grechkin, Timofey, Jerald Thomas, Mahdi Azmandian, Mark Bolas, and Evan Suma. "Revisiting detection thresholds for redirected walking: Combining translation and curvature gains." In Proceedings of the ACM Symposium on Applied Perception, pp. 113-120. ACM, 2016.
+
+[#hodgson2011redirected]: Hodgson, Eric, Eric Bachmann, and David Waller. "Redirected walking to explore virtual environments: Assessing the potential for spatial interference." ACM Transactions on Applied Perception (TAP) 8, no. 4 (2008): 1-22.
+
+[#hodgson2013comparing]: Hodgson, Eric, and Eric Bachmann. "Comparing four approaches to generalized redirected walking: Simulation and live user data." IEEE transactions on visualization and computer graphics 19, no. 4 (2013): 634-643.
+
+[#hutton2018individualized]: Hutton, Courtney, Shelby Ziccardi, Julio Medina, and Evan Suma Rosenberg. "Individualized Calibration of Rotation Gain Thresholds for Redirected Walking." (2018).
+
+[#interrante2007seven]: Interrante, Victoria, Brian Ries, and Lee Anderson. "Seven league boots: A new metaphor for augmented locomotion through moderately large scale immersive virtual environments." In 2007 IEEE Symposium on 3D User Interfaces. IEEE, 2007.
+
+[#jaekl2002perceptual]: Jaekl, Philip M., Robert S. Allison, Laurence R. Harris, Urszula T. Jasiobedzka, Heather L. Jenkin, Michael R. Jenkin, James E. Zacher, and Daniel C. Zikovitz. "Perceptual stability during head movement in virtual reality." In Proceedings IEEE Virtual Reality 2002, pp. 149-155. IEEE, 2002.
+
+[#jerald2008sensitivity]: Jerald, Jason, Tabitha Peck, Frank Steinicke, and Mary Whitton. "Sensitivity to scene motion for phases of head yaws." In Proceedings of the 5th symposium on Applied perception in graphics and visualization, pp. 155-162. ACM, 2008.
+
+[#kang2018floatation]: Kang, HyeongYeop, Geonsun Lee, Seongsu Kwon, Ohung Kwon, Seongpil Kim, and JungHyun Han. "Flotation Simulation in a Cable-driven Virtual Environment--A Study with Parasailing." In Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems, p. 632. ACM, 2018.
+
+[#kohli2005combining]: Kohli, Luv, Eric Burns, Dorian Miller, and Henry Fuchs. "Combining passive haptics with redirected walking." In Proceedings of the 2005 international conference on Augmented tele-existence, pp. 253-254. ACM, 2005.
+
+[#langbehn2019walking]: Langbehn, Eike. "Walking in Virtual Reality: Perceptually-inspired Interaction Techniques for Locomotion in Immersive Environments." (2019).
+
+[#meyer2016detection]: Meyer, Florian, Malte Nogalski, and Wolfgang Fohl. "Detection thresholds in audio-visual redirected walking." In Proc. Sound and Music Comp. Conf.(SMC), vol. 16, no. 1, pp. 17-27. 2016.
+
+[#neth2012velocity]: Neth, Christian T., Jan L. Souman, David Engel, Uwe Kloos, Heinrich H. Bulthoff, and Betty J. Mohler. "Velocity-dependent dynamic curvature gain for redirected walking." IEEE transactions on visualization and computer graphics 18, no. 7 (2012): 1041-1052.
+
+[#nguyen2018individual]: Nguyen, Anh, Yannick Rothacher, Bigna Lenggenhager, Peter Brugger, and Andreas Kunz. "Individual differences and impact of gender on curvature redirection thresholds." In Proceedings of the 15th ACM Symposium on Applied Perception, p. 5. ACM, 2018.
+
+[#nilsson2016estimation]: Nilsson, Niels Christian, Evan Suma, Rolf Nordahl, Mark Bolas, and Stefania Serafin. "Estimation of detection thresholds for audiovisual rotation gains." In 2016 IEEE Virtual Reality (VR), pp. 241-242. IEEE, 2016.
+
+[#nilsson201815]: Nilsson, Niels Christian, Tabitha Peck, Gerd Bruder, Eri Hodgson, Stefania Serafin, Mary Whitton, Frank Steinicke, and Evan Suma Rosenberg. "15 years of research on redirected walking in immersive virtual environments." IEEE computer graphics and applications 38, no. 2 (2018): 44-56.
+
+[#paludan2016disguising]: Paludan, Anders, Jacob Elbaek, Mathias Mortensen, Morten Zobbe, Niels Christian Nilsson, Rolf Nordahl, Lars Reng, and Stefania Serafin. "Disguising rotational gain for redirected walking in virtual reality: Effect of visual density." In 2016 IEEE Virtual Reality (VR), pp. 259-260. IEEE, 2016.
+
+[#peck2009evaluation]: Peck, Tabitha C., Henry Fuchs, and Mary C. Whitton. "Evaluation of reorientation techniques and distractors for walking in large virtual environments." IEEE Transactions on Visualization and Computer Graphics 15, no. 3 (2009): 383-394.
+
+[#peck2010improved]: Peck, Tabitha C., Henry Fuchs, and Mary C. Whitton. "Improved redirection with distractors: A large-scale-real-walking locomotion interface and its effect on navigation in virtual environments." In 2010 IEEE Virtual Reality Conference (VR), pp. 35-38. IEEE, 2010.
+
+[#peck2011evaluation]: Peck, Tabitha C., Henry Fuchs, and Mary C. Whitton. "An evaluation of navigational ability comparing Redirected Free Exploration with Distractors to Walking-in-Place and joystick locomotio interfaces." In 2011 IEEE Virtual Reality Conference, pp. 55-62. IEEE, 2011.
+
+[#razzaque2005redirected]: Razzaque, Sharif, Zachariah Kohn, and Mary C. Whitton. Redirected walking. Chapel Hill: University of North Carolina at Chapel Hill, 2005.
+
+[#rovira2017reinforcement]: Rovira, Aitor, and Mel Slater. "Reinforcement Learning as a tool to make people move to a specific location in Immersive Virtual Reality." International Journal of Human-Computer Studies 98 (2017): 89-94.
+
+[#schmitz2018you]: Schmitz, Patric, Julian Hildebrandt, André Calero Valdez, Leif Kobbelt, and Martina Ziefle. "You spin my head right round: Threshold of limited immersion for rotation gains in redirected walking." IEEE transactions on visualization and computer graphics 24, no. 4 (2018): 1623-1632.
+
+[#serafin2013estimation]: Serafin, Stefania, Niels C. Nilsson, Erik Sikstrom, Amalia De Goetzen, and Rolf Nordahl. "Estimation of detection thresholds for acoustic based redirected walking techniques." In 2013 IEEE Virtual Reality (VR), pp. 161-162. IEEE, 2013.
+
+[#steinicke2008analysis]: Steinicke, Frank, Gerd Bruder, Jason Jerald, Harald Frenz, and Markus Lappe. "Analyses of human sensitivity to redirected walking." In Proceedings of the 2008 ACM symposium on Virtual reality software and technology, pp. 149-156. ACM, 2008.
+
+[#steinicke2008moving]: Steinicke, Frank, Gerd Bruder, Timo Ropinski, and Klaus Hinrichs. "Moving towards generally applicable redirected walking." In Proceedings of the Virtual Reality International Conference (VRIC), pp. 15-24. IEEE Press, 2008.
+
+[#steinicke2009estimation]: Steinicke, Frank, Gerd Bruder, Jason Jerald, Harald Frenz, and Markus Lappe. "Estimation of detection thresholds for redirected walking techniques." IEEE transactions on visualization and computer graphics 16, no. 1 (2009): 17-27.
+
+[#suma2011leveraging]: Suma, Evan A., Seth Clark, David Krum, Samantha Finkelstein, Mark Bolas, and Zachary Warte. "Leveraging change blindness for redirection in virtual environments." In 2011 IEEE Virtual Reality Conference, pp. 159-166. IEEE, 2011.
+
+[#suma2012taxonomy]: Suma, Evan A., Gerd Bruder, Frank Steinicke, David M. Krum, and Mark Bolas. "A taxonomy for deploying redirection techniques in immersive virtual environments." In 2012 IEEE Virtual Reality Workshops (VRW), pp. 43-46. IEEE, 2012.
+
+[#vasylevska2013flexible]: Vasylevska, Khrystyna, Hannes Kaufmann, Mark Bolas, and Evan A. Suma. "Flexible spaces: Dynamic layout generation for infinite walking in virtual environments." In 2013 IEEE Symposium on 3D User Interfaces (3DUI), pp. 39-42. IEEE, 2013.
+
+[#williams2006updating]: Williams, Betsy, Gayathri Narasimham, Tim P. McNamara, Thomas H. Carr, John J. Rieser, and Bobby Bodenheimer. "Updating orientation in large virtual environments using scaled translational gain." In Proceedings of the 3rd symposium on Applied perception in graphics and visualization, pp. 21-28. ACM, 2006.
+
+[#williams2007exploring]: Williams, Betsy, Gayathri Narasimham, Bjoern Rump, Timothy P. McNamara, Thomas H. Carr, John Rieser, and Bobby Bodenheimer. "Exploring large virtual environments with an HMD when physical space is limited." In Proceedings of the 4th symposium on Applied perception in graphics and visualization, pp. 41-48. ACM, 2007.
+
+[#langbehn2019redirected]: Langbehn, Eike, and Frank Steinicke. "Redirected Walking in Virtual Reality." (2019).
+
+[#bachmann2019multi]: Bachmann, Eric R., Eric Hodgson, Cole Hoffbauer, and Justin Messinger. "Multi-User Redirected Walking and Resetting Using Artificial Potential Fields." IEEE transactions on visualization and computer graphics 25, no. 5 (2019): 2022-2031.
+
+[#dong2019redirected]: Dong, Zhi-Chao, Xiao-Ming Fu, Zeshi Yang, and Ligang Liu. "Redirected Smooth Mappings for Multiuser Real Walking in Virtual Reality." ACM Transactions on Graphics (TOG) 38, no. 5 (2019): 1-17.
+
+[#messinger2019effects]: Messinger, Justin, Eric Hodoson, and Eric R. Bachmann. "Effects of Tracking Area Shape and Size on Artificial Potential Field Redirected Walking." In 2019 IEEE Conference on Virtual Reality and 3D User Interfaces (VR), pp. 72-80. IEEE, 2019.
+
+[#azmandian2017evaluation]: Azmandian, Mahdi, Timofey Grechkin, and Evan Suma Rosenberg. "An evaluation of strategies for two-user redirected walking in shared physical spaces." In 2017 IEEE Virtual Reality (VR), pp. 91-98. IEEE, 2017.
+
+[#azmandian2015physical]: Azmandian, Mahdi, Timofey Grechkin, Mark T. Bolas, and Evan A. Suma. "Physical Space Requirements for Redirected Walking: How Size and Shape Affect Performance." In ICAT-EGVE, pp. 93-100. 2015.
+
+[#strauss2020steering]: Strauss, Ryan R., Ramanujan, Raghuram, Becker, Andrew, Peck, Tabitha C., "A Steering Algorithm for Redirected Walking Using Reinforcement Learning" In 2020 IEEE Virtual Reality (VR)
+
+[#jerald2019general]: Thomas, Jerald, and Evan Suma Rosenberg. "A general reactive algorithm for redirected walking using artificial potential functions." In 2019 IEEE Conference on Virtual Reality and 3D User Interfaces (VR), pp. 56-62. IEEE, 2019.
+
+<!-- [#CITE]: PAPER_DETAILS -->
+
+<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>

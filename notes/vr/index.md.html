@@ -1,0 +1,101 @@
+<meta charset="utf-8" emacsmode="-*- markdown -*-">
+<link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/slate.css?">
+
+**Virtual Reality**
+
+[Back to notes main page](../main.md.html)
+
+<!-- Main section
+==============================================================
+
+Subsection
+--------------------------------------------------------------
+
+### Subsubsection -->
+Virtual reality (VR) is a computer-generated experience in which the user is fully immersed in a 3D virtual environment (VE). 
+In VR, the user sees the environment from a first-person perspective and the computer tracks the position of the user’s head.   
+Head tracking is commonly done with a head-mounted display (HMD) which doubles as the display through which the user observes the VE. 
+When the user moves their head, the view of the environment changes according to that movement. 
+Additionally, VR is an interactive experience. 
+This means the user does not passively observe the VE, but instead the environment changes in response to the user’s actions and movements.
+
+VR differs from a regular desktop computer or mobile phone interface due to the level of immersion it affords. 
+Immersion is concerned with the technical specifications that describe the system’s ability to deliver an inclusive, extensive, surrounding and vivid illusion of reality [#slater1997framework]. 
+Closely related to immersion is the feeling of presence, which is defined as the user’s psychological, subjective feeling of actually being in the VE [#slater1997framework].
+
+Technical Implementation
+==============================================================
+Display
+--------------------------------------------------------------
+We need to be able to render stereoscopic images in our HMD in order for the user to perceive a 3D environment.
+To acheive this stereoscopy, users view the virtual environment (VE) through two separate screens, where the scenes are rendered from the perspective of two slightly offset virtual cameras.
+This virtual camera offset mimics the way we observe our physical surroundings with our eyes.
+Each camera is rendered to the screen for the corresponding eye.
+
+Since the HMD is worn directly on the head, the displays are very close to the user's eyes.
+Thus, the user is only able to view a small portion of the displays.
+To compensate for this and afford a wide field of view (FOV), a lense placed in front of both screens distorts the image.
+Note that the image rendered on the displays must be rendered to compensate for the distortion and chromatic abberation caused by the lenses.
+
+Depending on the HMD, the distance between the lenses can be adjusted to accomodate for users with different IODs to ensure that users see a clear, sharp image.
+Some users' IOCs will be too large or small for the HMD, in which case the images they see will likely be slightly less sharp than users who can properly accomodate for their IOC.
+However, there is evidence suggesting that this lack of IOC adjustment does not significantly affect distance estimation in VR [#willemsen2008effects, #williams2019estimation].
+Nevertheless, the HMD should still be adjusted to fit the user's IOC if possible in order to deliver as immersive an experience as possible.
+
+Tracking
+--------------------------------------------------------------
+A key component of VR is that it is head-tracked.
+This means that as the user moves their head, the view of the VE changes according to those head movements.
+Modern systems are able to track movements with sub-millimeter precision.
+There are many different methods for tracking:
+
+- **Outside-in Tracking:** Multiple calibrated cameras sense the position of the HMD and triangulate its position in 3D space. This requires at least two senors to be able to triangulate the HMD position, and accuracy is increased with more cameras or points to sensor. By tracking multiple points on the HMD, we are able to determine its orientation. 
+- **Inside-out Tracking:** The HMD has sensors (cameras) on it. By tracking the position of the targets as the HMD moves, the system can determine the direction that the HMD moved that caused the sensed target movement.
+- **Other:** 
+
+User Input
+--------------------------------------------------------------
+
+Audio
+--------------------------------------------------------------
+
+Locomotion
+==============================================================
+
+Head-mounted Display
+==============================================================
+
+Head-mounted Display
+==============================================================
+
+Head-mounted Display
+==============================================================
+
+Head-mounted Display
+==============================================================
+
+Head-mounted Display
+==============================================================
+
+Head-mounted Display
+==============================================================
+<!-- Main section
+==============================================================
+
+Main section
+==============================================================
+
+Main section
+============================================================== -->
+
+Bibliography
+==============================================================
+[#slater1997framework]: Slater, M., & Wilbur, S. (1997). A framework for immersive virtual environments (FIVE): Speculations on the role of presence in virtual environments. Presence: Teleoperators & Virtual Environments, 6(6), 603-616.
+
+[#willemsen2008effects]: Willemsen, P., Gooch, A. A., Thompson, W. B., & Creem-Regehr, S. H. (2008). Effects of stereo viewing conditions on distance perception in virtual environments. Presence: Teleoperators and Virtual Environments, 17(1), 91-101.
+
+[#williams2019estimation]: Williams, N. L., & Peck, T. C. (2019). Estimation of Rotation Gain Thresholds Considering FOV, Gender, and Distractors. IEEE transactions on visualization and computer graphics, 25(11), 3158-3168.
+
+
+<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>

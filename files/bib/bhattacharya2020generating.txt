@@ -1,0 +1,6 @@
+@article{bhattacharya2020generating,
+  title={Generating Emotive Gaits for Virtual Agents Using Affect-Based Autoregression},
+  author={Bhattacharya, Uttaran and Rewkowski, Nicholas and Guhan, Pooja and Williams, Niall L and Mittal, Trisha and Bera, Aniket and Manocha, Dinesh},
+  journal={arXiv preprint arXiv:2010.01615},
+  year={2020}
+}
