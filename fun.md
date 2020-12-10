@@ -48,7 +48,7 @@ A collection of random bits of info about me or things I find interesting.
 		<a href="../files/img/cat_and_dog.jpg">Img 8<img src=""></a>.<br>
 	</li>
 	<li>
-		My undergrad thesis advisor and second reader made watching all episodes of Seinfeld a requirement for qualifying for honors.<br>
+		My undergrad thesis advisor and second reader made watching all episodes of Seinfeld as a requirement for qualifying for honors.<br>
 	</li>
 </ul>
 
