@@ -39,7 +39,7 @@ Uttaran Bhattacharya, Nicholas Rewkowski, Pooja Guhan, <b>Niall L. Williams</b>,
 <ol>
 
 <li>
-Augmenting Physics Education with Haptic and Visual Feedback.</b><br>
+<b>Augmenting Physics Education with Haptic and Visual Feedback.</b><br>
 Kern Qi, David Borland, <b>Niall L. Williams</b>, Emily Jackson, James Minogue, Tabitha C. Peck<br>
 <i>IEEE VR 2020 Fifth Workshop on K-12+ Embodied Learning through Virtual & Augmented Reality (KELVAR)</i><br>
 <a href="../files/publications/qi2020augmenting.pdf" target="_blank"><b>[Paper]</b></a> | <a href="../files/bib/qi2020augmenting.txt" target="_blank"><b>[Bibtex]</b></a>
