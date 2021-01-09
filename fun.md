@@ -10,7 +10,7 @@ A collection of random bits of info about me or things I find interesting.
 
 <ul>
 	<li>
-		My name is pronounced like how you pronounce "Nile." The different spelling is because my name is Irish.<br>
+		My name is pronounced in the same way that you pronounce "Nile." The different spelling is because my name is Irish.<br>
 	</li>
 	<li>
 		While it's true that I'm a <a href="https://scholar.google.com/citations?user=KIUsT1cAAAAJ&hl" target="_blank">published author</a>, I do not write <a href="http://www.niallwilliams.com/" target="_blank">novels</a>.<br>
@@ -22,7 +22,7 @@ A collection of random bits of info about me or things I find interesting.
 		I walked my dog during a hurricane once (nature calls!).<br>
 	</li>
 	<li>
-		I have gone scuba diving with sharks.<br>
+		I have gone scuba diving with sharks in open water (no cage!).<br>
 	</li>
 	<li>
 		I had open-heart surgery days after being born.<br>
@@ -48,7 +48,7 @@ A collection of random bits of info about me or things I find interesting.
 		<a href="../files/img/cat_and_dog.jpg">Img 8<img src=""></a>.<br>
 	</li>
 	<li>
-		My undergrad thesis advisor and second reader made watching all episodes of Seinfeld as a requirement for qualifying for honors.<br>
+		My undergrad thesis advisor and second reader made watching all episodes of Seinfeld a requirement to qualify for honors.<br>
 	</li>
 </ul>
 
