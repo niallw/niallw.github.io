@@ -1,0 +1,6 @@
+@article{williams2021arc,
+  title={ARC: Alignment-based Redirection Controller for Redirected Walking in Complex Environments},
+  author={Williams, Niall L and Bera, Aniket and Manocha, Dinesh},
+  journal={arXiv preprint arXiv:2101.04912},
+  year={2021}
+}

@@ -11,6 +11,15 @@ You can also find a list of my publications on my <a href="https://scholar.googl
 <ol>
 
 <li>
+<b>ARC: Alignment-based Redirection Controller for Redirected Walking in Complex Environments</b><br>
+<b>Niall L. Williams</b>, Aniket Bera, Dinesh Manocha<br>
+<i>IEEE Transactions on Visualization and Computer Graphics, 2021</i><br>
+(Presented at IEEE VR 2021)<br>
+<a href="../files/publications/williams2021arc.pdf" target="_blank"><b>[Paper]</b></a> | <a href="https://github.com/niallw/" target="_blank"><b>[Code coming soon]</b></a> | <a href="../files/bib/williams2021arc.txt" target="_blank"><b>[Bibtex]</b></a>
+</li>
+<br>
+
+<li>
 <b>Estimation of Rotation Gain Thresholds Considering FOV, Gender, and Distractors</b><br>
 <b>Niall L. Williams</b>, Tabitha C. Peck<br>
 <i>IEEE Transactions on Visualization and Computer Graphics, 2019</i><br>
