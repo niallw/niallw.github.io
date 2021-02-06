@@ -24,6 +24,6 @@ In my free time, I mostly enjoy drawing and competitive video games (DotA 2 and 
   <li><b>May 2019</b>: I graduated from Davidson College.</li>
   <li><b>May 2019</b>: I passed my undergraduate thesis defense with high honors.</li>
   <li><b>April 2019</b>: I received the senior computer science award at Davidson.</li>
-  <li><b>March 2019</b>: I will join the University of Maryland, College Park as a PhD student in the fall.</li>
+  <!-- <li><b>March 2019</b>: I will join the University of Maryland, College Park as a PhD student in the fall.</li> -->
   <!-- <li><b>DATE</b>: NEWS</li> -->
 </ul>
