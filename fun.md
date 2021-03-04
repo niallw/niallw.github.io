@@ -64,7 +64,7 @@ Useful resources:
 	<li><a href="http://web.engr.oregonstate.edu/~mjb/whirlwind/" target="_blank">Tour of computer graphics.</a></li>
 	<li><a href="https://stats.idre.ucla.edu/other/mult-pkg/whatstat/" target="_blank">Statistical test cheat sheet.</a></li>
 	<li><a href="https://colorbrewer2.org/" target="_blank">Color scheme resource.</a></li>
-	<!-- <li><a href="LINK" target="_blank">DESCRIPTION</a></li> -->
+	<li><a href="https://phdadvice.carrd.co/" target="_blank">Advice for CS PhD students.</a></li>
 	<!-- <li><a href="LINK" target="_blank">DESCRIPTION</a></li> -->
 	<!-- <li><a href="LINK" target="_blank">DESCRIPTION</a></li> -->
 </ul>
