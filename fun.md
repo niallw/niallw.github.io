@@ -50,6 +50,9 @@ A collection of random bits of info about me or things I find interesting.
 	<li>
 		My undergrad thesis advisor and second reader made watching all episodes of Seinfeld a requirement to qualify for honors.<br>
 	</li>
+	<li>
+		I once spent a summer digging up nests of hatching sea turtles and helping them safely reach the ocean.<br>
+	</li>
 	<!-- <li>
 		<a href"https://academictree.org/math/distance.php?username=guest&sessionid=&refresh=1&search1=Carl++Gau%C3%9F+%28Gauss%29&pid1=7650&search2=Dinesh++Manocha&pid2=234766&includepd=1&Update=Find+Connection" target="_blank">Carl Gauss is my academic great-great-great-great-great-great-great-great-great-great-grandfather!</a> (That's 10 "greats"!)<br>
 	</li> -->
