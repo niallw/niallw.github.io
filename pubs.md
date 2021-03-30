@@ -15,7 +15,7 @@ You can also find a list of my publications on my <a href="https://scholar.googl
 <b>Niall L. Williams</b>, Aniket Bera, Dinesh Manocha<br>
 <i>IEEE Transactions on Visualization and Computer Graphics, 2021</i><br>
 (Presented at IEEE VR 2021)<br>
-<a href="../files/publications/williams2021arc.pdf" target="_blank"><b>[Paper]</b></a> | <a href="https://github.com/niallw/" target="_blank"><b>[Code coming soon]</b></a> | <a href="../files/bib/williams2021arc.txt" target="_blank"><b>[Bibtex]</b></a>
+<a href="../files/publications/williams2021arc.pdf" target="_blank"><b>[Paper]</b></a> | <a href="https://github.com/pasumi/pasumi" target="_blank"><b>[Code coming soon]</b></a> | <a href="../files/bib/williams2021arc.txt" target="_blank"><b>[Bibtex]</b></a>
 </li>
 <br>
 
@@ -38,7 +38,7 @@ You can also find a list of my publications on my <a href="https://scholar.googl
 <b>Generating Emotive Gaits for Virtual Agents Using Affect-Based Autoregression</b><br>
 Uttaran Bhattacharya, Nicholas Rewkowski, Pooja Guhan, <b>Niall L. Williams</b>, Trisha Mittal, Aniket Bera, Dinesh Manocha<br>
 <i>International Symposium on Mixed and Augmented Reality, 2020</i><br>
-<a href="../files/publications/bhattacharya2020generating.pdf" target="_blank"><b>[Paper]</b></a> | <a href="https://gamma.umd.edu/publication/793/" target="_blank"><b>[Project Page]</b></a> | <a href="../files/bib/bhattacharya2020generating.txt" target="_blank"><b>[Bibtex]</b></a>
+<a href="../files/publications/bhattacharya2020generating.pdf" target="_blank"><b>[Paper]</b></a> | <a href="https://gamma.umd.edu/gen_emotive_gaits/" target="_blank"><b>[Project Page]</b></a> | <a href="../files/bib/bhattacharya2020generating.txt" target="_blank"><b>[Bibtex]</b></a>
 </li><br>
 
 </ol>
