@@ -9,7 +9,7 @@ layout: home
 <img src="files/img/profile.png" style="width: 200px">
 
 
-I am a PhD student in computer science at the University of Maryland, College Park. I am working in the <a href="https://gamma.umd.edu/" target="_blank">GAMMA lab</a> under the supervision of <a href="https://www.cs.umd.edu/people/dmanocha" target="_blank">Dr. Dinesh Manocha</a> and <a href="https://www.cs.umd.edu/~ab/" target="_blank">Dr. Aniket Bera</a>. My research interests involve virtual reality, computer graphics, human perception, human-computer interaction, and non-photorealistic rendering.
+I am a PhD student in computer science at the University of Maryland, College Park. I am working in the <a href="https://gamma.umd.edu/" target="_blank">GAMMA lab</a> under the supervision of <a href="https://www.cs.umd.edu/people/dmanocha" target="_blank">Dr. Dinesh Manocha</a> and <a href="https://www.cs.umd.edu/~ab/" target="_blank">Dr. Aniket Bera</a>. My research interests involve virtual reality, computer graphics, human perception, and robotics.
 
 I graduated with a B.S. with High Honors in Computer Science from <a href="https://www.davidson.edu/" target="_blank">Davidson College</a>. During my time at Davidson, I was a member of the DRIVE lab, where I was advised by <a href="https://tabithapeck.com/" target="_blank">Dr. Tabitha Peck</a>. My undergraduate thesis studied redirected walking thresholds under different conditions and how we can efficiently estimate them. 
 
