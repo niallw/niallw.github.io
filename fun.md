@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Fun stuff
+title: Fun Stuff
 permalink: /fun/
 ---
 

@@ -48,7 +48,7 @@ header_pages:
  - teach.md
  - cv.md
  - fun.md
- - fails.md
+#  - fails.md
 
 
 # Build settings
