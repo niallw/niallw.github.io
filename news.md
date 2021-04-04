@@ -1,7 +1,7 @@
 ---
-layout: page
-title: Publications
-permalink: /pubs/
+layout: news
+title: News
+permalink: /news/
 ---
 
 You can also find a list of my publications on my <a href="https://scholar.google.com/citations?user=KIUsT1cAAAAJ" target="_blank">Google Scholar</a> profile.
