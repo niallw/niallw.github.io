@@ -22,7 +22,8 @@ In my free time, I mostly enjoy drawing and competitive video games (DotA 2 and 
   <li><b>Nov 2020</b>: One TVCG paper accepted to VR 2021!</li>
   <li><b>July 2020</b>: One paper accepted to ISMAR 2020!</li>
   <li><b>March 2020</b>: Received the IEEE VR 2020 Diversity Scholarship travel grant!</li>
-  <li><b>June 2019</b>: One paper accepted to ISMAR 2019!</li>
+  <li><b>March 2020</b>: <a href="https://niallw.github.com/news/">All news...</a></li>
+  <!-- <li><b>June 2019</b>: One paper accepted to ISMAR 2019!</li> -->
   <!-- <li><b>May 2019</b>: I graduated from Davidson College.</li> -->
   <!-- <li><b>May 2019</b>: I passed my undergraduate thesis defense with high honors.</li> -->
   <!-- <li><b>April 2019</b>: I received the senior computer science award at Davidson.</li> -->
