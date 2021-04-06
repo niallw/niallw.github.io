@@ -11,7 +11,8 @@ You can also find a list of my publications on my <a href="https://scholar.googl
 <ol>
 
 <li>
-<b>ARC: Alignment-based Redirection Controller for Redirected Walking in Complex Environments</b> <span style="color:red"><b>[Best paper honorable mention]</b></span><br>
+<b>ARC: Alignment-based Redirection Controller for Redirected Walking in Complex Environments</b> <span style="color:red"></span><br>
+<b>[Best paper honorable mention]</b><br>
 <b>Niall L. Williams</b>, Aniket Bera, Dinesh Manocha<br>
 <i>IEEE Transactions on Visualization and Computer Graphics, 2021</i><br>
 (Presented at IEEE VR 2021)<br>
