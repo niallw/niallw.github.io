@@ -79,7 +79,7 @@ Fun reads:
 <ul>
 	<li><a href="http://tomforsyth1000.github.io/blog.wiki.html#%5B%5BVR%20optics%20and%20why%20IPD%20means%20too%20many%20things%5D%5D" target="_blank">Tom Forsyth on IPD</a></li>
 	<li><a href="http://paulgraham.com/genius.html" target="_blank">The bus ticket theory of genius</a></li>
-	<!-- <li><a href="LINK" target="_blank">DESCRIPTION</a></li> -->
+	<li><a href="http://www.tkim.graphics/HOWTOTALK/HowToTalk.pdf" target="_blank">How to organize a presentation by Theodore Kim.</a></li>
 	<!-- <li><a href="LINK" target="_blank">DESCRIPTION</a></li> -->
 	<!-- <li><a href="LINK" target="_blank">DESCRIPTION</a></li> -->
 	<!-- <li><a href="LINK" target="_blank">DESCRIPTION</a></li> -->
