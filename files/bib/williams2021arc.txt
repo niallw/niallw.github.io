@@ -2,8 +2,9 @@
   title={ARC: Alignment-based Redirection Controller for Redirected Walking in Complex Environments},
   author={Williams, Niall L and Bera, Aniket and Manocha, Dinesh},
   journal={IEEE Transactions on Visualization \& Computer Graphics},
-  number={01},
-  pages={1--1},
+  volume={27},
+  number={05},
+  pages={2535--2544},
   year={2021},
   publisher={IEEE Computer Society}
 }
