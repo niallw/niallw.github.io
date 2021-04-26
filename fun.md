@@ -31,9 +31,6 @@ A collection of random bits of info about me or things I find interesting.
 		I had a cast on my left arm and right leg at the same time for 6 weeks.<br>
 	</li>
 	<li>
-		My birthday is on the same date that <a href="https://en.wikipedia.org/wiki/Broom_Bridge" target="_blank">the formula for quaternions was discovered</a>.<br>
-	</li>
-	<li>
 		I won the only poker game I ever played. I no longer remember how to play poker.<br>
 	</li>
 	<li>
