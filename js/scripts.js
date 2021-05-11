@@ -133,6 +133,8 @@ function recordSession(){
 
     restLength = sessionLength * REST_PERCENTAGE;
     console.log("Rest length: " + restLength + " minutes.");
+
+    sendEmail();
 }
 
 function startRestSession(){
@@ -176,4 +178,31 @@ function startRestSession(){
 function playAlarm(){
     var audio = new Audio('js/alarm.mp3');
     audio.play();
+}
+
+function sendEmail(){
+    $.ajax({
+    type: "POST",
+    url: "https://mandrillapp.com/api/1.0/messages/send.json",
+    data: {
+        'key': 'aabefced8e736993e092d0aa2e6c2842-us1',
+        'message': {
+        'from_email': 'niallw.work.log@gmail.com',
+        'to': [
+            {
+                'email': 'niallw.work.log@gmail.comE',
+                'name': 'RECIPIENT NAME (OPTIONAL)',
+                'type': 'to'
+            }
+            ],
+        'autotext': 'true',
+        'subject': 'YOUR SUBJECT HERE!',
+        'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
+        }
+    }
+    }).done(function(response) {
+        console.log(response); // if you're into that sorta thing
+    });
+
+    console.log("sent email");
 }
