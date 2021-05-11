@@ -182,7 +182,8 @@ function playAlarm(){
 
 function getCurrentUser() {
     gapi.load('client', start);
-    
+    console.log(gapi.client);
+
     var mySpreadsheetID = "1x1nhNY3zm0VlBm7_6wf2KpAt_nJIDZbJPpkX1zQ2beQ";
     var sheetID = "0";
     var accessToken = "x";
@@ -191,9 +192,11 @@ function getCurrentUser() {
         ["UFC"],
         ["KFC"]    
     ];
+
     var body = {
         values: values
     };
+
     gapi.client.sheets.spreadsheets.values.update({
         spreadsheetId: "1x1nhNY3zm0VlBm7_6wf2KpAt_nJIDZbJPpkX1zQ2beQ",
         range: "Sheet1!A2:A3",
