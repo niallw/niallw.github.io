@@ -51,8 +51,7 @@ function timerFunction(numMinutesCountdown) {
         // If the count down is over, write some text 
         if (distance < 0) {
             clearInterval(x);
-            var audio = new Audio('js/alarm.mp3');
-            audio.play();
+            playAlarm();
             document.getElementById("demo").innerHTML = "EXPIRED";
             timerStarted = false;
             stopTimer();
@@ -114,8 +113,6 @@ function stopTimer(){
     document.getElementById("demo").innerHTML = "No timer running.";
     clearInterval(x);
 
-    sleep(9000);
-
     recordSession();
 }
 
@@ -159,8 +156,7 @@ function startRestSession(restLength){
         // If the count down is over, write some text 
         if (distance < 0) {
             clearInterval(x);
-            var audio = new Audio('js/alarm.mp3');
-            audio.play();
+            playAlarm();
             document.getElementById("demo").innerHTML = "REST OVER";
             timerStarted = false;
         }
@@ -173,4 +169,10 @@ function sleep(milliseconds){
     while( (end-start) < milliseconds){
         end = new Date().getTime();
     }
+}
+
+function playAlarm(){
+    var audio = new Audio('js/alarm.mp3');
+    audio.play();
+    sleep(9000);    
 }
