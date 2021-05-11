@@ -1,5 +1,3 @@
-import Github from './GitHub'
-
 const CONVERT_TO_MINUTES = 60000;
 const REST_PERCENTAGE = 0.25; // Percentage of the study session duration.
 var x;
@@ -183,45 +181,23 @@ function playAlarm(){
 }
 
 function getCurrentUser() {
-    var github = new Github({
-        username: 'awoh',
-        password: 'paintinggithub96',
-        auth: 'basic'
-      }); 
+    var spreadsheetID = "1x1nhNY3zm0VlBm7_6wf2KpAt_nJIDZbJPpkX1zQ2beQ";
+    var sheetID = "0";
+    var accessToken = "x";
 
-    // Creates an object representing the repository you want to work with
-    var repository = github.getRepo('awoh', 'test-repo');
-    
-    // Creates a new file (or updates it if the file already exists)
-    // with the content provided
-    repository.write(
-        'master', // e.g. 'master'
-        'js/scripts.js', // e.g. 'blog/index.md'
-        'Hello world, this is my new content', // e.g. 'Hello world, this is my new content'
-        'Committing, my dudde', // e.g. 'Created new index'
-        function(err) {}
-    );
-
-    var file = new File(["imblue"], "foo.txt", {
-        type: "text/plain",
-      });
-
-    console.log(file)
-    console.log("wepfij")
-    // const key = document.getElementById("api").innerHTML;
-    // console.log(key);
-    // if (!key) {
-    //   alert('API key is required')
-    //   return
-    // }
-    // fetch('https://api.clockify.me/api/v1/user', {
-    //   headers: {
-    //     'X-Api-Key': key
-    //   }
-    // }).then(r => r.json()).then(user => {
-    //   let message = 'Provided API key is not valid'
-    //   user.name && (message = `Welcome ${user.name}`)
-      
-    //   document.querySelector('#result').innerText = message
-    // })
+    var params = {
+        "range":"Sheet1!A2:A3",
+        "majorDimension": "ROWS",
+        "values": [
+          ["UFC"],
+          ["KFC"]
+ 
+       ],
+      }
+      var xhr = new XMLHttpRequest();
+      xhr.open("PUT", "https://sheets.googleapis.com/v4/spreadsheets/"+spreadsheetID+"/"+"values/"+"Sheet1!A2:A3?"+"valueInputOption=USER_ENTERED");
+      xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
+      xhr.send(JSON.stringify(params));
 }
+
+// https://stackoverflow.com/questions/21151896/can-a-google-form-be-auto-filled-and-submitted-using-data-from-a-spreadsheet
