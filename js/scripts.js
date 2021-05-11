@@ -222,6 +222,8 @@ function writeToCell(){
     }).then((response) => {
         var result = response.result;
         console.log(`${result.updatedCells} cells updated.`);
+    }, function(reason) {
+        console.log('Error: ' + reason.result.error.message);
     });
 }
 
