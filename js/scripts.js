@@ -51,7 +51,6 @@ function timerFunction(numMinutesCountdown) {
         // If the count down is over, write some text 
         if (distance < 0) {
             clearInterval(x);
-            playAlarm();
             document.getElementById("demo").innerHTML = "EXPIRED";
             timerStarted = false;
             stopTimer();
@@ -110,8 +109,8 @@ function resumeTimer(){
 function stopTimer(){
     console.log("Stopped the timer.");
     timerStarted = false;
-    document.getElementById("demo").innerHTML = "No timer running.";
     clearInterval(x);
+    playAlarm();
 
     recordSession();
 }
@@ -174,5 +173,5 @@ function sleep(milliseconds){
 function playAlarm(){
     var audio = new Audio('js/alarm.mp3');
     audio.play();
-    sleep(9000);    
+    // sleep(9000);
 }
