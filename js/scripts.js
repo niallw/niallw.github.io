@@ -172,6 +172,14 @@ function sleep(milliseconds){
 
 function playAlarm(){
     var audio = new Audio('js/alarm.mp3');
+
+    audio.addEventListener("ended", function() {
+        alert("ended");
+        audio.currentTime = 0;
+        audio.play();
+     });
+
     audio.play();
-    wait(9000);
+    
+    // wait(9000);
 }
