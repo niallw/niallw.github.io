@@ -181,6 +181,8 @@ function playAlarm(){
 }
 
 function getCurrentUser() {
+    gapi.load('client', start);
+    
     var mySpreadsheetID = "1x1nhNY3zm0VlBm7_6wf2KpAt_nJIDZbJPpkX1zQ2beQ";
     var sheetID = "0";
     var accessToken = "x";
