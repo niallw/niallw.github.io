@@ -24,7 +24,7 @@ function testTimerFunction(numMinutesCountdown) {
     // If the count down is over, write some text 
     if (distance < 0) {
         clearInterval(x);
-        var audio = new Audio('alarm.mp3');
+        var audio = new Audio('js/alarm.mp3');
         audio.play();
         document.getElementById("demo").innerHTML = "EXPIRED";
     }
