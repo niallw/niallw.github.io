@@ -51,7 +51,9 @@
 
 <body>
   <script>
-    var timerDone = false;
+    window.onbeforeunload = function(event){
+        return window.confirm("Confirm refresh");
+    };
   </script>
 
   <script src="js/scripts.js"></script>
