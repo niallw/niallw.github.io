@@ -1,4 +1,4 @@
-import GitHub from 'github-api';
+import Github from './GitHub'
 
 const CONVERT_TO_MINUTES = 60000;
 const REST_PERCENTAGE = 0.25; // Percentage of the study session duration.
