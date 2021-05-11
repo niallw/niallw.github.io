@@ -179,7 +179,7 @@ function playAlarm(){
         audio.play();
      });
 
-    audio.play();
-    
+    // audio.play();
+
     // wait(9000);
 }
