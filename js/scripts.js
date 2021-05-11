@@ -173,5 +173,5 @@ function sleep(milliseconds){
 function playAlarm(){
     var audio = new Audio('js/alarm.mp3');
     audio.play();
-    // sleep(9000);
+    sleep(9000);
 }
