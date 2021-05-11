@@ -180,29 +180,20 @@ function playAlarm(){
     audio.play();
 }
 
-function sendEmail(){
-    $.ajax({
-    type: "POST",
-    url: "https://mandrillapp.com/api/1.0/messages/send.json",
-    data: {
-        'key': 'aabefced8e736993e092d0aa2e6c2842-us1',
-        'message': {
-        'from_email': 'niallw.work.log@gmail.com',
-        'to': [
-            {
-                'email': 'niallw.work.log@gmail.comE',
-                'name': 'RECIPIENT NAME (OPTIONAL)',
-                'type': 'to'
-            }
-            ],
-        'autotext': 'true',
-        'subject': 'YOUR SUBJECT HERE!',
-        'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
-        }
+function getCurrentUser() {
+    const key = document.querySelector('#apiKey').value;
+    if (!key) {
+      alert('API key is required')
+      return
     }
-    }).done(function(response) {
-        console.log(response); // if you're into that sorta thing
-    });
-
-    console.log("sent email");
-}
+    fetch('https://api.clockify.me/api/v1/user', {
+      headers: {
+        'X-Api-Key': key
+      }
+    }).then(r => r.json()).then(user => {
+      let message = 'Provided API key is not valid'
+      user.name && (message = `Welcome ${user.name}`)
+      
+      document.querySelector('#result').innerText = message
+    })
+  }
