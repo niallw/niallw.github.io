@@ -46,9 +46,9 @@
 <br>
 <button style="font-size: 20px; background-color: #cc0000;" onclick="confirmStop()">Stop timer</button>
 
-Your <a href="https://clockify.me/user/settings" target="_blank">API key</a>: <input id="apiKey"> 
-  <button onClick="getCurrentUser()">Go</button><br>
-<span id="result">
+<div hidden id="api">NjM5MjI2NjAtMDFlNy00NWMxLWFkNDMtOGZhYjZkNGZlNmIy</div>
+
+<button style="font-size: 20px; background-color: #cc0000;" onclick="getCurrentUser()">dab</button>
 
 <body>
   <script>
@@ -57,7 +57,16 @@ Your <a href="https://clockify.me/user/settings" target="_blank">API key</a>: <i
     };
   </script>
 
+  <!-- <script type="module">
+    import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
+  </script> -->
+
+  <!-- just github-api source (5.3kb) -->
+  <!-- <script src="https://unpkg.com/github-api/dist/GitHub.min.js"></script> -->
+  <!-- <script type="module" src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script> -->
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="module" src="js/lib/"></script>
   <script src="js/scripts.js"></script>
 </body>
 </html>

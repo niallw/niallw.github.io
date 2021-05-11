@@ -1,5 +1,7 @@
+import GitHub from './GitHub';
+
 const CONVERT_TO_MINUTES = 60000;
-const REST_PERCENTAGE = 0.3; // Percentage of the study session duration.
+const REST_PERCENTAGE = 0.25; // Percentage of the study session duration.
 var x;
 var timerStarted = false;
 var unboundedTimerStartTime;
@@ -134,7 +136,7 @@ function recordSession(){
     restLength = sessionLength * REST_PERCENTAGE;
     console.log("Rest length: " + restLength + " minutes.");
 
-    sendEmail();
+    logSession();
 }
 
 function startRestSession(){
@@ -181,19 +183,45 @@ function playAlarm(){
 }
 
 function getCurrentUser() {
-    const key = document.querySelector('#apiKey').value;
-    if (!key) {
-      alert('API key is required')
-      return
-    }
-    fetch('https://api.clockify.me/api/v1/user', {
-      headers: {
-        'X-Api-Key': key
-      }
-    }).then(r => r.json()).then(user => {
-      let message = 'Provided API key is not valid'
-      user.name && (message = `Welcome ${user.name}`)
+    var github = new Github({
+        username: 'awoh',
+        password: 'paintinggithub96',
+        auth: 'basic'
+      }); 
+
+    // Creates an object representing the repository you want to work with
+    var repository = github.getRepo('awoh', 'test-repo');
+    
+    // Creates a new file (or updates it if the file already exists)
+    // with the content provided
+    repository.write(
+        'master', // e.g. 'master'
+        'js/scripts.js', // e.g. 'blog/index.md'
+        'Hello world, this is my new content', // e.g. 'Hello world, this is my new content'
+        'Committing, my dudde', // e.g. 'Created new index'
+        function(err) {}
+    );
+
+    var file = new File(["imblue"], "foo.txt", {
+        type: "text/plain",
+      });
+
+    console.log(file)
+    console.log("wepfij")
+    // const key = document.getElementById("api").innerHTML;
+    // console.log(key);
+    // if (!key) {
+    //   alert('API key is required')
+    //   return
+    // }
+    // fetch('https://api.clockify.me/api/v1/user', {
+    //   headers: {
+    //     'X-Api-Key': key
+    //   }
+    // }).then(r => r.json()).then(user => {
+    //   let message = 'Provided API key is not valid'
+    //   user.name && (message = `Welcome ${user.name}`)
       
-      document.querySelector('#result').innerText = message
-    })
-  }
+    //   document.querySelector('#result').innerText = message
+    // })
+}
