@@ -181,9 +181,25 @@ function playAlarm(){
 }
 
 function getCurrentUser() {
-    gapi.load('client', start);
+    gapi.load('client', writeToCell);
     console.log(gapi.client);
 
+    // var params = {
+    // "range":"Sheet1!A2:A3",
+    // "majorDimension": "ROWS",
+    // "values": [
+    //     ["UFC"],
+    //     ["KFC"]
+
+    // ],
+    // }
+    // var xhr = new XMLHttpRequest();
+    // xhr.open("PUT", "https://sheets.googleapis.com/v4/spreadsheets/"+spreadsheetID+"/"+"values/"+"Sheet1!A2:A3?"+"valueInputOption=USER_ENTERED");
+    // xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
+    // xhr.send(JSON.stringify(params));
+}
+
+function writeToCell(){
     var mySpreadsheetID = "1x1nhNY3zm0VlBm7_6wf2KpAt_nJIDZbJPpkX1zQ2beQ";
     var sheetID = "0";
     var accessToken = "x";
@@ -206,20 +222,6 @@ function getCurrentUser() {
         var result = response.result;
         console.log(`${result.updatedCells} cells updated.`);
     });
-
-    // var params = {
-    // "range":"Sheet1!A2:A3",
-    // "majorDimension": "ROWS",
-    // "values": [
-    //     ["UFC"],
-    //     ["KFC"]
-
-    // ],
-    // }
-    // var xhr = new XMLHttpRequest();
-    // xhr.open("PUT", "https://sheets.googleapis.com/v4/spreadsheets/"+spreadsheetID+"/"+"values/"+"Sheet1!A2:A3?"+"valueInputOption=USER_ENTERED");
-    // xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
-    // xhr.send(JSON.stringify(params));
 }
 
 // https://stackoverflow.com/questions/21151896/can-a-google-form-be-auto-filled-and-submitted-using-data-from-a-spreadsheet
