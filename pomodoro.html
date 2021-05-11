@@ -12,13 +12,48 @@
 
 </head>
 
-This is a test
+<ul>
+  <li>Focus on getting DEEP into the work.</li>
+  <li>Focus on expanding your knowledgebase.</li>
+  <li>The goal is to improve your brain.</li>
+</ul> 
 
-<button onclick="testTimerFunction(0.5)">Click me</button> 
+<button style="font-size: 50px;" onclick="timerFunction(60)">60 min. timer</button> 
 
-<p id="demo"></p>
+<button style="font-size: 50px;" onclick="timerFunction(30)">30 min. timer</button> 
+
+<button style="font-size: 50px;" onclick="timerFunction(20)">20 min. timer</button> 
+
+<button style="font-size: 50px;" onclick="timerFunction(10)">10 min. timer</button> 
+
+<br>
+<br>
+<label style="font-size: 50px;" for="customTime">Custom time (minutes):</label>
+<input style="font-size: 50px;" type="text" id="customTime" name="customTime">
+<input style="font-size: 50px;" type="submit" value="Start custom timer" onclick="customTimer()">
+
+<br>
+<br>
+<button style="font-size: 50px;" onclick="unboundedTimer()">Unbounded timer</button> 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p id="demo" style="font-size: 100px;">No timer running.</p>
+<button style="font-size: 20px;" onclick="stopTimer()">Stop timer</button> 
+
 
 <body>
+  <script>
+    var timerDone = false;
+  </script>
+
   <script src="js/scripts.js"></script>
 </body>
 </html>
