@@ -6,6 +6,7 @@ var unboundedTimerStartTime;
 var breakTimer = false;
 var remainingTime;
 var startTime;
+var restLength;
 
 function timerFunction(numMinutesCountdown) {
     if (timerStarted){
@@ -106,6 +107,12 @@ function resumeTimer(){
     timerFunction(remainingTime);
 }
 
+function confirmStop(){
+    if (confirm('Are you sure you want to stop the timer?')) {
+        stopTimer();
+    }
+}
+
 function stopTimer(){
     console.log("Stopped the timer.");
     timerStarted = false;
@@ -124,12 +131,16 @@ function recordSession(){
     var sessionLength = (endTime - startTime) / CONVERT_TO_MINUTES;
     console.log("Session was " + sessionLength + " minutes long.");
 
-    var restLength = sessionLength * REST_PERCENTAGE;
+    restLength = sessionLength * REST_PERCENTAGE;
     console.log("Rest length: " + restLength + " minutes.");
-    startRestSession(restLength);
 }
 
-function startRestSession(restLength){
+function startRestSession(){
+    if (!(restLength > 0)){
+        console.log("You are not due for a rest yet!");
+        return;
+    }
+
     // Set the date we're counting down to
     var endTime = new Date().getTime() + (restLength * CONVERT_TO_MINUTES);
 
