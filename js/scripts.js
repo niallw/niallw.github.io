@@ -173,14 +173,6 @@ function startRestSession(){
     }, 1000);
 }
 
-function sleep(milliseconds){
-    var start = new Date().getTime();
-    var end=0;
-    while( (end-start) < milliseconds){
-        end = new Date().getTime();
-    }
-}
-
 function playAlarm(){
     var audio = new Audio('js/alarm.mp3');
     audio.play();
