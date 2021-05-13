@@ -228,3 +228,4 @@ function writeToCell(){
 }
 
 // https://stackoverflow.com/questions/21151896/can-a-google-form-be-auto-filled-and-submitted-using-data-from-a-spreadsheet
+// https://github.com/googleworkspace/browser-samples/blob/master/sheets/snippets/test_snippets.js
