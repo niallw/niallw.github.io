@@ -18,7 +18,7 @@ In my free time, I mostly enjoy drawing and competitive video games (DotA 2 and 
 <h2>Recent News</h2>
 <ul>
   <li><b>March 2021</b>: <a href="https://twitter.com/niallwphd/status/1377655573513142272" target="_blank">Received an honorable mention for my TVCG paper at VR 2021!</a></li>
-  <li><b>Feb 2021</b>: Joined the <a href="https://research.siggraph.org/" target="_blank">SIGGRAPH Research Career Development Committee!</li>
+  <li><b>Feb 2021</b>: Joined the <a href="https://research.siggraph.org/" target="_blank">SIGGRAPH Research Career Development Committee!</a></li>
   <li><b>Nov 2020</b>: One TVCG paper accepted to VR 2021!</li>
   <li><b>July 2020</b>: One paper accepted to ISMAR 2020!</li>
   <li><b>March 2020</b>: Received the IEEE VR 2020 Diversity Scholarship travel grant!</li>
