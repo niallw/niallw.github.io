@@ -205,13 +205,13 @@ function writeToCell(){
     var sheetID = "0";
     var accessToken = "x";
 
-    var values = [
+    var _values = [
         ["UFC"],
         ["KFC"]    
     ];
 
     var body = {
-        values: values
+        values: _values
     };
 
     gapi.client.sheets.spreadsheets.values.update({

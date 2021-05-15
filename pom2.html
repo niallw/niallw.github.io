@@ -24,6 +24,7 @@ limitations under the License.
     <p>Google Sheets API Quickstart</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="edit_button" style="display: none;">Edit cells</button>
     <button id="authorize_button" style="display: none;">Authorize</button>
     <button id="signout_button" style="display: none;">Sign Out</button>
 
@@ -43,6 +44,7 @@ limitations under the License.
 
       var authorizeButton = document.getElementById('authorize_button');
       var signoutButton = document.getElementById('signout_button');
+      var editButton = document.getElementById('edit_button');
 
       /**
        *  On load, called to load the auth2 library and API client library.
@@ -120,24 +122,47 @@ limitations under the License.
        * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
        */
       function listMajors() {
-        gapi.client.sheets.spreadsheets.values.get({
-          spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
-          range: 'Class Data!A2:E',
-        }).then(function(response) {
-          var range = response.result;
-          if (range.values.length > 0) {
-            appendPre('Name, Major:');
-            for (i = 0; i < range.values.length; i++) {
-              var row = range.values[i];
-              // Print columns A and E, which correspond to indices 0 and 4.
-              appendPre(row[0] + ', ' + row[4]);
-            }
-          } else {
-            appendPre('No data found.');
-          }
-        }, function(response) {
-          appendPre('Error: ' + response.result.error.message);
+        console.log("editing sheet");
+        var _values = [
+            ["UFC"],
+            ["KFC"]    
+        ];
+
+        var body = {
+            values: _values
+        };
+
+        gapi.client.sheets.spreadsheets.values.update({
+            spreadsheetId: "1x1nhNY3zm0VlBm7_6wf2KpAt_nJIDZbJPpkX1zQ2beQ",
+            range: "Sheet1!A2:A3",
+            valueInputOption: "USER_ENTERED",
+            resource: body
+        }).then((response) => {
+            var result = response.result;
+            console.log(`${result.updatedCells} cells updated.`);
+        }, function(reason) {
+            console.log('Error: ' + reason.result.error.message);
         });
+        
+        // gapi.client.sheets.spreadsheets.values.get({
+        //   spreadsheetId: '1x1nhNY3zm0VlBm7_6wf2KpAt_nJIDZbJPpkX1zQ2beQ',
+        //   range: 'Sheet1!A2:A3',
+        // }).then(function(response) {
+        //   var range = response.result;
+        //   if (range.values.length > 0) {
+        //     appendPre('Name, Major:');
+        //     for (i = 0; i < range.values.length; i++) {
+        //       var row = range.values[i];
+        //       // Print columns A and E, which correspond to indices 0 and 4.
+        //       appendPre(row[0] + ', ' + row[4]);
+        //     }
+        //   } else {
+        //     appendPre('No data found.');
+        //   }
+        // }, function(response) {
+        //   appendPre('Error: ' + response.result.error.message);
+        // });
+
       }
 
     </script>
