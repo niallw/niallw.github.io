@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "work-logger-313421",
+  "private_key_id": "11a1385211cd76f64eae3b342321ac9742d16646",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCRso8t/rvVa0SC\nM5O8ilYc71WXTZBLN6nUvUDm7zh7Gx1Rh5FDGswwM2bjaApOSnxTXfGuT5YA51RP\nzS4m2cff6P33WbPQfCFkqVwmN1ZJu39GcPdqVhtRKdKJOZVzo0hJ6pyUgeqTvEA9\nwb1cPCU+SgsNUXgh1n83qctrSiglqMogfEldKoy+/ewnw1gZuFjJEtLFvZ1gMjvD\nFePavpX4ZCvpU9xofB7QF4KYa0VVh+9J02aizl7kBm31AwwnbXvvGqVnfH1Bislb\ndTqkJbTNRwGZNXIZzKskB9cyS+lp/gLHzxY4pHZmjk05pYBp8jfVKsl6f0nbOZQh\nSIEOg9UFAgMBAAECggEANLHnFRSXrOXB/nFXEo7Z/FcXlsSH1pyIQRg93AhTXjr9\nTJqCkEml5h0BLmhXqd9IvgIxQgEo2KTSGpa0BXsozjP/frGj1li+3yBd4riK7dnx\ne3GqGnyQHrfInLcF9a/tmkZPYWrng41Hks56hVx/f9rZynRXxa1Fj8VKfEBy6sNo\nrIR+/zHtRdnkjC5qHaL4sgmc2xO3Dqz7j9y+qf/jPWQjPB4+hsLChKoEPi4GMny4\nlWfgyA9uEYAZv96bvspCnmQAaJxzaYYVReMoanaTpHA9zeQyAtdidJyrNkGHHWSh\nLc6rn8KxTnkD/kJM5PRj4rrkRVr3t/YM1vp/i+oNtQKBgQDG5ze3dv4nF0cp1VYh\nnGdjyP+jvTtJ2NGJ0E3mDzK+FVajoURHzJrZamI+MxtSHrIh9zOo52d9HS2euWc/\naxGz7825iXHGirXg+dASELFEcPJEbcrg0aKgsPo99ksvhHGOxp6TcPfo/E/WpTRB\nPJpnRK89k996eAvnWtH0aNBcRwKBgQC7hWtIlD42arvG48RV+M5gqGUE1vj/roSE\nZ7PBtzbPTvcwxkduzAOPIGLGe8YqkjTuNVbejgyOtlTWcqHibeepnqcKmTO+b8ro\nqZ0kMfXeam//D5g7eRMZBON1Jr1kmLqNtGadpYJa1dgXvUDsq7Ql+5pDOQy7BM7G\nTpCorjHGUwKBgEy8f55kZgEm1empyKUG9kxlC1tccjc3Uv/cQXF0g5saGGbgnLsm\nkMc4Z9afWPcBqK+581BCloaKb0NBPDgXUqkc5z2hbSev9CNrvX56uikxegY0ZYT+\n28MrBCBLmQ4oBreSoTM47iwQy6x/5/0TKG6W7RTQq/NPxSfovf+RQHGZAoGBAKqh\ngreuPNXjVS5rPtJD7fbCA/ndawGs2WRpwIW6oyMMZZ16LrHA7lQkUfztz6oZFBTV\ncFBezUpm2tevw2J4Q15ywOjB8vWMYARJonW3CFT0YSikFg+34grYCekl8RxCZS5g\nQyeb3Puurk0bpqI0s14EjaAxn0Xl4AlOoA79QsmFAoGALJbivdIcT5L5nBJvMF9Q\nZ/kx/wvKM2Z6oMy+7b/JnWqEd+Z9oqWydYH+RCYtrhj2/7HIDiqSMHB7Uwtx2y/A\nvTLK6x/mHZlgcEqiQ1PaGgqPB+EfRdb3Hta3+C5ocMjTqGegJ/932OVt/IV9i4aL\n+qjzEDbfVwL4Vr1VfgU9OEY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "pomodoro-app-github@work-logger-313421.iam.gserviceaccount.com",
+  "client_id": "111949092663062829005",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pomodoro-app-github%40work-logger-313421.iam.gserviceaccount.com"
+}
