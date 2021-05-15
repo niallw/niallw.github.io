@@ -14,6 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <!-- [START sheets_quickstart] -->
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -22,11 +24,6 @@ limitations under the License.
   </head>
   <body>
     <p>Google Sheets API Quickstart</p>
-
-    <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="edit_button" style="display: none;">Edit cells</button>
-    <button id="authorize_button" style="display: none;">Authorize</button>
-    <button id="signout_button" style="display: none;">Sign Out</button>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
@@ -83,7 +80,6 @@ limitations under the License.
        * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
        */
       function listMajors() {
-        
         gapi.client.sheets.spreadsheets.values.get({
           spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
           range: 'Class Data!A2:E',
@@ -102,28 +98,6 @@ limitations under the License.
         }, function(response) {
           appendPre('Error: ' + response.result.error.message);
         });
-
-        // console.log("editing sheet");
-        // var _values = [
-        //     ["wefwef"],
-        //     ["KFfwefwfC"]    
-        // ];
-
-        // var body = {
-        //     values: _values
-        // };
-
-        // gapi.client.sheets.spreadsheets.values.update({
-        //     spreadsheetId: "1x1nhNY3zm0VlBm7_6wf2KpAt_nJIDZbJPpkX1zQ2beQ",
-        //     range: "Sheet1!A2:B2",
-        //     valueInputOption: "USER_ENTERED",
-        //     resource: body
-        // }).then((response) => {
-        //     var result = response.result;
-        //     console.log(`${result.updatedCells} cells updated.`);
-        // }, function(reason) {
-        //     console.log('Error: ' + reason.result.error.message);
-        // });
       }
 
     </script>
@@ -134,4 +108,3 @@ limitations under the License.
     </script>
   </body>
 </html>
-<!-- [END sheets_quickstart] -->
