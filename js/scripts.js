@@ -221,6 +221,7 @@ function initClient() {
         console.log("Initialized client!");
         gapi.auth2.getAuthInstance().signIn();
     }, function(error) {
+        console.log("failed input");
         console.log(JSON.stringify(error, null, 2));
     });
 }
