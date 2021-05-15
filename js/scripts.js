@@ -182,7 +182,9 @@ function playAlarm(){
     audio.play();
 }
 
-// Google sheets API stuff
+// **************************
+// *Google sheets API stuff *
+// **************************
 
 // Client ID and API key from the Developer Console
 var CLIENT_ID;
@@ -225,11 +227,9 @@ function initClient() {
 
 function logSession() {
     console.log("editing sheet");
-    // var rowcount = this.mService.spreadsheets().values().get(spreadsheetId, range).execute().getValues().size()
-    // console.log("num rows: " + rowcount);
 
     var _values = [
-        [startTime, endTimeToRecord]    
+        [startTime.toString(), endTimeToRecord.toString()]    
     ];
     
     var body = {
@@ -248,6 +248,3 @@ function logSession() {
         console.log('Error: ' + reason.result.error.message);
     });
 }
-
-// https://stackoverflow.com/questions/21151896/can-a-google-form-be-auto-filled-and-submitted-using-data-from-a-spreadsheet
-// https://github.com/googleworkspace/browser-samples/blob/master/sheets/snippets/test_snippets.js
