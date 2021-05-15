@@ -229,8 +229,7 @@ function logSession() {
     // console.log("num rows: " + rowcount);
 
     var _values = [
-        [startTime],
-        [endTimeToRecord]    
+        [startTime, endTimeToRecord]    
     ];
     
     var body = {
