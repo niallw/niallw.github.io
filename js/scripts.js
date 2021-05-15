@@ -6,6 +6,7 @@ var unboundedTimerStartTime;
 var breakTimer = false;
 var remainingTime;
 var startTime;
+var endTimeToRecord;
 var restLength;
 
 function timerFunction(numMinutesCountdown) {
@@ -128,6 +129,7 @@ function setStartTime(){
 
 function recordSession(){
     var endTime = new Date().getTime();
+    endTimeToRecord = new Date().getTime();
     var sessionLength = (endTime - startTime) / CONVERT_TO_MINUTES;
     console.log("Session was " + sessionLength + " minutes long.");
 
@@ -180,40 +182,101 @@ function playAlarm(){
     audio.play();
 }
 
-function getCurrentUser() {
-    gapi.load('client', writeToCell);
-    console.log(gapi.client);
+// Google sheets API stuff
 
-    // var params = {
-    // "range":"Sheet1!A2:A3",
-    // "majorDimension": "ROWS",
-    // "values": [
-    //     ["UFC"],
-    //     ["KFC"]
+// Client ID and API key from the Developer Console
+var CLIENT_ID;
+var API_KEY;
 
-    // ],
-    // }
-    // var xhr = new XMLHttpRequest();
-    // xhr.open("PUT", "https://sheets.googleapis.com/v4/spreadsheets/"+spreadsheetID+"/"+"values/"+"Sheet1!A2:A3?"+"valueInputOption=USER_ENTERED");
-    // xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
-    // xhr.send(JSON.stringify(params));
+// Array of API discovery doc URLs for APIs used by the quickstart
+var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
+
+// Authorization scopes required by the API; multiple scopes can be included, separated by spaces.
+var SCOPES = "https://www.googleapis.com/auth/spreadsheets";
+
+/**
+ *  On load, called to load the auth2 library and API client library.
+ */
+function handleClientLoad() {
+    CLIENT_ID = document.getElementById("client_id").value;
+    API_KEY = document.getElementById("api").value;
+    gapi.load('client:auth2', initClient);
 }
 
-function writeToCell(){
-    console.log("writing to sheets now...");
-    var mySpreadsheetID = "1x1nhNY3zm0VlBm7_6wf2KpAt_nJIDZbJPpkX1zQ2beQ";
-    var sheetID = "0";
-    var accessToken = "x";
+/**
+ *  Initializes the API client library and sets up sign-in state
+ *  listeners.
+ */
+function initClient() {
+    gapi.client.init({
+        apiKey: API_KEY,
+        clientId: CLIENT_ID,
+        discoveryDocs: DISCOVERY_DOCS,
+        scope: SCOPES
+    }).then(function () {
+        // Listen for sign-in state changes.
+        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
+        // Handle the initial sign-in state.
+        updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+        authorizeButton.onclick = handleAuthClick;
+        signoutButton.onclick = handleSignoutClick;
+    }, function(error) {
+        appendPre(JSON.stringify(error, null, 2));
+    });
+}
+
+/**
+ *  Called when the signed in status changes, to update the UI
+ *  appropriately. After a sign-in, the API is called.
+ */
+function updateSigninStatus(isSignedIn) {
+    if (isSignedIn) {
+        authorizeButton.style.display = 'none';
+        signoutButton.style.display = 'block';
+    } else {
+        authorizeButton.style.display = 'block';
+        signoutButton.style.display = 'none';
+    }
+}
+
+/**
+ *  Sign in the user upon button click.
+ */
+function handleAuthClick(event) {
+    gapi.auth2.getAuthInstance().signIn();
+}
+
+/**
+ *  Sign out the user upon button click.
+ */
+function handleSignoutClick(event) {
+    gapi.auth2.getAuthInstance().signOut();
+}
+
+/**
+ * Append a pre element to the body containing the given message
+ * as its text node. Used to display the results of the API call.
+ *
+ * @param {string} message Text to be placed in pre element.
+ */
+function appendPre(message) {
+    var pre = document.getElementById('content');
+    var textContent = document.createTextNode(message + '\n');
+    pre.appendChild(textContent);
+}
+
+function logSession() {
+    console.log("editing sheet");
     var _values = [
-        ["UFC"],
-        ["KFC"]    
+        [startTime],
+        [endTimeToRecord]    
     ];
-
+    
     var body = {
         values: _values
     };
-
+    
     gapi.client.sheets.spreadsheets.values.update({
         spreadsheetId: "1x1nhNY3zm0VlBm7_6wf2KpAt_nJIDZbJPpkX1zQ2beQ",
         range: "Sheet1!A2:A3",

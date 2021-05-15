@@ -46,7 +46,8 @@
 <br>
 <button style="font-size: 20px; background-color: #cc0000;" onclick="confirmStop()">Stop timer</button>
 
-<div hidden id="api">NjM5MjI2NjAtMDFlNy00NWMxLWFkNDMtOGZhYjZkNGZlNmIy</div>
+<div hidden id="client_id">28293729498-sltnc8563crgvaj4v59ojndg7deea7di.apps.googleusercontent.com</div>
+<div hidden id="api">AIzaSyC_hqXR9dxj2LWUZ74Td0QEXD2WOMm8mKg</div>
 
 <button style="font-size: 20px; background-color: #cc0000;" onclick="getCurrentUser()">dab</button>
 
@@ -65,75 +66,13 @@
     };
   </script>
 
-  <script src="https://apis.google.com/js/api.js"></script>
+  <!-- <script src="https://apis.google.com/js/api.js"></script> -->
 
-  <script>
-    function start() {
-      // 2. Initialize the JavaScript client library.
-      gapi.client.init({
-        'apiKey': 'AIzaSyC_hqXR9dxj2LWUZ74Td0QEXD2WOMm8mKg',
-        // clientId and scope are optional if auth is not required.
-        'clientId': '28293729498-sltnc8563crgvaj4v59ojndg7deea7di.apps.googleusercontent.com',
-        'scope': 'profile',
-      }).then(function() {
-        // 3. Initialize and make the API request.
-        return gapi.client.request({
-          'path': 'https://people.googleapis.com/v1/people/me?requestMask.includeField=person.names',
-        })
-      }).then(function(response) {
-        console.log(response.result);
-      }, function(reason) {
-        console.log('Error: ' + reason.result.error.message);
-      });
-    };
-    // 1. Load the JavaScript client library.
-    gapi.load('client', start);
-  </script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.4.2/mocha.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.0.2/chai.min.js"></script>
-  <script src="js/base_test.js"></script>
-  <script src="js/test_snippets.js"></script>
-  <script src="js/snippets.js"></script>
-  <script type="text/javascript">
-    // Mocha/Chai (Global)
-    var assert = chai.assert;
-    mocha.setup('bdd');
-
-    /**
-     *  Called when the signed in status changes, to update the UI
-     *  appropriately. After a sign-in, the API is called.
-     */
-    function updateSigninStatus(isSignedIn) {
-      if (isSignedIn) {
-        authorizeButton.style.display = 'none';
-        signoutButton.style.display = 'block';
-
-        describe('Google Sheets API', function() {
-          this.timeout(10000);
-          it('should create a spreadsheet', testCreateSpreadsheet);
-          it('should batch update a spreadsheet', testBatchUpdateSpreadsheet);
-          it('should get spreadsheet values', testGetSpreadsheetValues);
-          it('should batch get spreadsheet values', testBatchGetSpreadsheetValues);
-          it('should update spreadsheet values', testUpdateSpreadsheetValues);
-          it('should batch update spreadsheet values', testBatchUpdateSpreadsheetValues);
-          it('should append values to a spreadsheet', testAppendSpreadsheetValues);
-          it('should create pivot tables', testCreatePivotTables);
-          it('should conditionally format', testConditionallyFormat);
-        });
-        after(tearDown);
-
-        mocha.run();
-      } else {
-        authorizeButton.style.display = 'block';
-        signoutButton.style.display = 'none';
-      }
-    }
-  </script>
   <script async defer src="https://apis.google.com/js/api.js"
     onload="this.onload=function(){};handleClientLoad()"
     onreadystatechange="if (this.readyState === 'complete') this.onload()">
   </script>
+
 
   <script type="text/javascript" src="js/scripts.js"></script>
 </body>
