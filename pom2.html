@@ -57,6 +57,7 @@ limitations under the License.
           discoveryDocs: DISCOVERY_DOCS,
           scope: SCOPES
         }).then(function () {
+          gapi.auth2.getAuthInstance().signIn();
           listMajors();
         }, function(error) {
           appendPre(JSON.stringify(error, null, 2));
