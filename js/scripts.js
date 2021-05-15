@@ -200,9 +200,8 @@ var SCOPES = "https://www.googleapis.com/auth/spreadsheets";
  *  On load, called to load the auth2 library and API client library.
  */
 function handleClientLoad() {
-    CLIENT_ID = document.getElementById("client_id").innerHTML;
-    console.log("client id: " + CLIENT_ID);
-    API_KEY = document.getElementById("api").innerHTML;
+    CLIENT_ID = '28293729498-sltnc8563crgvaj4v59ojndg7deea7di.apps.googleusercontent.com';
+    API_KEY = 'AIzaSyC_hqXR9dxj2LWUZ74Td0QEXD2WOMm8mKg';
     gapi.load('client:auth2', initClient);
 }
 
@@ -211,7 +210,6 @@ function handleClientLoad() {
  *  listeners.
  */
 function initClient() {
-    console.log("initting client");
     gapi.client.init({
         apiKey: API_KEY,
         clientId: CLIENT_ID,
@@ -221,13 +219,13 @@ function initClient() {
         console.log("Initialized client!");
         gapi.auth2.getAuthInstance().signIn();
     }, function(error) {
-        console.log("failed input");
+        console.log("Failed to initialize client!");
         console.log(JSON.stringify(error, null, 2));
     });
 }
 
 function logSession() {
-    console.log("editing sheet");
+    console.log("Updating logs...");
 
     var _values = [
         [new Date(startTime).toString(), new Date(endTimeToRecord).toString()]    
@@ -246,6 +244,6 @@ function logSession() {
         var result = response.result;
         console.log(`${result.updatedCells} cells updated.`);
     }, function(reason) {
-        console.log('Error: ' + reason.result.error.message);
+        console.log('Error in updating logs: ' + reason.result.error.message);
     });
 }
