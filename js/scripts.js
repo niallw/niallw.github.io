@@ -218,59 +218,15 @@ function initClient() {
     }).then(function () {
         console.log("Initialized client!");
         gapi.auth2.getAuthInstance().signIn();
-        // // Listen for sign-in state changes.
-        // gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-
-        // // Handle the initial sign-in state.
-        // updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-        // authorizeButton.onclick = handleAuthClick;
     }, function(error) {
-        appendPre(JSON.stringify(error, null, 2));
+        console.log(JSON.stringify(error, null, 2));
     });
-}
-
-/**
- *  Called when the signed in status changes, to update the UI
- *  appropriately. After a sign-in, the API is called.
- */
-function updateSigninStatus(isSignedIn) {
-    if (isSignedIn) {
-        // authorizeButton.style.display = 'none';
-        // signoutButton.style.display = 'block';
-    } else {
-        // authorizeButton.style.display = 'block';
-        // signoutButton.style.display = 'none';
-    }
-}
-
-/**
- *  Sign in the user upon button click.
- */
-function handleAuthClick(event) {
-    gapi.auth2.getAuthInstance().signIn();
-}
-
-/**
- *  Sign out the user upon button click.
- */
-function handleSignoutClick(event) {
-    gapi.auth2.getAuthInstance().signOut();
-}
-
-/**
- * Append a pre element to the body containing the given message
- * as its text node. Used to display the results of the API call.
- *
- * @param {string} message Text to be placed in pre element.
- */
-function appendPre(message) {
-    var pre = document.getElementById('content');
-    var textContent = document.createTextNode(message + '\n');
-    pre.appendChild(textContent);
 }
 
 function logSession() {
     console.log("editing sheet");
+    var rowcount = this.mService.spreadsheets().values().get(spreadsheetId, range).execute().getValues().size()
+    console.log("num rows: " + rowcount);
 
     var _values = [
         [startTime],
