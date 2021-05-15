@@ -200,6 +200,16 @@ var SCOPES = "https://www.googleapis.com/auth/spreadsheets";
  *  On load, called to load the auth2 library and API client library.
  */
 function handleClientLoad() {
+    gapi.client.load('plus', 'v1', function() {
+        var request = gapi.client.plus.people.get({
+            'userId': 'me'
+        });
+    
+        request.execute(function(response) {
+            console.log(response);   
+        });
+    });
+
     CLIENT_ID = document.getElementById("client_id").innerHTML;
     console.log("client id: " + CLIENT_ID);
     API_KEY = document.getElementById("api").innerHTML;
