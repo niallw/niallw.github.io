@@ -271,6 +271,7 @@ function appendPre(message) {
 
 function logSession() {
     console.log("editing sheet");
+    
     var _values = [
         [startTime],
         [endTimeToRecord]    
