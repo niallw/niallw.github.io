@@ -225,8 +225,8 @@ function initClient() {
 
 function logSession() {
     console.log("editing sheet");
-    var rowcount = this.mService.spreadsheets().values().get(spreadsheetId, range).execute().getValues().size()
-    console.log("num rows: " + rowcount);
+    // var rowcount = this.mService.spreadsheets().values().get(spreadsheetId, range).execute().getValues().size()
+    // console.log("num rows: " + rowcount);
 
     var _values = [
         [startTime],
@@ -237,7 +237,7 @@ function logSession() {
         values: _values
     };
     
-    gapi.client.sheets.spreadsheets.values.update({
+    gapi.client.sheets.spreadsheets.values.append({
         spreadsheetId: "1x1nhNY3zm0VlBm7_6wf2KpAt_nJIDZbJPpkX1zQ2beQ",
         range: "Sheet1!A2:A3",
         valueInputOption: "USER_ENTERED",
