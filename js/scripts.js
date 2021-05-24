@@ -230,7 +230,7 @@ function logSession() {
     console.log("Updating logs...");
 
     var _values = [
-        [new Date(startTime).toString(), new Date(endTimeToRecord).toString(), sessionLengthToRecord / 60]    
+        [new Date(startTime).toString(), new Date(endTimeToRecord).toString(), sessionLengthToRecord]    
     ];
     
     var body = {
