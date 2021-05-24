@@ -7,6 +7,7 @@ var breakTimer = false;
 var remainingTime;
 var startTime;
 var endTimeToRecord;
+var sessionLengthToRecord;
 var restLength;
 
 function timerFunction(numMinutesCountdown) {
@@ -131,6 +132,7 @@ function recordSession(){
     var endTime = new Date().getTime();
     endTimeToRecord = new Date().getTime();
     var sessionLength = (endTime - startTime) / CONVERT_TO_MINUTES;
+    sessionLengthToRecord = sessionLength;
     console.log("Session was " + sessionLength + " minutes long.");
 
     restLength = sessionLength * REST_PERCENTAGE;
@@ -228,7 +230,7 @@ function logSession() {
     console.log("Updating logs...");
 
     var _values = [
-        [new Date(startTime).toString(), new Date(endTimeToRecord).toString()]    
+        [new Date(startTime).toString(), new Date(endTimeToRecord).toString(), sessionLengthToRecord]    
     ];
     
     var body = {
