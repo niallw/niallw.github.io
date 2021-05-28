@@ -68,6 +68,9 @@ Useful resources:
 	<li><a href="https://stats.idre.ucla.edu/other/mult-pkg/whatstat/" target="_blank">Statistical test cheat sheet.</a></li>
 	<li><a href="https://colorbrewer2.org/" target="_blank">Color scheme resource.</a></li>
 	<li><a href="https://phdadvice.carrd.co/" target="_blank">Advice for CS PhD students.</a></li>
+	<li><a href="https://matt.might.net/articles/academic-presentation-tips/" target="_blank">10 tips for academic talks.</a></li>
+	<li><a href="https://ocw.mit.edu/resources/res-tll-005-how-to-speak-january-iap-2018/how-to-speak/" target="_blank">How to speak.</a></li>
+	<li><a href="https://twitter.com/jbhuang0604/status/1379653498837602309" target="_blank">How to title a paper, by Jitendra Malik</a></li>
 	<!-- <li><a href="LINK" target="_blank">DESCRIPTION</a></li> -->
 	<!-- <li><a href="LINK" target="_blank">DESCRIPTION</a></li> -->
 </ul>
