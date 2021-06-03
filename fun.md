@@ -34,7 +34,7 @@ A collection of random bits of info about me or things I find interesting.
 		I won the only poker game I ever played. I no longer remember how to play poker.<br>
 	</li>
 	<li>
-		Some of my favorite pictures of my cat (who has since died):
+		Some of my favorite pictures of my cat:
 		<a href="../files/img/tongue.jpg">Img 1<img src=""></a>
 		<a href="../files/img/balcony1.jpg">Img 2<img src=""></a>
 		<a href="../files/img/christmas.jpg">Img 3<img src=""></a>
