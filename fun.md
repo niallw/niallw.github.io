@@ -10,9 +10,6 @@ A collection of random bits of info about me or things I find interesting.
 
 <ul>
 	<li>
-		My name is pronounced in the same way that you pronounce "Nile." The different spelling is because my name is Irish.<br>
-	</li>
-	<li>
 		While it's true that I'm a <a href="https://scholar.google.com/citations?user=KIUsT1cAAAAJ&hl" target="_blank">published author</a>, I do not write <a href="http://www.niallwilliams.com/" target="_blank">novels</a>.<br>
 	</li>
 	<li>
