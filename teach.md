@@ -17,9 +17,28 @@ I learned a lot about teaching from my time as an undergrad at Davidson, and I d
 <ul>
 <li>
     <b>CMSC420 TA (Advanced Data Structures)</b><br>
-    <i>Davidson College Center for Teaching & Learning, Aug 2019 - Dec 2019</i><br>
+    <i>University of Maryland, College Park, Aug 2019 - Dec 2019</i><br>
     - Held office hours, assisted with answering students' questions during lectures, and graded assignments.<br>
 </li>
+
+<li>
+    <b>CMSC425 TA (Game Programming)</b><br>
+    <i>University of Maryland, College Park, Jan 2020 - May 2020</i><br>
+    - Held office hours, developed a new assignment based on procedural generation, and graded assignments.<br>
+</li>
+
+<li>
+    <b>CMSC420 TA (Advanced Data Structures)</b><br>
+    <i>University of Maryland, College Park, Aug 2020 - Dec 2020</i><br>
+    - Held office hours, assisted with answering students' questions during lectures, and graded assignments.<br>
+</li>
+
+<li>
+    <b>CMSC423 TA (Bioinformatic Algorithms, Databases, and Tools)</b><br>
+    <i>University of Maryland, College Park, Jan 2021 - May 2021</i><br>
+    - Held office hours, designed quiz questions and graded assignments.<br>
+</li>
+
 </ul>
 
 <br>
