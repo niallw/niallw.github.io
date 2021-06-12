@@ -5,6 +5,14 @@
 layout: home
 ---
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QYC3D7D1ZS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QYC3D7D1ZS');
+</script>
 
 <img src="files/img/profile.png" style="width: 200px">
 
