@@ -13,9 +13,9 @@ You can also find a list of my publications on my <a href="https://scholar.googl
 <li>
 <b> Redirected Walking in Static and Dynamic Scenes Using Visibility Polygons </b> <br>
 <b>Niall L. Williams</b>, Aniket Bera, Dinesh Manocha<br>
-<i>IEEE Transactions on Visualization and Computer Graphics, 2021</i><br>
-(Presented at ISMAR 2021)<br>
-<a href="../files/publications/williams2021redirected.pdf" target="_blank"><b>[Paper]</b></a> | <a href="" target="_blank"><b>[Video coming soon]</b></a> | <a href="" target="_blank"><b>[Code coming soon]</b></a> | <a href="../files/bib/williams2021redirected.txt" target="_blank"><b>[Bibtex]</b></a>
+<i>IEEE Transactions on Visualization and Computer Graphics, 2021 (to appear)</i><br>
+(To be presented at ISMAR 2021)<br>
+<a href="../files/publications/williams2021redirected.pdf" target="_blank"><b>[Pre-print]</b></a> | <a href="" target="_blank"><b>[Video coming soon]</b></a> | <a href="" target="_blank"><b>[Code coming soon]</b></a> | <a href="../files/bib/williams2021redirected.txt" target="_blank"><b>[Bibtex]</b></a>
 </li>
 <br>
 
