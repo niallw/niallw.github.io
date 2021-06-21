@@ -19,6 +19,7 @@ You can also find a list of my publications on my <a href="https://scholar.googl
 </li>
 <br>
 
+<li>
 <b>ARC: Alignment-based Redirection Controller for Redirected Walking in Complex Environments</b> <br>
 <span style="color:red"><b>[Best paper honorable mention]</b></span><br>
 <b>Niall L. Williams</b>, Aniket Bera, Dinesh Manocha<br>
