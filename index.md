@@ -22,7 +22,7 @@ I am a PhD student in computer science at the University of Maryland, College Pa
 I graduated with a B.S. with High Honors in Computer Science from <a href="https://www.davidson.edu/" target="_blank">Davidson College</a>. During my time at Davidson, I was a member of the DRIVE lab, where I was advised by <a href="https://tabithapeck.com/" target="_blank">Dr. Tabitha Peck</a>. My undergraduate thesis studied redirected walking thresholds under different conditions and how we can efficiently estimate them. 
 
 In my free time, I mostly enjoy drawing and competitive video games (DotA 2 and Tetris).<br>
-My name is pronounced in the same way that you pronounce "Nile." The different spelling is because my name is Irish.
+My name is pronounced in the same way that you pronounce "Nile."
 
 <h2>Recent News</h2>
 <ul>
