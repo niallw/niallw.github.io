@@ -1,0 +1,6 @@
+@article{terry2020pettingzoo,
+  title={Pettingzoo: Gym for multi-agent reinforcement learning},
+  author={Terry, Justin K and Black, Benjamin and Jayakumar, Mario and Hari, Ananth and Sullivan, Ryan and Santos, Luis and Dieffendahl, Clemens and Williams, Niall L and Lokesh, Yashas and Horsch, Caroline and others},
+  journal={arXiv preprint arXiv:2009.14471},
+  year={2020}
+}
