@@ -1,5 +1,5 @@
 @article{williams2021arc,
-  title={ARC: Alignment-based Redirection Controller for Redirected Walking in Complex Environments},
+  title={A{R}{C}: Alignment-based Redirection Controller for Redirected Walking in Complex Environments},
   author={Williams, Niall L and Bera, Aniket and Manocha, Dinesh},
   journal={IEEE Transactions on Visualization \& Computer Graphics},
   volume={27},
