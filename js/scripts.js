@@ -101,6 +101,7 @@ function unboundedTimer(){
 function pauseTimer(){
     breakTimer = true;
     console.log("Minutes remaining on pause: " + remainingTime);
+    recordSession();
 }
 
 function resumeTimer(){
