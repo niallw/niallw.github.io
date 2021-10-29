@@ -1,6 +1,10 @@
 @article{williams2021redirected,
   title={Redirected Walking in Static and Dynamic Scenes Using Visibility Polygons},
   author={Williams, Niall L and Bera, Aniket and Manocha, Dinesh},
-  journal={arXiv preprint arXiv:2106.06807},
-  year={2021}
+  journal={IEEE Transactions on Visualization \& Computer Graphics},
+  volume={27},
+  number={11},
+  pages={4267--4277},
+  year={2021},
+  publisher={IEEE Computer Society}
 }
