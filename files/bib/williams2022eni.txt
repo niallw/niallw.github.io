@@ -1,0 +1,6 @@
+@article{williams2022eni,
+  title={{E}{N}{I}: {Q}uantifying {E}nvironment {C}ompatibility for {N}atural {W}alking in {V}irtual {R}eality},
+  author={Williams, Niall L and Bera, Aniket and Manocha, Dinesh},
+  journal={arXiv preprint arXiv:2201.01261},
+  year={2022}
+}
