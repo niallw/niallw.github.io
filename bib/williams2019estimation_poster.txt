@@ -1,0 +1,8 @@
+@inproceedings{williams2019estimation,
+  title={Estimation of rotation gain thresholds for redirected walking considering FOV and gender},
+  author={Williams, Niall and Peck, Tabitha C},
+  booktitle={2019 IEEE {C}onference on {V}irtual {R}eality and 3{D} {U}ser {I}nterfaces ({V}{R})},
+  pages={1229--1230},
+  year={2019},
+  organization={IEEE}
+}

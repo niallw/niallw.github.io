@@ -1,0 +1,10 @@
+@article{williams2019estimation,
+  title={Estimation of {R}otation {G}ain {T}hresholds {C}onsidering {F}{O}{V}, {G}ender, and {D}istractors},
+  author={Williams, Niall L and Peck, Tabitha C},
+  journal={IEEE {T}ransactions on {V}isualization and {C}omputer {G}raphics},
+  volume={25},
+  number={11},
+  pages={3158--3168},
+  year={2019},
+  publisher={IEEE}
+}

@@ -1,0 +1,8 @@
+@inproceedings{williams2021redirection,
+  title={Redirection {U}sing {A}lignment},
+  author={Williams, Niall L and Bera, Aniket and Manocha, Dinesh},
+  booktitle={2021 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)},
+  pages={360--362},
+  year={2021},
+  organization={IEEE}
+}
