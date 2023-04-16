@@ -56,6 +56,7 @@ function drawRays() {
   ctx.beginPath();
   ctx.strokeStyle = "black";
   ctx.lineWidth = 2;
+  ctx.setLineDash([]);
   ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
   ctx.stroke();
   // theta = 0 line
