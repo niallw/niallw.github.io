@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Unit Circle Ray Visualization</title>
+    <meta charset="UTF-8" />
+    <style>
+      /* Style the canvas element */
+      canvas {
+        border: 1px solid black;
+      }
+
+      .left-section {
+        padding: 20px;
+        width: auto;
+      }
+      .right-section {
+        flex: 1; /* Take up 1/2 of the available space */
+        padding: 20px;
+      }
+      /* Define the styles for the container */
+      .container {
+        display: flex; /* Use flexbox layout */
+        align-items: flex-start;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Unit Circle Ray Visualization</h1>
+    <p>
+      Enter your angles and click the "Draw all rays" button to visualize
+      the position of the rays on the unit circle:
+    </p>
+
+    <div class="container">
+      <div class="left-section">
+        <label for="angle1" style="color:green">Angle 1:</label>
+        <input type="number" id="angle1">
+        <select id="toggle1">
+          <option value="radians">Radians</option>
+          <option value="degrees">Degrees</option>
+        </select>
+        <br /><br />
+
+        <label for="angle2" style="color:blue">Angle 2:</label>
+        <input type="number" id="angle2">
+        <select id="toggle2">
+          <option value="radians">Radians</option>
+          <option value="degrees">Degrees</option>
+        </select>
+        <br /><br />
+
+        <label for="angle3" style="color:red">Angle 3:</label>
+        <input type="number" id="angle3">
+        <select id="toggle3">
+          <option value="radians">Radians</option>
+          <option value="degrees">Degrees</option>
+        </select>
+        <br /><br />
+
+        <label for="angle4" style="color:rgb(245, 0, 233)">Angle 4:</label>
+        <input type="number" id="angle4">
+        <select id="toggle4">
+          <option value="radians">Radians</option>
+          <option value="degrees">Degrees</option>
+        </select>
+        <br /><br />
+
+        <label for="angle5" style="color:orange">Angle 5:</label>
+        <input type="number" id="angle5">
+        <select id="toggle5">
+          <option value="radians">Radians</option>
+          <option value="degrees">Degrees</option>
+        </select>
+        <br /><br />
+
+        <button onclick="drawRays()">Draw all rays</button>
+        <br /><br />
+      </div>
+
+      <div class="right-section">
+        <canvas id="unit-circle" width="300" height="300"></canvas>
+        <script src="js/unit_circle.js"></script>
+      </div>
+
+      
+
+    </div>
+    
+  </body>
+  
+</html>
