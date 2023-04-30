@@ -1,0 +1,7 @@
+@inproceedings{williams2023framework,
+  title={A Framework for Active Haptic Guidance Using Robotic Haptic Proxies},
+  author={Williams, Niall L and Rewkowski, Nicholas and Li, Jiasheng and Lin, Ming C},
+  booktitle={2023 IEEE International Conference on Robotics and Automation (ICRA)},
+  year={2023},
+  organization={IEEE}
+}
