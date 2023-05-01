@@ -1,8 +1,0 @@
-@inproceedings{bhattacharya2020generating,
-  title={Generating emotive gaits for virtual agents using affect-based autoregression},
-  author={Bhattacharya, Uttaran and Rewkowski, Nicholas and Guhan, Pooja and Williams, Niall L and Mittal, Trisha and Bera, Aniket and Manocha, Dinesh},
-  booktitle={2020 IEEE International Symposium on Mixed and Augmented Reality (ISMAR)},
-  pages={24--35},
-  year={2020},
-  organization={IEEE}
-}

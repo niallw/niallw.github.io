@@ -13,7 +13,10 @@
 <meta name="keywords" content="Niall, Williams, University of Maryland, College Park, virtual reality, VR, motion planning, human perception, computer graphics">
 
 <link rel="stylesheet" type="text/css" media="screen, projection" href="stylesheet.css">
-<link rel="icon" type="image/png" href="files/img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="img/favicon-16x16.png">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/img_hover.js"></script>
 
 </head>
 <body>
@@ -21,10 +24,11 @@
 	<div id="main">
 		<div id="contact">
 			<table border=0><tr>
-				<!-- <td width ="400" align=center valign=bottom> <img class="imageHeader" id="me" src="files/img/profile.png" alt="Niall Williams" border=0 width="245"> -->
-				<!-- <td width ="400" align=center valign=bottom> <img class="imageHeader" id="me" src="files/img/profile.png" alt="Niall Williams" border=0 width="245"> -->
-				<td width ="400" align=center valign=bottom> <img class="imageHeader" id="me" src='files/img/profile.png' onmouseover="this.src='files/img/profile-fun.png';" onmouseout="this.src='files/img/profile.png';" alt="Niall Williams" border=0 width="245"/>
-				</td>
+				<!-- <td width ="400" align=center valign=bottom> <img class="imageHeader" id="me" src="img/profile.png" alt="Niall Williams" border=0 width="245"> -->
+				<!-- <td width ="400" align=center valign=bottom> <img class="imageHeader" id="me" src="img/profile.png" alt="Niall Williams" border=0 width="245"> -->
+				<!-- <td width ="400" align=center valign=bottom> <img class="imageHeader" id="me" src='img/profile.png' onmouseover="this.src='img/profile-fun1.png';" onmouseout="this.src='img/profile.png';" alt="Niall Williams" border=0 width="245"/> -->
+
+				<td width ="400" align=center valign=bottom> <img class="imageHeader" id="me" src='img/profile.png' onmouseover="getRandomImage()" onmouseout="this.src='img/profile.png';" alt="Niall Williams" border=0 width="245"/>
 				<td width="450">
 					<h2>Niall L. Williams</h2>
 					<p>
@@ -39,7 +43,7 @@
 					<table border=0 cellpadding=0 cellspacing=0><tr>
 						<td>e-mail: <b>niallw</b> AT <b>cs.umd.edu</b></td>
 						</tr><tr>
-						<td> [<a href="files/cv.pdf" target="_blank">CV</a>] [<a href="https://scholar.google.com/citations?user=KIUsT1cAAAAJ&hl=en" target="_blank">Google Scholar</a>] [<a href="https://twitter.com/niallw_cs" target="_blank">Twitter</a>] [<a href="https://github.com/niallw/" target="_blank">Github</a>] [<a href="https://www.linkedin.com/in/niall-l-williams-262702137/" target="_blank">LinkedIn</a>]</td>
+						<td> [<a href="cv.pdf" target="_blank">CV</a>] [<a href="https://scholar.google.com/citations?user=KIUsT1cAAAAJ&hl=en" target="_blank">Google Scholar</a>] [<a href="https://twitter.com/niallw_cs" target="_blank">Twitter</a>] [<a href="https://github.com/niallw/" target="_blank">Github</a>] [<a href="https://www.linkedin.com/in/niall-l-williams-262702137/" target="_blank">LinkedIn</a>]</td>
 						</tr><tr></tr>
 					</table>
 					<p style="margin-bottom:0.5cm;">
@@ -110,13 +114,13 @@
 
         <!-- <tr>
 			<td width="250">
-			<a href="files/publications/XXX_PAPER.pdf"><img class="image" src="files/img/teasers/XXX_TEASER.png" alt="XXX_ALT_TEXT" border=0 width="250"></a>
+			<a href="pdfs/publications/XXX_PAPER.pdf"><img class="image" src="img/teasers/XXX_TEASER.png" alt="XXX_ALT_TEXT" border=0 width="250"></a>
 			</td><td>
             <b>XXX_TITLE</b><br>
             XXX_AUTHORS<br>
 			<i>XXX_VENUE</i>, XXX_YEAR
 			<p class="links">
-            [<a href="files/publications/XXX_PAPER.pdf">Paper</a>]
+            [<a href="pdfs/publications/XXX_PAPER.pdf">Paper</a>]
             [<a href="XXX_ARXIV">arXiv</a>]
             [<a href="XXX_PROJECT_PAGE">Project Page</a>]
             [<a href="XXX_VIDEO">Video</a>]
@@ -130,18 +134,18 @@
 
 			<tr> 
 			<td width="250">
-			<a href="files/publications/williams2023active_haptic.pdf"><img class="image" src="files/img/teasers/williams2023active_haptic2.png" alt="Visualization of how we use active haptic feedback to improve the user's virtual experience." border=0 width="250"></a>
+			<a href="pdfs/publications/williams2023active_haptic.pdf"><img class="image" src="img/teasers/williams2023active_haptic2.png" alt="Visualization of how we use active haptic feedback to improve the user's virtual experience." border=0 width="250"></a>
 			</td><td style="background-color:#ffffd0">
 			<b>A Framework for Active Haptic Guidance Using Robotic Haptic Proxies</b><br>
 			<strong>Niall L. Williams*</strong>, <a href="https://www.nickvr.me/">Nicholas Rewkowski*</a>, <a href="https://jsli.dev/">Jiasheng Li</a>, <a href="https://www.cs.umd.edu/~lin/">Ming C. Lin</a><br>
 			<i>IEEE International Conference on Robotics and Automation (ICRA)</i>, 2023
 			<p class="links">
-			[<a href="files/publications/williams2023active_haptic.pdf">Paper</a>]
+			[<a href="pdfs/publications/williams2023active_haptic.pdf">Paper</a>]
 			[<a href="https://arxiv.org/abs/2301.05311">arXiv</a>]
 			[<a href="https://gamma.umd.edu/active_haptic_guidance/">Project Page</a>]
 			[<a href="https://www.youtube.com/watch?v=DI2cGm7tlbE">Video</a>]
 			<!-- [<a href="XXX_CODE">Code</a>] -->
-			[<a href="files/bib/williams2023active_haptic.txt">Bibtex</a>]
+			[<a href="bib/williams2023active_haptic.txt">Bibtex</a>]
 			</p>
 			<br>
 			We used robots to proactively generate context-aware haptic feedback that influences the user's behavior in mixed reality, to improve the immersion and safety of their virtual experience.
@@ -150,18 +154,18 @@
 
 			<tr>
 			<td width="250">
-			<a href="files/publications/williams2022eni.pdf"><img class="image" src="files/img/teasers/williams2022eni.png" alt="Visualization of our navigability metric." border=0 width="250"></a>
+			<a href="pdfs/publications/williams2022eni.pdf"><img class="image" src="img/teasers/williams2022eni.png" alt="Visualization of our navigability metric." border=0 width="250"></a>
 			</td><td style="background-color:#ffffd0">
 			<b>ENI: Quantifying Environment Compatibility for Natural Walking in Virtual Reality</b><br>
 			<strong>Niall L. Williams</strong>, <a href="https://www.cs.purdue.edu/homes/ab/">Aniket Bera</a>, <a href="https://www.cs.umd.edu/people/dmanocha">Dinesh Manocha</a><br>
 			<i> IEEE Conference on Virtual Reality and 3D User Interfaces (IEEE VR)</i>, 2022 &nbsp <font color="red"><strong>[Best Paper Honorable Mention]</strong></font>
 			<p class="links">
-			[<a href="files/publications/williams2022eni.pdf">Paper</a>]
+			[<a href="pdfs/publications/williams2022eni.pdf">Paper</a>]
 			[<a href="https://arxiv.org/abs/2201.01261">arXiv</a>]
 			[<a href="https://gamma.umd.edu/eni/">Project Page</a>]
 			[<a href="https://www.youtube.com/watch?v=XcFQbl82yBw">Video</a>]
 			[<a href="https://github.com/niallw/ENI">Code</a>]
-			[<a href="files/bib/williams2022eni.txt">Bibtex</a>]
+			[<a href="bib/williams2022eni.txt">Bibtex</a>]
 			</p>
 			<br>
 			We provide a metric to quantify the ease of collision-free navigation in VR for any given pair of physical and virtual environments, using geometric features.
@@ -170,19 +174,19 @@
 
 			<tr>
 			<td width="250">
-			<a href="files/publications/williams2021redirected.pdf"><img class="image" src="files/img/teasers/williams2021redirected.png" alt="Visibility polygons can represent free space." border=0 width="250"></a>
+			<a href="pdfs/publications/williams2021redirected.pdf"><img class="image" src="img/teasers/williams2021redirected.png" alt="Visibility polygons can represent free space." border=0 width="250"></a>
 			</td><td style="background-color:#ffffd0">
 			<b>Redirected Walking in Static and Dynamic Scenes Using Visibility Polygons</b><br>
 			<strong>Niall L. Williams</strong>, <a href="https://www.cs.purdue.edu/homes/ab/">Aniket Bera</a>, <a href="https://www.cs.umd.edu/people/dmanocha">Dinesh Manocha</a><br>
 			<i>Transactions on Visualization and Computer Graphics</i>, 2021 <br>
 			<i>Proc. IEEE ISMAR 2021</i> &nbsp <font color="red"><strong>[Best Paper Honorable Mention]</strong></font>
 			<p class="links">
-			[<a href="files/publications/williams2021redirected.pdf">Paper</a>]
+			[<a href="pdfs/publications/williams2021redirected.pdf">Paper</a>]
 			[<a href="https://arxiv.org/abs/2106.06807">arXiv</a>]
 			[<a href="https://gamma.umd.edu/vis_poly/">Project Page</a>]
 			[<a href="https://www.youtube.com/watch?v=lnDQn2qv0Qw">Video</a>]
 			[<a href="https://github.com/pasumi/pasumi">Code</a>]
-			[<a href="files/bib/williams2021redirected.txt">Bibtex</a>]
+			[<a href="bib/williams2021redirected.txt">Bibtex</a>]
 			</p>
 			<br>
 			We formalize the redirection problem using motion planning and use this formalization to develop an improved steering algorithm based on the similarity of physical and virtual free spaces.
@@ -191,19 +195,19 @@
 
 			<tr>
 			<td width="250">
-			<a href="files/publications/williams2021arc.pdf"><img class="image" src="files/img/teasers/williams2021arc.png" alt="Our algorthim yields physical paths that match virtual paths." border=0 width="250"></a>
+			<a href="pdfs/publications/williams2021arc.pdf"><img class="image" src="img/teasers/williams2021arc.png" alt="Our algorthim yields physical paths that match virtual paths." border=0 width="250"></a>
 			</td><td style="background-color:#ffffd0">
 			<b>ARC: Alignment-based Redirection Controller for Redirected Walking in Complex Environments</b><br>
 			<strong>Niall L. Williams</strong>, <a href="https://www.cs.purdue.edu/homes/ab/">Aniket Bera</a>, <a href="https://www.cs.umd.edu/people/dmanocha">Dinesh Manocha</a><br>
 			<i>Transactions on Visualization and Computer Graphics</i>, 2021 <br>
 			<i>Proc. IEEE VR 2021</i> &nbsp <font color="red"><strong>[Best Paper Honorable Mention]</strong></font>
 			<p class="links">
-			[<a href="files/publications/williams2021arc.pdf">Paper</a>]
+			[<a href="pdfs/publications/williams2021arc.pdf">Paper</a>]
 			[<a href="https://arxiv.org/abs/2101.04912">arXiv</a>]
 			[<a href="https://gamma.umd.edu/arc/">Project Page</a>]
 			[<a href="https://www.youtube.com/watch?v=myz2Qnyaj7Q">Video</a>]
 			[<a href="https://github.com/pasumi/pasumi">Code</a>]
-			[<a href="files/bib/williams2021arc.txt">Bibtex</a>]
+			[<a href="bib/williams2021arc.txt">Bibtex</a>]
 			</p>
 			<br>
 			We achieve improved steering results with redirected walking by steering the user towards positions in the physical world that more closely match their position in the virtual world.
@@ -212,16 +216,16 @@
 
 			<tr>
 			<td width="250">
-			<a href="files/publications/terry2020petting.pdf"><img class="image" src="files/img/teasers/terry2020petting.png" alt="Logo for the PettingZoo library." border=0 width="250"></a>
+			<a href="pdfs/publications/terry2020petting.pdf"><img class="image" src="img/teasers/terry2020petting.png" alt="Logo for the PettingZoo library." border=0 width="250"></a>
 			</td><td>
 			<b>PettingZoo: Gym for Multi-Agent Reinforcement Learning</b><br>
 			<a href="https://scholar.google.com/citations?user=gb83gcIAAAAJ&hl=en&oi=sra">J. K. Terry</a>, Benjamin Black, Mario Jayakumar, Ananth Hari, Ryan Sullivan, Luis Santos, Clemens Dieffendahl, <strong>Niall L. Williams</strong>, Yashas Lokesh, Caroline Horsch, Praveen Ravi<br>
 			<i>Neural Information Processing Systems (NeurIPS)</i>, 2021
 			<p class="links">
-			[<a href="files/publications/terry2020petting.pdf">Paper</a>]
+			[<a href="pdfs/publications/terry2020petting.pdf">Paper</a>]
 			[<a href="https://arxiv.org/abs/2009.14471">arXiv</a>]
 			[<a href="https://github.com/PettingZoo-Team/PettingZoo">Code</a>]
-			[<a href="files/bib/terry2020petting.txt">Bibtex</a>]
+			[<a href="bib/terry2020petting.txt">Bibtex</a>]
 			</p>
 			<br>
 			One of the most popular libraries for multi-agent reinforcement learning.
@@ -230,18 +234,18 @@
 
 			<tr>
 			<td width="250">
-			<a href="files/publications/bhattacharya2020generating.pdf"><img class="image" src="files/img/teasers/bhattacharya2020generating.png" alt="Our emotionally expressive agents in an AR environment." border=0 width="250"></a>
+			<a href="pdfs/publications/bhattacharya2020generating.pdf"><img class="image" src="img/teasers/bhattacharya2020generating.png" alt="Our emotionally expressive agents in an AR environment." border=0 width="250"></a>
 			</td><td>
 			<b>Generating Emotive Gaits for Virtual Agents Using Affect-Based Autoregression</b><br>
 			<a href="http://www.cs.umd.edu/~uttaranb/">Uttaran Bhattacharya</a>, <a href="https://www.nickvr.me/">Nicholas Rewkowski</a>, Pooja Guhan, <strong>Niall L. Williams</strong>, <a href="http://www.cs.umd.edu/~trisha/">Trisha Mittal</a>, <a href="https://www.cs.purdue.edu/homes/ab/">Aniket Bera</a>, <a href="https://www.cs.umd.edu/people/dmanocha">Dinesh Manocha</a><br>
 			<i>IEEE International Symposium on Mixed and Augmented Reality (ISMAR)</i>, 2020
 			<p class="links">
-			[<a href="files/publications/bhattacharya2020generating.pdf">Paper</a>]
+			[<a href="pdfs/publications/bhattacharya2020generating.pdf">Paper</a>]
 			[<a href="https://arxiv.org/abs/2010.01615">arXiv</a>]
 			[<a href="https://gamma.umd.edu/researchdirections/affectivecomputing/affagents/gen_emotive_gaits/">Project Page</a>]
 			[<a href="https://www.youtube.com/watch?v=wxkvW8CtHt0">Video</a>]
 			[<a href="https://github.com/UttaranB127/GeneratingEmotiveGaits">Code</a>]
-			[<a href="files/bib/bhattacharya2020generating.txt">Bibtex</a>]
+			[<a href="bib/bhattacharya2020generating.txt">Bibtex</a>]
 			</p>
 			<br>
 			We automatically synthesize emotionally expressive gaits for virtual avatars using an autoregression network.
@@ -250,16 +254,16 @@
 
 			<tr>
 			<td width="250">
-			<a href="files/publications/williams2019estimation.pdf"><img class="image" src="files/img/teasers/williams2019estimation.png" alt="Difference in viewports with a 40 and 110 FOV." border=0 width="250"></a>
+			<a href="pdfs/publications/williams2019estimation.pdf"><img class="image" src="img/teasers/williams2019estimation.png" alt="Difference in viewports with a 40 and 110 FOV." border=0 width="250"></a>
 			</td><td style="background-color:#ffffd0">
 			<b>Estimation of Rotation Gain Thresholds Considering FOV, Gender, and Distractors</b><br>
 			<strong>Niall L. Williams</strong>, <a href="https://tabithapeck.com/">Tabitha C. Peck</a><br>
 			<i>Transactions on Visualization and Computer Graphics</i>, 2019<br>
 			<i>Proc. IEEE ISMAR 2019</i>
 			<p class="links">
-			[<a href="files/publications/williams2019estimation.pdf">Paper</a>]
+			[<a href="pdfs/publications/williams2019estimation.pdf">Paper</a>]
 			[<a href="https://github.com/niallw/Redirected-Walking-Thresholds">Code</a>]
-			[<a href="files/bib/williams2019estimation.txt">Bibtex</a>]
+			[<a href="bib/williams2019estimation.txt">Bibtex</a>]
 			</p>
 			<br>
 			We measured perceptual thresholds for redirected walking and found that the user's tolerance for redirection depends on the field of view, the presence of distractors, and their gender.
@@ -277,14 +281,14 @@
 		<table border=0 cellspacing=15 cellpadding=10 width="100%">
 			<tr>
 			<td width="250">
-			<a href="files/publications/williams2021redirection_workshop.pdf"><img class="image" src="files/img/teasers/williams2021redirection_workshop.png" alt="XXX_ALT_TEXT" border=0 width="250"></a>
+			<a href="pdfs/publications/williams2021redirection_workshop.pdf"><img class="image" src="img/teasers/williams2021redirection_workshop.png" alt="XXX_ALT_TEXT" border=0 width="250"></a>
 			</td><td>
 			<b>Redirection Using Alignment</b><br>
 			<strong>Niall L. Williams</strong>, <a href="https://www.cs.purdue.edu/homes/ab/">Aniket Bera</a>, <a href="https://www.cs.umd.edu/people/dmanocha">Dinesh Manocha</a><br>
 			<i>IEEE VR Locomotion Workshop</i>, 2021
 			<p class="links">
-			[<a href="files/publications/williams2021redirection_workshop.pdf">2-page Abstract</a>]
-			[<a href="files/bib/williams2021redirection_workshop.txt">Bibtex</a>]
+			[<a href="pdfs/publications/williams2021redirection_workshop.pdf">2-page Abstract</a>]
+			[<a href="bib/williams2021redirection_workshop.txt">Bibtex</a>]
 			</p>
 			<br>
 			We provide a general framework for how alignment can be used in redirected walking to steer the user towards similar physical and virtual positions.
@@ -293,14 +297,14 @@
 
 			<tr>
 			<td width="250">
-			<a href="files/publications/qi2020augmenting.pdf"><img class="image" src="files/img/teasers/qi2020augmenting.png" alt="Our haptic interface and buouancy simulator." border=0 width="250"></a>
+			<a href="pdfs/publications/qi2020augmenting.pdf"><img class="image" src="img/teasers/qi2020augmenting.png" alt="Our haptic interface and buouancy simulator." border=0 width="250"></a>
 			</td><td>
 			<b>Augmenting Physics Education with Haptic and Visual Feedback</b><br>
 			Kern Qi, <a href="http://people.renci.org/~borland/">David Borland</a>, Emily Jackson, <strong>Niall L. Williams</strong>, <a href="https://ced.ncsu.edu/people/jminogu/">James Minogue</a>, and <a href="https://tabithapeck.com/">Tabitha C. Peck</a><br>
 			<i>IEEE VR 5th Workshop on K-12+ Embodied Learning through Virtual & Augmented Reality (KELVAR)</i>, 2020
 			<p class="links">
-			[<a href="files/publications/qi2020augmenting.pdf">2-page Abstract</a>]
-			[<a href="files/bib/qi2020augmenting.txt">Bibtex</a>]
+			[<a href="pdfs/publications/qi2020augmenting.pdf">2-page Abstract</a>]
+			[<a href="bib/qi2020augmenting.txt">Bibtex</a>]
 			</p>
 			<br>
 			Using haptic force feedback to help teachers better understand physics concepts.
@@ -309,28 +313,28 @@
 
 			<tr>
 			<td width="250">
-			<a href="files/publications/qi2020impact.pdf"><img class="image" src="files/img/teasers/qi2020impact.png" alt="Our haptic interface and experiment conditions." border=0 width="250"></a>
+			<a href="pdfs/publications/qi2020impact.pdf"><img class="image" src="img/teasers/qi2020impact.png" alt="Our haptic interface and experiment conditions." border=0 width="250"></a>
 			</td><td>
 			<b>The Impact of Haptic and Visual Feedback on Teaching</b><br>
 			Kern Qi, <a href="http://people.renci.org/~borland/">David Borland</a>, Emily Jackson, <strong>Niall L. Williams</strong>, <a href="https://ced.ncsu.edu/people/jminogu/">James Minogue</a>, and <a href="https://tabithapeck.com/">Tabitha C. Peck</a><br>
 			<i>IEEE Conference on Virtual Reality and 3D User Interfaces</i>, 2020
 			<p class="links">
-			[<a href="files/publications/qi2020impact.pdf">2-page Abstract</a>]
-			[<a href="files/bib/qi2020impact.txt">Bibtex</a>]
+			[<a href="pdfs/publications/qi2020impact.pdf">2-page Abstract</a>]
+			[<a href="bib/qi2020impact.txt">Bibtex</a>]
 			</p>
 			</td>
 			</tr>
 
 			<tr>
 			<td width="250">
-			<a href="files/publications/williams2019poster.pdf"><img class="image" src="files/img/teasers/williams2019poster.png" alt="Significant differences results." border=0 width="250"></a>
+			<a href="pdfs/publications/williams2019poster.pdf"><img class="image" src="img/teasers/williams2019poster.png" alt="Significant differences results." border=0 width="250"></a>
 			</td><td>
 			<b>Estimation of Rotation Gain Thresholds for Redirected Walking Considering FOV and Gender</b><br>
 			<strong>Niall L. Williams</strong>, <a href="https://tabithapeck.com/"></a>Tabitha C. Peck</a><br>
 			<i>IEEE Conference on Virtual Reality and 3D User Interfaces</i>, 2019
 			<p class="links">
-			[<a href="files/publications/williams2019poster.pdf">2-page Abstract</a>]
-			[<a href="files/bib/williams2019estimation_poster.txt">Bibtex</a>]
+			[<a href="pdfs/publications/williams2019poster.pdf">2-page Abstract</a>]
+			[<a href="bib/williams2019estimation_poster.txt">Bibtex</a>]
 			</p>
 			</td>
 			</tr>
@@ -345,7 +349,7 @@
 		<table border=0 cellspacing=15 cellpadding=10 width="100%">
 			<tr>
 			<td width="250">
-			<a href="https://www.youtube.com/watch?v=SjIUjDS0ou8"><img class="image" src="files/img/teasers/siggraph_invited_talk_thumbnail.png" alt="Thumbnail for my SIGGRAPH talk." border=0 width="250"></a>
+			<a href="https://www.youtube.com/watch?v=SjIUjDS0ou8"><img class="image" src="img/teasers/siggraph_invited_talk_thumbnail.png" alt="Thumbnail for my SIGGRAPH talk." border=0 width="250"></a>
 			</td><td>
 			<b>ARC: Alignment-based Redirection Controller for Redirected Walking in Complex Environments</b><br>
 			<strong>Niall L. Williams</strong><br>
@@ -430,14 +434,14 @@
                   <li>I had a cast on my left arm and right leg at the same time for 6 weeks.</li>
                   <li>I won the only poker game I ever played. I no longer remember how to play poker.</li>
                   <li>Some of my favorite pictures of my cat:
-                    <a href="files/img/tongue.jpg">Img 1<img src="" /></a>
-                    <a href="files/img/balcony1.jpg">Img 2<img src="" /></a>
-                    <a href="files/img/christmas.jpg">Img 3<img src="" /></a>
-                    <a href="files/img/balcony2.jpg">Img 4<img src="" /></a>
-                    <a href="files/img/balcony3.jpg">Img 5<img src="" /></a>
-                    <a href="files/img/bed1.jpg">Img 6<img src="" /></a>
-                    <a href="files/img/bed2.jpg">Img 7<img src="" /></a> 
-                    <a href="files/img/cat_and_dog.jpg">Img 8<img src="" /></a>.</li>
+                    <a href="img/tongue.jpg">Img 1<img src="" /></a>
+                    <a href="img/balcony1.jpg">Img 2<img src="" /></a>
+                    <a href="img/christmas.jpg">Img 3<img src="" /></a>
+                    <a href="img/balcony2.jpg">Img 4<img src="" /></a>
+                    <a href="img/balcony3.jpg">Img 5<img src="" /></a>
+                    <a href="img/bed1.jpg">Img 6<img src="" /></a>
+                    <a href="img/bed2.jpg">Img 7<img src="" /></a> 
+                    <a href="img/cat_and_dog.jpg">Img 8<img src="" /></a>.</li>
                   <li>My undergrad thesis advisor and second reader made watching all episodes of Seinfeld a requirement to qualify for honors.</li>
                   <li>I once spent a summer helping newly-hatched sea turtles safely reach the ocean.</li>
                   <li><a href="https://www.csauthors.net/distance/paul-erdos/niall-williams" target="_blank">My Erd&#337;s Number is 4 (Me → Dinesh Manocha → Pankaj K. Agarwal → János Pach → Paul Erd&#337;s)</a><br></li>
@@ -448,7 +452,7 @@
 				<ul>
 				<li><a href="http://tool.duruofei.com/abstract/" target="_blank">LaTeX abstract extractor</a></li>
 				<li><a href="https://casual-effects.com/markdeep/features.md.html" target="_blank">Markeep feature reference</a></li>
-				<li><a href="files/poster_templates.zip" target="_blank">Poster templates</a></li>
+				<li><a href="poster_templates.zip" target="_blank">Poster templates</a></li>
 				<li><a href="https://www.sigaccess.org/welcome-to-sigaccess/resources/accessible-pdf-author-guide/" target="_blank">SIGACCESS guide to making your PDFs accessible to people with disabilities.</a></li>
 				<li><a href="https://www.sigaccess.org/welcome-to-sigaccess/resources/accessible-presentation-guide/" target="_blank">SIGACCESS guide to making your presentations accessible to people with disabilities.</a></li>
 				<li><a href="https://www.wigraph.org/spotlights/a-field-guide-to-undergraduate-research/" target="_blank">Article about how to get involved in research as an undergraduate student.</a></li>
@@ -471,8 +475,8 @@
 				<li><a href="https://www.silviasellan.com/gender_question.html" target="_blank">Information on asking about name/gender on data-collection forms.</a></li>
 				<li><a href="https://ubadahsabbagh.com/guide-to-postdoc.php" target="_blank">Guide to postdoc</a></li>
 				<li><a href="https://flamingtempura.github.io/bibtex-tidy/" target="_blank">Bibtex cleaning tool</a></li>
-				<li><a href="https://niallw.github.io/files/pdfs/gradschooltalk.pdf" target="_blank">Applying to Ph.D. Programs in Computer Science</a></li>
-				<li><a href="https://niallw.github.io/files/pdfs/DAGAP.pdf" target="_blank">Demystifying the American Graduate Admissions Process</a></li>
+				<li><a href="https://niallw.github.io/pdfs/gradschooltalk.pdf" target="_blank">Applying to Ph.D. Programs in Computer Science</a></li>
+				<li><a href="https://niallw.github.io/pdfs/DAGAP.pdf" target="_blank">Demystifying the American Graduate Admissions Process</a></li>
 				<li><a href="http://nifty.stanford.edu/" target="_blank">Nifty assignment ideas</a></li>
 				<li><a href="https://scratchapixel.com/" target="_blank">Online "course" for learning graphics programming.</a></li>
 				<li><a href="https://www.happyscribe.com/" target="_blank">Automatically generate and add subtitles to a video.</a></li>

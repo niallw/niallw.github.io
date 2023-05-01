@@ -1,8 +1,0 @@
-@inproceedings{qi2020impact,
-  title={The Impact of Haptic and Visual Feedback on Teaching},
-  author={Qi, Kern and Borland, David and Jackson, Emily and Williams, Niall L and Minogue, James and Peck, Tabitha C},
-  booktitle={2020 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)},
-  pages={613--614},
-  year={2020},
-  organization={IEEE}
-}
