@@ -19,7 +19,8 @@ var images = [
     "img/profile-fun4.png",
     "img/profile-fun5.png",
     "img/profile-fun6.png",
-    "img/profile-fun7.png"
+    "img/profile-fun7.png",
+    "img/profile-fun8.png"
 ];
 
 function getRandomImage(event) {
