@@ -25,7 +25,6 @@ var images = [
     "img/profile-fun10.png",
     "img/profile-fun11.png",
     "img/profile-fun12.png",
-    "img/profile-fun13.png",
     "img/profile-fun14.png",
     "img/profile-fun15.png",
     "img/profile-fun16.png",
