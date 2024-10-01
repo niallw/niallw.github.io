@@ -1,0 +1,10 @@
+@article{rosenholtz2024who,
+  title={Who you lookin'at? Perception of gaze direction in group settings depends on naturalness of gaze behavior and clutter},
+  author={Rosenholtz, Ruth and Williams, Niall},
+  journal={Journal of Vision},
+  volume={24},
+  number={10},
+  pages={1295--1295},
+  year={2024},
+  publisher={The Association for Research in Vision and Ophthalmology}
+}
