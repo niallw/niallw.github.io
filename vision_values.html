@@ -16,17 +16,17 @@ Copied from the <a href="https://www.cfn.upenn.edu/aguirre/wiki/doku.php?id=publ
 
 <h3>Units</h3>
     <ul>
-        <li>Radiometric units represent physical energy (e.g., radiance has units of watts sr-1 m-2)</li>
-        <li>Colorimetric units adjust radiometric units for visual wavelength sensitivity (e.g. luminance has units of cd m-2); scotopic units are proportional to rod absorptions; photopic luminance units are proportional to a weighted sum of the L and M cone absorptions</li>
-        <li>Typical ambient luminance levels (in cd m-2)</li>
+        <li>Radiometric units represent physical energy (e.g., radiance has units of watts sr<sup>-1</sup> m<sup>-2</sup>)</li>
+        <li>Colorimetric units adjust radiometric units for visual wavelength sensitivity (e.g. luminance has units of cd m<sup>-2</sup>); scotopic units are proportional to rod absorptions; photopic luminance units are proportional to a weighted sum of the L and M cone absorptions</li>
+        <li>Typical ambient luminance levels (in cd m<sup>-2</sup>)</li>
         <ul>
-            <li>starlight 10-3</li>
-            <li>moonlight 10-1</li>
-            <li>indoor lighting 102</li>
-            <li>sunlight 105</li>
-            <li>max intensity of common CRT monitors, 102</li>
+            <li>starlight 10<sup>-3</sup></li>
+            <li>moonlight 10<sup>-1</sup></li>
+            <li>indoor lighting 10<sup>2</sup></li>
+            <li>sunlight 10<sup>5</sup></li>
+            <li>max intensity of common CRT monitors, 10<sup>2</sup></li>
         </ul>
-        <li>One Troland (Td) of retinal illumination is produced on the retina when the eye looks at a surface of 1 cd / m2 through a pupil of area 1 mm2.</li>
+        <li>One Troland (Td) of retinal illumination is produced on the retina when the eye looks at a surface of 1 cd / m<sup>2</sup> through a pupil of area 1 mm<sup>2</sup>.</li>
         <li>Lens focal length: f (meters); lens power = 1/f (diopters)</li>
         <li>Conversion of linear units (X) to decibels: Y = 20 log10(X); a change of 0.3 log10 units is a factor of 2, or 6 dB</li>
     </ul>
@@ -75,5 +75,90 @@ Copied from the <a href="https://www.cfn.upenn.edu/aguirre/wiki/doku.php?id=publ
     <li>Change in power due to accommodation, 8 diopters</li>
     <li>Axial chromatic aberration over the visible spectrum: 2 diopters</li>
 </ul>
+
+<h3>Retina</h3>
+<ul>
+    <li>Retinal size: 5 cm x 5 cm; 0.4 mm thick</li>
+    <li>One degree of visual angle = 0.3 mm on the retina</li>
+    <li>Number of cones in each retina: 5 x 10<sup>6</sup></li>
+    <li>Number of rods in each retina: 10<sup>8</sup></li>
+    <li>Diameter of the fovea: 1.5 mm (5.2 deg);</li>
+        <ul>
+            <li>rod-free fovea: 0.5 mm (1.7 deg);</li>
+            <li>foveola (rod-free, capillary-free fovea): 0.3 mm (1 deg);</li>
+            <li>size of the optic nerve head: 1.5 mm x 2.1 mm (5 deg (w) x 7 deg (h))</li>
+            <li>location of the optic nerve head: 15 deg nasal</li>
+        </ul>
+    <li>Peak cone density: 1.6 x 10<sup>5</sup> cones/mm<sup>2</sup>;</li>
+    <li>Foveal cone size: 1-4 mu (diameter) x 50-80 mu (length);</li>
+        <ul>
+            <li>extrafoveal cone size: 4-10 mu (diameter) x 40 mu (length)</li>
+        </ul>
+    <li>Size of rods near fovea: 1 mu (diameter) x 60 mu (length)</li>
+    <li>S cone spacing (foveal): 10 arc min</li>
+    <li>L and M cone spacing (foveal): 0.5 arc min</li>
+    <li>Number of (L + M) cones / Number of S cones = 14 (though the ratio may be higher in the foveola)</li>
+    <li>1.5 106 optic nerve fibers/retina; ratio of receptors to ganglion cell in fovea 1:3; ratio of receptors to ganglion cells for whole retina, 125:1</li>
+</ul>
+
+<h3>Cortex</h3>
+<ul>
+    <li>Area of entire cortex: 1.3 x 10<sup>5</sup> mm<sup>2</sup>; 1.7 mm thick</li>
+    <li>Total number of cortical neurons: 10<sup>10</sup>; density: 10<sup>5</sup> neurons / mm<sup>3</sup></li>
+    <li>Synapses: 5 x 10<sup>8</sup> synapses / mm<sup>3</sup> 4 x 10<sup>3</sup> synapses/neuron;</li>
+    <li>Axons: 3 kilometers / mm<sup>3</sup></li>
+    <li>Number of corpus callosum fibers: 5 x 10<sup>8</sup></li>
+    <li>Number of macaque visual areas: 30</li>
+    <li>Size of each area V1: 3cm by 8 cm</li>
+    <li>Half of area V1 represents the central 10 deg (2% of the visual field)</li>
+    <li>Width of a human ocular dominance column 0.5-1.0 mm; width of a macaque ocular dominance column 0.3 mm“>.</li>
+</ul>
+
+<h3>Sensitivity</h3>
+<ul>
+    <li>Minimum number of absorptions for: scotopic detection 1-5</li>
+        <ul>
+            <li>detectable electrical excitation of a rod 1</li>
+            <li>photopic detection 10-15</li>
+        </ul>
+    <li>The number of photoisomerisations per rod (per sec?) required to saturate the retinal rod circuit.</li>
+    <li>Following exposure to a sunny day, dark adaptation to a moonless night involves</li>
+        <ul>
+            <li>10 minutes (photopic)</li>
+            <li>40 minutes (scotopic)</li>
+            <li>change in visual sensitivity 6 log10 units</li>
+        </ul>
+    <li>Highest detectable spatial frequency at high ambient light levels, 50-60 cpd</li>
+        <ul>
+            <li>low ambient light levels, 20-30 cpd</li>
+        </ul>
+    <li>The contrast threshold (Delta L / L) for a static edge at photopic luminances is 1%.</li>
+    <li>Highest detectable temporal frequency: high ambient large field, 80 Hz; low ambient, large field 40 Hz.</li>
+    <li>Typical localization threshold: 6 arc sec (0.5 mu on the retina)</li>
+    <li>Minimum temporal separation needed to discriminate two small, brief light pulses from a single equal-energy pulse: 15-20 ms</li>
+    <li>Stereoscopic depth discrimination: step threshold, 3 arc sec</li>
+        <ul>
+            <li>point threshold, 30 arc sec</li>
+        </ul>
+</ul>
+
+<h3>Color</h3>
+<ul>
+    <li>Visible spectrum: 370-730 nm</li>
+    <li>Peak wavelength sensitivity: 507nm (scotopic) and 555 nm (photopic)</li>
+    <li>Spectral equilibrium hues: 475 nm (blue)</li>
+    <ul>
+        <li>500 nm (green)</li>
+        <li>575 nm (yellow)</li>
+        <li>no spectral equilibrium red</li>
+    </ul>
+    <li>Number of basic English color names: 11</li>
+    <li>Incidence of</li>
+    <ul>
+        <li>anomalous trichromacy, 10<sup>-2</sup> (male), 10<sup>-4</sup> (female);</li>
+        <li>protanopia and deuteranopia, 10<sup>-2</sup> (male), 10<sup>-4</sup> (female);</li>
+        <li>tritanopia, 10<sup>-4</sup>; rod monochromacy, 10<sup>-4</sup>; cone monochromacy, 10<sup>-5</sup></li>
+    </ul>
+</ul>  
 
 </html>
