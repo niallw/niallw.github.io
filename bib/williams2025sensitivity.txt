@@ -1,0 +1,7 @@
+@article{williams2025sensitivity,
+  title={Sensitivity to Redirected Walking Considering Gaze, Posture, and Luminance},
+  author={Williams, Niall L and Stevens, Logan C and Bera, Aniket and Manocha, Dinesh},
+  journal={IEEE Transactions on Visualization \& Computer Graphics},
+  year={2025},
+  publisher={IEEE Computer Society}
+}
