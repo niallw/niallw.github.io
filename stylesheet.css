@@ -4,6 +4,9 @@
 * {
 	/* font-family: Times New Roman; */
 	font-family: Fontin;
+    src: url('fonts/Fontin-Regular.woff2') format('woff2'),
+         url('fonts/Fontin-Regular.woff') format('woff');
+    font-display: swap; /* Improves performance by showing fallback text first */
 }
 
 a:link{
