@@ -1,11 +1,27 @@
 
 @charset "ISO-8859-1";
 
-* {
-	/* font-family: Times New Roman; */
-	font-family: Fontin;
+@font-face {
+    font-family: 'Fontin';
     src: url('fonts/Fontin-Regular.woff2') format('woff2'),
          url('fonts/Fontin-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Improves performance by showing fallback text first */
+}
+
+@font-face {
+    font-family: 'Fontin';
+    src: url('fonts/Fontin-Bold.woff2') format('woff2'),
+         url('fonts/Fontin-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+	/* font-family: Times New Roman; */
+	font-family: 'Fontin', serif;
     font-display: swap; /* Improves performance by showing fallback text first */
 }
 
