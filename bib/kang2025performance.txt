@@ -1,0 +1,7 @@
+@inproceedings{kang2025performance,
+  title={Performance Analysis of Catch-Up Eye Movements in Visual Tracking},
+  author={Kang, Jenna and Duinkharjav, Budmonde and Williams, Niall L. and Sun, Qi},
+  booktitle={SIGGRAPH Asia 2024 Conference Papers},
+  pages={1--14},
+  year={2025}
+}
