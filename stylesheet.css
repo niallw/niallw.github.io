@@ -10,6 +10,12 @@
     font-display: swap; /* Improves performance by showing fallback text first */
 }
 
+.email-img {
+	vertical-align: middle; /* Aligns image center with text center */
+	height: 1.2em;          /* Scales image relative to font size */
+	width: auto;            /* Maintains aspect ratio */
+}
+
 @font-face {
     font-family: 'Fontin';
     src: url('fonts/Fontin-Bold.woff2') format('woff2'),
