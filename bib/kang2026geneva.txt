@@ -1,0 +1,6 @@
+@article{kang2025geneva,
+  title={GeneVA: A Dataset of Human Annotations for Generative Text to Video Artifacts},
+  author={Kang, Jenna and Silva, Maria and Sangkloy, Patsorn and Chen, Kenneth and Williams, Niall and Sun, Qi},
+  journal={arXiv preprint arXiv:2509.08818},
+  year={2025}
+}
