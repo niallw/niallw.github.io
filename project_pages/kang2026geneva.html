@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeneVA: A Dataset of Human Annotations for Generative Text to Video Artifacts</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 900px; }
+        h1, h2 { color: #333; }
+        .author { margin-bottom: 0px; font-size: 20px; text-align: center; }
+        .affiliation { font-style: italic; text-align: center; }
+        .venue { font-weight: bold; text-align: center; }
+        .abstract { background-color: #f0f0f0; padding: 15px; border-radius: 5px; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .bibtex { 
+            background-color: #f5f5f5; /* Light gray background */
+            white-space: pre-wrap;
+            border: 1px solid #ddd; /* Optional border for better visibility */
+            padding: 10px; /* Add padding for spacing */
+            border-radius: 4px; /* Optional rounded corners */
+         }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">GeneVA: A Dataset of Human Annotations for Generative Text to Video Artifacts</h1>
+
+    <div class="author"><a href="https://jennakangg.github.io/">Jenna Kang</a><sup>1</sup>, Maria Beatriz Silva<sup>1</sup>, <a href="https://patsorn.me/">Patsorn Sangkloy</a><sup>1</sup>, <a href="https://kenchen10.github.io/">Kenneth Chen</a><sup>1</sup>, <b>Niall L. Williams</b><sup>1</sup>, <a href="https://qisun.me/">Qi Sun</a><sup>1</sup></div>
+    <div class="affiliation"><sup>1</sup>New York University</div>
+    <div class="venue">IEEE/CVF Winter Conference on Applications of Computer Vision 2026</div>
+
+    <div class="teaser-container" style="text-align: center; margin: 20px 0;">
+        <img src="../img/teasers/geneva-teaser.png" alt="Teaser Banner" style="width: 100%; max-width: 900px; height: auto; border-radius: 5px;">
+        <div style="
+            text-align: justify; 
+            text-justify: inter-word; 
+            text-align-last: left; /* Forces the last line to align left */
+            hyphens: auto;         /* Optional: helps reduce gaps in upper lines */
+            width: 100%; 
+            margin-top: 10px; 
+            font-size: 14px; 
+            color: #555;
+            line-height: 1.4;">
+            Example annotated bounding boxes and summary statistics for videos from each of the three models in our dataset (Sora, Pika, VC). The bounding boxes are annotated in red, with their artifact category and user-annotated description below the frames. Video quality ("Overall") and video-prompt alignment ("Prompt") are shown to the left.
+        </div>
+    </div>
+
+    <h2>Abstract</h2>
+    <div class="abstract">
+        Recent advances in probabilistic generative models have extended capabilities from static image synthesis to text-driven video generation. However, the inherent randomness of their generation process can lead to unpredictable artifacts, such as impossible physics and temporal inconsistency. Progress in addressing these challenges requires systematic benchmarks, yet existing datasets primarily focus on generative images due to the unique spatio-temporal complexities of videos. To bridge this gap, we introduce GeneVA, a large-scale artifact dataset with rich human annotations that focuses on spatio-temporal artifacts in videos generated from natural text prompts. We hope GeneVA can enable and assist critical applications, such as benchmarking model performance and improving generative video quality. 
+    </div>
+
+    <h2>Paper and Supplementary Materials</h2>
+    <ul>
+        <li><a href="../pdfs/publications/kang2026GeneVA.pdf">Full Paper (PDF)</a></li>
+        <li><a href="https://ai-generated-videos-icl.s3.us-east-1.amazonaws.com/">Dataset: Videos</a></li>
+        <li><a href="https://geneva-annotations.s3.us-east-1.amazonaws.com/AnnotatedVideos.json">Dataset: Annotations</a></li>
+    </ul>
+
+    <h2>BibTeX</h2>
+    <pre class="bibtex">
+@article{kang2025geneva,
+  title={GeneVA: A Dataset of Human Annotations for Generative Text to Video Artifacts},
+  author={Kang, Jenna and Silva, Maria and Sangkloy, Patsorn and Chen, Kenneth and Williams, Niall and Sun, Qi},
+  journal={arXiv preprint arXiv:2509.08818},
+  year={2025}
+}</pre>
+</body>
+</html>
