@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GeneVA: A Dataset of Human Annotations for Generative Text to Video Artifacts</title>
+    <title>Performance Analysis of Catch-Up Eye Movements in Visual Tracking</title>
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 900px; }
         h1, h2 { color: #333; }
@@ -50,39 +50,42 @@
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">GeneVA: A Dataset of Human Annotations for Generative Text to Video Artifacts</h1>
+    <h1 style="text-align: center;">Performance Analysis of Catch-Up Eye Movements in Visual Tracking</h1>
 
-    <div class="author"><a href="https://jennakangg.github.io/">Jenna Kang</a><sup>1</sup>, Maria Beatriz Silva<sup>1</sup>, <a href="https://patsorn.me/">Patsorn Sangkloy</a><sup>1</sup>, <a href="https://kenchen10.github.io/">Kenneth Chen</a><sup>1</sup>, <b>Niall L. Williams</b><sup>1</sup>, <a href="https://qisun.me/">Qi Sun</a><sup>1</sup></div>
+    <div class="author"><a href="https://jennakangg.github.io/">Jenna Kang</a><sup>1</sup>, <a href="https://www.budmonde.com/">Budmonde Duinkharjav</a><sup>1</sup>, <b>Niall L. Williams</b><sup>1</sup>, <a href="https://qisun.me/">Qi Sun</a><sup>1</sup></div>
     <div class="affiliation"><sup>1</sup>New York University</div>
-    <div class="venue">IEEE/CVF Winter Conference on Applications of Computer Vision 2026</div>
+    <div class="venue">ACM SIGGRAPH Asia 2025</div>
 
     <div class="teaser-container" style="text-align: center; margin: 20px 0;">
-        <img src="../img/teasers/geneva-teaser.png" alt="Example of an artifact in an AI-generated video and its associated annotation: A cat and pizza floating in space are identified as being unrealistic." style="width: 100%; max-width: 900px; height: auto; border-radius: 5px;">
+        <img src="../img/teasers/kang2025performance2.png" alt="Teaser Banner" style="width: 100%; max-width: 900px; height: auto; border-radius: 5px;">
         <div style="
             text-align: justify; 
             text-justify: inter-word; 
-            text-align-last: left; /* Forces the last line to align left */
-            hyphens: auto;         /* Optional: helps reduce gaps in upper lines */
+            text-align-last: left; 
+            hyphens: auto;         
             width: 100%; 
             margin-top: 10px; 
             font-size: 14px; 
             color: #555;
             line-height: 1.4;">
-            Example annotated bounding boxes and summary statistics for videos from each of the three models in our dataset (Sora, Pika, VC). The bounding boxes are annotated in red, with their artifact category and user-annotated description below the frames. Video quality ("Overall") and video-prompt alignment ("Prompt") are shown to the left.
+            Catch-up eye movement performance is influenced by visual features. <i>Left:</i> A soccer gaming scenario where the gatekeeper player must accuratelyfollow the sudden motion of a kicked ball to take action. This process requires the player to visually estimate the change of the ball's motion pattern andadjust the eye movement accordingly to catch up. Depending on game designs and difficulties, the ball may appear differently on screen (varying visual signalstrength) or move at different speeds. <i>Right:</i> Our prediction of user catch-up latency influenced by visual signal strengths and ball motion speeds.
         </div>
     </div>
 
     <h2>Abstract</h2>
     <div class="abstract">
-        Recent advances in probabilistic generative models have extended capabilities from static image synthesis to text-driven video generation. However, the inherent randomness of their generation process can lead to unpredictable artifacts, such as impossible physics and temporal inconsistency. Progress in addressing these challenges requires systematic benchmarks, yet existing datasets primarily focus on generative images due to the unique spatio-temporal complexities of videos. To bridge this gap, we introduce GeneVA, a large-scale artifact dataset with rich human annotations that focuses on spatio-temporal artifacts in videos generated from natural text prompts. We hope GeneVA can enable and assist critical applications, such as benchmarking model performance and improving generative video quality. 
+        In graphics applications featuring dynamically moving visual targets -- such as film and gaming -- we have to rotate our eyes to follow objects as they move across the screen. Because target motion is often unpredictable and ever-changing, we must rapidly respond to motion cues and adjust eye movements to maintain the target within the fovea, a process known as catch-up. This catch-up behavior reflects how efficiently the eyes react to and compensate for sudden changes in motion, making it a critical indicator for both task performance and the overall visual experience. In this work, we study and measure the eye catch-up performance during visual tracking. In particular, we present a behavioral analysis that predicts users' reaction latency to abrupt target motion based on target visibility. Our numerical analysis and human subject studies evidence the effectiveness and generalizability. We further show how the catch-up metric can be applied to evaluate video quality, adjust game difficulty, and optimize display configurations for enhanced user performance. We envision this research to create a computational link between human perception and behavioral performance in dynamic graphics contexts.
     </div>
+
+    <!-- <h2>Video</h2>
+    <div class="video-container">
+        <iframe src="[Your video embed URL]" frameborder="0" allowfullscreen></iframe>
+    </div> -->
 
     <h2>Paper and Supplementary Materials</h2>
     <ul>
-        <li><a href="../pdfs/publications/kang2026GeneVA.pdf">Full Paper (PDF)</a></li>
-        <li><a href="https://ai-generated-videos-icl.s3.us-east-1.amazonaws.com/">Dataset: Videos</a></li>
-        <li><a href="https://geneva-annotations.s3.us-east-1.amazonaws.com/AnnotatedVideos.json">Dataset: Annotations</a></li>
-    </ul>
+        <li><a href="../pdfs/publications/kang2025performance.pdf">Full Paper (PDF)</a></li>
+        </ul>
 
     <div class="bibtex-header">
         <h2>BibTeX</h2>
@@ -94,10 +97,11 @@
     </div>
 
     <pre class="bibtex">
-@article{kang2025geneva,
-  title={GeneVA: A Dataset of Human Annotations for Generative Text to Video Artifacts},
-  author={Kang, Jenna and Silva, Maria and Sangkloy, Patsorn and Chen, Kenneth and Williams, Niall and Sun, Qi},
-  journal={arXiv preprint arXiv:2509.08818},
+@inproceedings{kang2025performance,
+  title={Performance Analysis of Catch-Up Eye Movements in Visual Tracking},
+  author={Kang, Jenna and Duinkharjav, Budmonde and Williams, Niall L. and Sun, Qi},
+  booktitle={SIGGRAPH Asia 2024 Conference Papers},
+  pages={1--14},
   year={2025}
 }</pre>
 
@@ -119,5 +123,6 @@
             });
         }
     </script>
+
 </body>
 </html>
