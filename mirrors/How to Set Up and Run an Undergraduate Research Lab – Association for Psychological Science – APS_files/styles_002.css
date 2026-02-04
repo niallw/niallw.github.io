@@ -1,0 +1,585 @@
+/*
+Plugin Name: Confex Sync CSS
+Plugin URI: https://www.psychologicalscience.org
+Description: Custom CSS for Confex Sync
+Author: Asa Boy
+Author URI: https://www.psychologicalscience.org
+Template Version: 1.1
+Version: 1.3
+Text Domain: aapd
+*/
+
+.post.program h1 {
+    color: #003352;
+    /*text-shadow: -1px -1px 0 #f2ab2d, 1px -1px 0 #f2ab2d, -1px 1px 0 #f2ab2d, 1px 1px 0 #f2ab2d;*/
+    margin-bottom: 10px;
+}
+
+img.programLogo {
+    width: 100%;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+button.programBack {
+    background: #003352; /* Dark blue background for the button */
+    color: #fff; /* White text color */
+    border: none; /* No border */
+    padding: 5px 10px; /* Padding around the text */
+    font-size: 1em; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 20px; /* Space below the button */
+}
+
+button.programBack:hover {
+    background: #f2ab2d; /* Change background color on hover */
+    color: #003352; /* Change text color on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for the background color change */
+}
+
+
+.sessions{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+.sessions .session{
+    width: calc(33.333% - 30px);
+    margin: 0 15px 30px;
+    padding: 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+.sessions .session .session-title{
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.sessions .session .session-date{
+    font-size: .9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.sessions .session .session-speakers{
+    font-size: .8em;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.sessions .session .session-classification{
+    font-size: .9em;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.papers{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.papers .paper{
+    width: calc(33.333% - 30px);
+    margin: 0 15px 30px;
+    padding: 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+.papers .paper .paper-title{
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.papers .paper .paper-authors{
+    font-size: .9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.papers .paper .paper-abstract{
+    font-size: .8em;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.search-container {
+    width: 100%; 
+    margin-bottom: 15px;
+    /*margin-left: 5%;*/
+}
+
+#search-tabs {
+    text-align:left;
+    margin-left: 3.5%
+}
+
+
+.poster {
+    font-size: .9em;
+    color: #000;
+    width: 100%;
+    padding: 10px;
+}
+
+.poster .title h3 {
+    margin-bottom: 0px;
+}
+
+.poster:nth-child(odd) {
+    background-color: #FFFFFF; /* Light blue background for even sessions */
+    
+    border: 1px solid #f2ab2d; /* Border color for even sessions */
+}
+
+.poster:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray background for odd sessions */
+    border-left: 1px solid #00919e; /* Border color for odd sessions */
+    border-right: 1px solid #00919e; /* Border color for odd sessions */
+}
+
+.poster:nth-child(odd) .title h3 a {
+    color: #0E395D;
+}
+
+.poster:nth-child(odd) .title h3 a:hover {
+    color: #f2ab2d; /* Change color on hover for links in odd posters */
+    text-decoration: underline; /* Optional: underline on hover for better visibility */
+}
+
+.poster:nth-child(even) .title h3 a {
+    color: #00919e;
+}
+
+.poster:nth-child(even) .title h3 a:hover {
+    color: #f2ab2d; /* Change color on hover for links in even posters */
+    text-decoration: underline; /* Optional: underline on hover for better visibility */
+}
+
+
+.poster p {
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+.poster h4 {
+    font: 1.1em/1.1rem p22-underground, sans-serif;
+    font-display: swap;
+    font-weight: 700;
+    color: #f2ab2d;
+    margin-bottom: 0px;
+}
+
+.poster h4 a {
+    color: #f2ab2d;
+}
+
+.poster h4 a:hover {
+    color: #0E395D; /* Change color on hover for links in h4 */
+}
+
+
+.poster .affiliation {
+    font: 500 1em/1em p22-underground, sans-serif; /* Adjusted font size for affiliation */
+    color: #f2ab2d; /* Color for affiliation */
+}
+
+.poster .keyword {
+    font: 700 1em/1em p22-underground, sans-serif; /* Adjusted font size for keywords */
+    color: #0E395D; /* Color for keywords */
+}
+
+.poster .keyword i {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.poster .abstract{
+    font: 700 1em/1em p22-underground, sans-serif; /* Adjusted font size for keywords */
+    color: #0E395D; /* Color for keywords */
+}
+
+.poster .abstract i {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.speaker {
+    font-size: 1em;
+    color: #000;
+    width: 100%;
+    padding: 10px;
+}
+
+.speaker .title h3 {
+    margin-bottom: 0px;
+}
+
+.speaker:nth-child(odd) {
+    background-color: #FFFFFF; /* Light blue background for even sessions */
+    
+    border: 1px solid #f2ab2d; /* Border color for even sessions */
+}
+
+.speaker:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray background for odd sessions */
+    border-left: 1px solid #00919e; /* Border color for odd sessions */
+    border-right: 1px solid #00919e; /* Border color for odd sessions */
+}
+
+.speaker:nth-child(odd) .title h3 a {
+    color: #0E395D;
+}
+
+.speaker:nth-child(even) .title h3 a {
+    color: #00919e;
+}
+
+.speaker:nth-child(odd) .title h3 a:hover {
+    color: #f2ab2d; /* Change color on hover for links in odd posters */
+    text-decoration: underline; /* Optional: underline on hover for better visibility */
+}
+
+.speaker:nth-child(even) .title h3 a:hover {
+    color: #f2ab2d; /* Change color on hover for links in even posters */
+    text-decoration: underline; /* Optional: underline on hover for better visibility */
+}
+
+.speaker p {
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+.speaker .affiliation {
+    font: 700 1em/1em p22-underground, sans-serif; /* Adjusted font size for affiliation */
+    color: #f2ab2d; /* Color for affiliation */
+}
+
+.session {
+    font-size: 1em;
+    color: #000;
+    width: 100%;
+    padding: 10px;
+}
+
+.session:nth-child(odd) {
+    background-color: #FFFFFF; /* Light blue background for even sessions */
+    
+    border: 1px solid #f2ab2d; /* Border color for even sessions */
+}
+
+.session:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray background for odd sessions */
+    border-left: 1px solid #00919e; /* Border color for odd sessions */
+    border-right: 1px solid #00919e; /* Border color for odd sessions */
+}
+
+.session summary {
+    background-color:lightgray;
+    color: #003352;
+    padding: 10px;
+    border-radius: 5px;
+    display: list-item;
+  }
+  
+.session details[open] summary {
+    border-radius: 5px 5px 0 0; 
+}
+  
+.session details {
+    background: #FFF;
+    border-radius: 5px;
+    border: 1px solid #003352;
+  }
+
+.talkHead {
+    font-size: 1em; /* Font size for talkhead */
+    color: #000; /* Text color for talkhead */
+    font-weight: 700; /* Bold font weight */
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.session details p {
+    padding: 10px;
+    margin: 0;
+}
+
+.session p {
+    font-size: .9em;
+    color: #000;
+    margin: 5px 0;
+}
+
+.session:nth-child(even) .title h3 a {
+    color: #0E395D;
+}
+
+.session:nth-child(odd) .title h3 a {
+    color: #00919e;
+}
+
+.session-info {
+    padding: 10px;
+}
+
+.title h3 {
+	font: 1.2em/1.2em p22-underground, sans-serif;
+	font-display: swap;
+	font-weight: 600;
+	color: #FFF;
+    margin-bottom: 0px;
+}
+
+.title h3 a {
+    color: #FFF;
+}
+
+.title h3 a:hover {
+    color: #f2ab2d;
+}
+
+.session h4 {
+    font: 1em/1rem p22-underground, sans-serif;
+    font-display: swap;
+    font-weight: 700;
+    color: #f2ab2d;
+}
+
+.session ul {
+    font-size: .9em;
+}
+
+.session p.time {
+    margin: 0px;
+    font-weight: 500;
+
+}
+
+.search-tab {
+    padding:.5em 3em;   
+    display:inline-block;
+    font:500 15px/18px p22-underground, sans-serif;
+    background: #FCFCFC;
+    width: 31%;
+    border-radius:10px 10px 0 0; /* tweak to preference */
+    color: #00919e;
+    border: 1.5px solid #00919e;
+    border-bottom: 1.5px solid #FCFCFC;
+}
+
+.search-tab.active {
+    background:#FFF;   
+    border:1.5px solid #cfd6df;
+    border-radius:20px 10px 0 4px; /* tweak to preference */
+    border-bottom: 3px solid #FFF; /* same as .content background */
+    margin-bottom: -2px; /* .content border width */ 
+    transition: all 100ms;
+    color: #003352;
+    font: 700 17px / 20px p22-underground, sans-serif;
+}
+
+.search-tab:hover {
+    color: #003352; /* Change text color on hover */
+    background: #00919e;
+    transition: color 0.3s ease; /* Smooth transition for the background color change */
+    font-weight: 700;
+    border-bottom: 1.5px solid #00919e;
+}
+
+.search-tab.active:hover {
+    color: #003352; /* Change text color on hover */
+    font-weight: 700;
+    background: none; 
+    border-bottom: 3px solid #FFF;
+}
+
+.search-form{
+    background:#FFF;   
+    border: 1.5px solid #cfd6df;
+    /*border-radius:0px 0 10px 10px;*/
+    padding: 15px;
+}
+
+.search-form h2 {
+    font: 1.3em/1.3em p22-underground, sans-serif;
+    font-display: swap;
+    font-weight: 600;
+    color: #003352;
+}
+
+.search-form input {
+	-webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #00919e;
+	padding: 10px;
+	box-sizing: border-box;
+	margin: 10px;
+}
+
+input.wider  {
+	width: 40em;
+}
+
+.search-form input:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.94);
+}
+
+.search-form input:focus {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.94);
+    outline: none;
+    border: 1px solid #f2ab2d;
+}
+
+.search-form select {
+	-webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #f2ab2d;
+	padding: 10px;
+	box-sizing: border-box;
+    margin-left: 4px;
+}
+
+.search-form input[type="text"] {
+    width: 50%; /* Full width on smaller screens */
+    margin: 5px 5px; /* Adjust margin on smaller screens */
+}
+
+.search-form input[type="checkbox"] {
+    box-shadow: none;
+}
+
+.search-form input[type="submit"] {
+    width: 15%; /* Full width on smaller screens */
+    margin: 5px 0; /* Adjust margin on smaller screens */
+    font-size: .8em;
+    color: #003352;
+    font-weight: 700;
+}
+
+.search-form input[type="submit"]:hover {
+    background: #00919e; /* Change background color on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for the background color change */
+}
+
+ul.presenterList {
+    list-style: none;
+    padding: 0;
+}
+
+ul.presenterList li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+ul.presenterList li::marker {    
+    font-family: "Font Awesome 6 Pro";
+    content: '\f2bd';
+    color: #00919e;
+}
+
+ul.talkList {
+    list-style: none;
+    padding: 0;
+}
+
+ul.talkList li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+ul.talkList li::marker {    
+    font-family: "Font Awesome 6 Pro";
+    content: '\f8cb';
+    color: #00919e;
+}
+
+h3.presenterType {
+    font-size: 1em;
+    color: #f2ab2d;
+}
+
+.parentSession {
+    padding-left: 20px;
+}
+
+.parentSession .date {
+    padding-left: 30px;
+    font-size: .9em;
+}
+
+.GSbranding {
+    color: #8bc53f;
+}
+
+.br-on-mobile {
+    display: none; /* Hide on larger screens */
+}
+
+
+
+
+/* Keep input and button aligned nicely on one line when space allows */
+@media (min-width: 800px) {
+  #sessionSearchForm input[type="text"]#search_text,
+  #sessionSearchForm .submitButton {
+    vertical-align: middle;
+  }
+}
+
+/* On phones, stack the button under the input with a little gap */
+@media (max-width: 799px) {
+  #sessionSearchForm .submitButton {
+    display: block;
+    margin-left: 0;
+    margin-top: 8px;
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+    .search-container {
+        width: 100%; /* Full width on smaller screens */
+        margin-left: 0; /* Reset margin on smaller screens */
+    }
+    .search-tab {
+        padding: 3px; /* Less padding on smaller screens */
+    }
+    .search-form {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+
+    .br-on-mobile {
+        display: block; /* Display block on smaller screens */
+    }
+
+    .search-form input[type="text"] {
+        width: 100%; /* Full width on smaller screens */
+        margin: 5px 0; /* Adjust margin on smaller screens */
+    }
+
+    .search-form select {
+        width: 100%; /* Full width on smaller screens */
+        margin: 5px 0; /* Adjust margin on smaller screens */
+    }
+
+    .search-form input[type="submit"] {
+        width: 100%; /* Full width on smaller screens */
+        margin: 5px 0; /* Adjust margin on smaller screens */
+    }
+    
+}

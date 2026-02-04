@@ -1,0 +1,91 @@
+/* APS Icon Button — CSS vars driven */
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 800;
+  line-height: 1;
+  font-family: p22-underground, sans-serif;
+  
+  /* Per-instance tokens */
+  padding: var(--btn-pad, 12px 16px);
+  font-size: var(--font-size, 16px);
+  border-radius: var(--radius, 12px);
+  color: var(--btn-fg, #fff)!important; 
+  background: var(--btn-bg, #2d2d2d);
+
+  transition: background-color .2s ease, color .2s ease, box-shadow .2s ease, transform .05s ease, filter .2s ease;
+}
+
+/* Hover/active/focus */
+.icon-button:hover {
+  background: var(--btn-bg-hover, var(--btn-bg, #2d2d2d));
+  color: var(--btn-fg-hover, var(--btn-fg, #fff))!important; /* text hover */
+}
+.icon-button:active { transform: translateY(1px); }
+.icon-button:focus { outline: none; }
+.icon-button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(255,255,255,.9),
+    0 0 0 5px color-mix(in oklab, var(--btn-bg, #2d2d2d) 70%, transparent);
+}
+
+/* Label */
+.icon-button__label { display: inline-block; }
+
+/* Icon wrapper uses currentColor via CSS variable */
+.icon-button__icon { display: inline-flex; align-items: center; color: var(--icon-color, currentColor); }
+.icon-button__icon svg { display: block; width: var(--icon-size, 20px); height: var(--icon-size, 20px); }
+
+/* Icon hover color */
+.icon-button:hover .icon-button__icon { color: var(--icon-color-hover, var(--icon-color, currentColor)); }
+
+/* Icon position helpers */
+.icon-button--icon-left   { flex-direction: row; align-items: flex-end;}
+.icon-button--icon-right  { flex-direction: row-reverse; align-items: flex-end;}
+.icon-button--icon-top    { flex-direction: column; align-items: center; text-align: center; }
+.icon-button--icon-bottom { flex-direction: column-reverse; align-items: center; text-align: center; }
+
+/* Optional block styles */
+.is-style-outline .icon-button {
+  background: transparent;
+  color: var(--btn-bg, currentColor);
+  border: 2px solid var(--btn-bg, currentColor);
+}
+.is-style-outline .icon-button:hover {
+  background: color-mix(in oklab, var(--btn-bg, #2d2d2d) 12%, transparent);
+}
+
+.is-style-ghost .icon-button {
+  background: transparent;
+  color: var(--btn-fg, currentColor);
+}
+.is-style-ghost .icon-button:hover {
+  background: color-mix(in oklab, var(--btn-bg, #2d2d2d) 10%, transparent);
+}
+
+/* Disabled */
+.icon-button[aria-disabled="true"], .icon-button.is-disabled { opacity: .55; pointer-events: none; }
+
+/* Make the block's text color win over parent containers */
+a.icon-button { 
+  color: var(--btn-fg, #fff) !important; 
+}
+a.icon-button:hover { 
+  color: var(--btn-fg-hover, var(--btn-fg, #fff)) !important; 
+}
+
+/* Ensure the label inherits the anchor's color */
+a.icon-button .icon-button__label { 
+  color: inherit !important; 
+  text-decoration: none !important;
+  text-transform: uppercase;
+  font-family: p22-underground, sans-serif !important;
+}
+
+/* Motion prefs */
+@media (prefers-reduced-motion: reduce) {
+  .icon-button { transition: none; transform: none; }
+}
