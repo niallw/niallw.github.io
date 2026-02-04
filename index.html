@@ -647,21 +647,61 @@
 				</ul>
 		</div>
 
-		<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-			<tr>
-			  <td style="padding:0px">
-				<br>
-				<p style="text-align:right;font-size:small;">
-				  <a href="https://people.cs.clemson.edu/~sjoerg/">Website format copied from Sophie J&ouml;rg.</a>
-				  <br>
-				</p>
-			  </td>
-			</tr>
-		</tbody></table>
+		<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+			<tbody>
+				<tr>
+					<td style="padding:0px; text-align: left;">
+						<div class="easter-egg-container" style="padding-left: 10px; padding-bottom: 2px;">
+							<button id="lore-trigger" title="Click for random lore">
+								<i class="fa-solid fa-circle-info"></i>
+							</button>
+							<span id="lore-display"></span>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="padding:0px; text-align: left;">
+						<p style="text-align:left; font-size:small; padding-left: 10px; margin: 0;">
+							<a href="https://people.cs.clemson.edu/~sjoerg/">Website format copied from Sophie J&ouml;rg.</a>
+						</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 
 		<div id="footer">
 		</div>
 	</div>
+
+	<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const loreItems = [
+			`While it's true that I'm a <a href="https://scholar.google.com/citations?user=KIUsT1cAAAAJ&amp;hl" target="_blank">published author</a>, I do not write <a href="http://www.niallwilliams.com/" target="_blank">novels</a>.`,
+			`I walked my dog during a hurricane once (nature calls!).`,
+			`I have gone scuba diving with sharks in open water (no cage!).`,
+			`Some of my favorite pictures of my cat: 
+			<a href="img/tongue.jpg">Img 1</a>, <a href="img/balcony1.jpg">Img 2</a>, 
+			<a href="img/christmas.jpg">Img 3</a>, <a href="img/balcony2.jpg">Img 4</a>, 
+			<a href="img/balcony3.jpg">Img 5</a>, <a href="img/bed1.jpg">Img 6</a>, 
+			<a href="img/bed2.jpg">Img 7</a>, <a href="img/cat_and_dog.jpg">Img 8</a>.`,
+			`My undergrad thesis advisor and second reader made watching all episodes of Seinfeld a requirement to qualify for honors.`,
+			`I once spent a summer helping newly-hatched sea turtles safely reach the ocean.`,
+			// Fixed encoding: Replaced arrows with &rarr; and special chars with HTML entities
+			`My Erd&#337;s Number is 4 (Me &rarr; Dinesh Manocha &rarr; Pankaj K. Agarwal &rarr; J&aacute;nos Pach &rarr; Paul Erd&#337;s)`
+		];
+
+		const trigger = document.getElementById('lore-trigger');
+		const display = document.getElementById('lore-display');
+
+		if(trigger && display) {
+			trigger.addEventListener('click', () => {
+				const randomIndex = Math.floor(Math.random() * loreItems.length);
+				display.innerHTML = loreItems[randomIndex];
+			});
+		}
+	});
+	</script>
 </body>
 
 </html>
