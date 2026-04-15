@@ -1,13 +1,37 @@
 <!-- via https://github.com/alecjacobson/chalkboard -->
 
-<body style="margin: 0px;padding: 0px">
-	<canvas id="board" style="border: 4px #888 solid"></canvas>
+<body style="margin: 0px;padding: 0px; background: #111; overflow: hidden;">
+	<canvas id="board" style="border: 4px #888 solid; display: block;"></canvas>
+	<div id="toolbar" style="
+		position: fixed;
+		bottom: 12px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		background: rgba(30,30,30,0.85);
+		border: 1px solid #555;
+		border-radius: 28px;
+		padding: 8px 16px;
+		box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+		user-select: none;
+	">
+		<button id="btn-undo" title="Undo (Ctrl+Z)" style="
+			background: none; border: 1px solid #666; color: #ccc;
+			border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: 14px;
+		">↩</button>
+		<button id="btn-redo" title="Redo (Ctrl+Y)" style="
+			background: none; border: 1px solid #666; color: #ccc;
+			border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: 14px;
+		">↪</button>
+		<div style="width: 1px; height: 24px; background: #555; margin: 0 4px;"></div>
+	</div>
 	<script>
-	
+
 	  // https://stackoverflow.com/a/55666538/148668
 	  function bresenham(startPos, endPos, callback) {
 		var coordinatesArray = new Array();
-		// get rid of this rounding?
 		var iscale = 1.0/scale;
 		var ox1 = Math.round(startPos.x/iscale);
 		var oy1 = Math.round(startPos.y/iscale);
@@ -15,17 +39,14 @@
 		var y1 = oy1;
 		var x2 = Math.round(endPos.x  /iscale);
 		var y2 = Math.round(endPos.y  /iscale);
-		// Define differences and error check
 		var dx = Math.abs(x2 - x1);
 		var dy = Math.abs(y2 - y1);
 		var sx = (x1 < x2) ? 1 : -1;
 		var sy = (y1 < y2) ? 1 : -1;
 		var err = dx - dy;
 		var d = Math.sqrt((x2-ox1)*(x2-ox1)+(y2-oy1)*(y2-oy1));
-		// Set first coordinates
 		callback({x: x1*iscale,y: y1*iscale},
 		  Math.sqrt((x1-ox1)*(x1-ox1)+(y1-oy1)*(y1-oy1))/ d);
-		// Main loop
 		while (!((x1 == x2) && (y1 == y2))) {
 			var e2 = err << 1;
 			if (e2 > -dy) {
@@ -36,27 +57,21 @@
 				err += dx;
 				y1 += sy;
 			}
-			// Set coordinates
 		  callback({x: x1*iscale,y: y1*iscale},
 			Math.sqrt((x1-ox1)*(x1-ox1)+(y1-oy1)*(y1-oy1))/ d);
 		}
-		// Return the result
 		return coordinatesArray;
 	  }
-	
+
 	var g_evt = [];
 	  let canvas = document.querySelector("canvas");
-	
+
 	  var canvas_dom = document.getElementById("board");
 	  canvas_dom.addEventListener("touchstart",  function(event) {event.preventDefault()});
 	  canvas_dom.addEventListener("touchmove",   function(event) {event.preventDefault()})
 	  canvas_dom.addEventListener("touchend",    function(event) {event.preventDefault()})
 	  canvas_dom.addEventListener("touchcancel", function(event) {event.preventDefault()})
-	
-	  // https://coderwall.com/p/vmkk6a/how-to-make-the-canvas-not-look-like-crap-on-retina
-	  // Q: Is this actually anti-aliasing?
-	  // H: Doesn't seem like it... Although a single vertical line does look better
-	  // with scale=2
+
 	  var scale = 2;
 	  var w = 1280;
 	  var h = 720;
@@ -66,19 +81,58 @@
 	  canvas.style.height = h+"px";
 	  let context = canvas.getContext('2d');
 	  context.scale(scale,scale);
-	
-	  context.fillStyle = "#121";
-	  context.fillRect(0, 0, 1280, 720);
-	  context.fillStyle = '#f0eff0';
-	
+
+	  // ── Color palette ─────────────────────────────────────────────────────────
+	  const COLORS = [
+		{ name: "chalk",  hex: "#f0eff0" },
+		{ name: "yellow", hex: "#f5e03a" },
+		{ name: "green",  hex: "#4cf57d" },
+		{ name: "cyan",   hex: "#42d4f5" },
+		{ name: "orange", hex: "#f5a030" },
+		{ name: "pink",   hex: "#f560c0" },
+		{ name: "red",    hex: "#f54040" },
+	  ];
+	  let currentColor = COLORS[0].hex;
+
+	  // Build color swatches in toolbar
+	  const toolbar = document.getElementById("toolbar");
+	  COLORS.forEach(c => {
+		const swatch = document.createElement("div");
+		swatch.title = c.name;
+		swatch.dataset.color = c.hex;
+		swatch.style.cssText = `
+		  width: 22px; height: 22px; border-radius: 50%;
+		  background: ${c.hex};
+		  cursor: pointer;
+		  border: 3px solid ${c.hex === currentColor ? "#fff" : "transparent"};
+		  box-sizing: border-box;
+		  transition: border-color 0.1s;
+		  flex-shrink: 0;
+		`;
+		swatch.addEventListener("click", () => selectColor(c.hex));
+		toolbar.appendChild(swatch);
+	  });
+
+	  function selectColor(hex) {
+		currentColor = hex;
+		toolbar.querySelectorAll("[data-color]").forEach(s => {
+		  s.style.borderColor = s.dataset.color === hex ? "#fff" : "transparent";
+		});
+	  }
+
+	  // ── Canvas background ─────────────────────────────────────────────────────
+	  function fillBackground() {
+		context.fillStyle = "#121";
+		context.fillRect(0, 0, w, h);
+	  }
+	  fillBackground();
+
 	  function disk(x,y,r)
 	  {
-		// funny things happen with r<0.5
 		r = Math.max(r,0.5);
 		context.fillRect(x-r+1, y-r+1, 2*r-1, 2*r-1);
 	  }
-	
-	
+
 	  function getMousePos(canvas, evt) {
 		var rect = canvas.getBoundingClientRect();
 		return {
@@ -86,13 +140,57 @@
 		  y: evt.clientY - rect.top
 		};
 	  }
-	
+
+	  // ── Stroke history ────────────────────────────────────────────────────────
+	  // Each stroke: { color, segments: [{prevPos, pos, prevr, r}] }
+	  let strokes = [];
+	  let redoStack = [];
+	  let currentStroke = null;
+
+	  function replayStrokes() {
+		fillBackground();
+		for (const stroke of strokes) {
+		  context.fillStyle = stroke.color;
+		  for (const seg of stroke.segments) {
+			bresenham(seg.prevPos, seg.pos, function(pos, t) {
+			  disk(pos.x, pos.y, seg.prevr + t * (seg.r - seg.prevr));
+			});
+		  }
+		}
+	  }
+
+	  function undo() {
+		if (strokes.length === 0) return;
+		redoStack.push(strokes.pop());
+		replayStrokes();
+	  }
+
+	  function redo() {
+		if (redoStack.length === 0) return;
+		strokes.push(redoStack.pop());
+		replayStrokes();
+	  }
+
+	  document.getElementById("btn-undo").addEventListener("click", undo);
+	  document.getElementById("btn-redo").addEventListener("click", redo);
+
+	  document.addEventListener("keydown", function(e) {
+		if (e.ctrlKey || e.metaKey) {
+		  if (e.key === "z") { e.preventDefault(); undo(); }
+		  if (e.key === "y" || (e.shiftKey && e.key === "z")) { e.preventDefault(); redo(); }
+		}
+	  });
+
+	  // ── Drawing ───────────────────────────────────────────────────────────────
 	  function finish(evt)
 	  {
 		if(evt.isPrimary)
 		{
-		  // On the next move, determine if moving with pen or mouse and only if
-		  // mouse then show cursor
+		  if (currentStroke && currentStroke.segments.length > 0) {
+			strokes.push(currentStroke);
+			redoStack = [];
+		  }
+		  currentStroke = null;
 		  document.onpointermove  = function(evt)
 		  {
 			if(evt.pointerType == "pen")
@@ -107,8 +205,7 @@
 		  document.onpointerup = [];
 		}
 	  };
-	
-	
+
 	  document.querySelector('#board').onpointerdown = function(evt){
 		if(evt.isPrimary)
 		{
@@ -120,6 +217,8 @@
 		  {
 			document.querySelector("#board").style.cursor = "default";
 		  }
+		  currentStroke = { color: currentColor, segments: [] };
+		  context.fillStyle = currentColor;
 		  var prevr = evt.pointerType === "pen" ? 4*evt.pressure : 2;
 		  var prevPos = getMousePos(canvas,evt);
 		  document.onpointermove = function(evt) {
@@ -127,8 +226,9 @@
 			{
 			  var mousePos = getMousePos(canvas, evt);
 			  var r = evt.pointerType === "pen" ? 4*evt.pressure : 2;
+			  context.fillStyle = currentColor;
 			  bresenham(prevPos,mousePos,function(pos,t){disk(pos.x,pos.y,prevr+t*(r-prevr));});
-			  //bresenham(prevPos,mousePos,function(pos,t){disk(pos.x,pos.y,r);});
+			  currentStroke.segments.push({ prevPos: prevPos, pos: mousePos, prevr: prevr, r: r });
 			  prevPos = mousePos;
 			  prevr = r;
 			}
@@ -136,6 +236,6 @@
 		  document.onpointerup = finish;
 		}
 	  };
-	
+
 	</script>
-	
+</body>
