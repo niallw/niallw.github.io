@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Human Vision to Machine Vision — SIGGRAPH 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: #fff; font-family: 'Source Sans 3', Arial, sans-serif; }
+
+    .flyer {
+      max-width: 720px;
+      margin: 2rem auto;
+      background: #fff;
+      border: 1px solid #ccc;
+    }
+
+    /* ── TOP HEADER ── */
+    .top-bar {
+      padding: 0.55rem 0.75rem 0.4rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .title-block { flex: 1; }
+
+    h1 {
+      font-size: clamp(1.3rem, 3.2vw, 1.75rem);
+      font-weight: 700;
+      color: #111;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .sub {
+      margin-top: 0.2rem;
+      font-size: clamp(0.65rem, 1.4vw, 0.8rem);
+      font-style: italic;
+      color: #444;
+      font-weight: 400;
+    }
+
+    /* ── SIGGRAPH BADGE ── */
+    .sig-badge {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      flex-shrink: 0;
+    }
+
+    .sig-text { text-align: right; line-height: 1.1; }
+
+    .sig-text .sig-name {
+      display: block;
+      font-size: clamp(0.75rem, 1.8vw, 1.0rem);
+      font-weight: 700;
+      color: #E8213D;
+      letter-spacing: 0.04em;
+    }
+
+    .sig-text .sig-year {
+      display: block;
+      font-size: clamp(0.75rem, 1.8vw, 1.0rem);
+      font-weight: 700;
+      color: #E8213D;
+      letter-spacing: 0.04em;
+    }
+
+    .sig-text .sig-loc {
+      display: block;
+      font-size: clamp(0.5rem, 1vw, 0.62rem);
+      color: #777;
+      margin-top: 0.15rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    /* QR code */
+    .sig-qr {
+      width: clamp(44px, 7vw, 58px);
+      height: clamp(44px, 7vw, 58px);
+      flex-shrink: 0;
+    }
+
+    .sig-qr svg { width: 100%; height: 100%; display: block; }
+
+    /* ── BACKGROUND IMAGE ── */
+    .hero { display: block; width: 100%; height: auto; line-height: 0; }
+    .hero img { display: block; width: 100%; height: auto; }
+
+    /* ── SPEAKERS STRIP ── */
+    .speakers-strip {
+      padding: 0.7rem 0.75rem 0.8rem;
+      background: #fff;
+    }
+
+    .speakers-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+    }
+
+    .speaker-card {
+      cursor: pointer;
+    }
+
+    .speaker-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #e0e0e0;
+    }
+
+    .speaker-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .speaker-name {
+      margin-top: 0.3rem;
+      font-size: clamp(0.65rem, 1.3vw, 0.8rem);
+      font-weight: 700;
+      color: #111;
+      line-height: 1.2;
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      padding: 0;
+      text-align: left;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      transition: text-decoration-color 0.15s;
+    }
+
+    .speaker-card:hover .speaker-name { text-decoration-color: #111; }
+    .speaker-card.active .speaker-name { text-decoration-color: #E8213D; color: #E8213D; }
+
+    .speaker-aff {
+      font-size: clamp(0.55rem, 1.1vw, 0.68rem);
+      color: #666;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    /* ── BIO DRAWER ── */
+    .bio-drawer {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.35s ease, opacity 0.28s ease;
+      background: #f5f5f5;
+      border-top: 2px solid #111;
+    }
+
+    .bio-drawer.open { max-height: 400px; opacity: 1; }
+
+    .bio-inner {
+      padding: 0.9rem 0.75rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.85rem;
+      align-items: start;
+      position: relative;
+    }
+
+    .bio-close {
+      position: absolute; top: 0.65rem; right: 0.75rem;
+      background: none; border: none;
+      font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: #999; cursor: pointer; font-family: inherit;
+    }
+    .bio-close:hover { color: #111; }
+
+    .bio-photo {
+      width: 56px; height: 56px;
+      overflow: hidden; background: #ddd;
+    }
+    .bio-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+
+    .bio-name { font-size: 0.88rem; font-weight: 700; color: #111; margin-bottom: 0.08rem; }
+    .bio-aff  { font-size: 0.65rem; color: #E8213D; margin-bottom: 0.5rem; }
+    .bio-text { font-size: 0.76rem; line-height: 1.7; color: #444; font-weight: 400; }
+
+    /* ── BLURB (below flyer) ── */
+    .blurb-section {
+      max-width: 720px;
+      margin: 1.25rem auto 2rem;
+      padding: 0 1rem;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 520px) {
+      .flyer { margin: 0; border: none; }
+      .speakers-row { grid-template-columns: repeat(2, 1fr); }
+      .bio-drawer.open { max-height: 600px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="flyer">
+
+  <!-- ── HEADER ── -->
+  <div class="top-bar">
+    <div class="title-block">
+      <h1>From Human Vision to Machine Vision</h1>
+      <div class="sub">SIGGRAPH 2026 Technical Workshop &nbsp;@X–Y PM on Thursday, July 23</div>
+    </div>
+    <div class="sig-badge">
+      <div class="sig-text">
+        <span class="sig-name">SIGGRAPH</span>
+        <span class="sig-year">2026</span>
+        <span class="sig-loc">Los Angeles &nbsp;19–23 JUL</span>
+      </div>
+      <div class="sig-qr">
+        <svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+          <!-- finder TL -->
+          <rect x="2" y="2" width="17" height="17" rx="2" fill="none" stroke="#111" stroke-width="2.2"/>
+          <rect x="6" y="6" width="9" height="9" fill="#111"/>
+          <!-- finder TR -->
+          <rect x="39" y="2" width="17" height="17" rx="2" fill="none" stroke="#111" stroke-width="2.2"/>
+          <rect x="43" y="6" width="9" height="9" fill="#111"/>
+          <!-- finder BL -->
+          <rect x="2" y="39" width="17" height="17" rx="2" fill="none" stroke="#111" stroke-width="2.2"/>
+          <rect x="6" y="43" width="9" height="9" fill="#111"/>
+          <!-- data -->
+          <rect x="22" y="2"  width="4" height="4" fill="#111"/>
+          <rect x="28" y="2"  width="4" height="4" fill="#111"/>
+          <rect x="22" y="8"  width="4" height="4" fill="#111"/>
+          <rect x="34" y="8"  width="4" height="4" fill="#111"/>
+          <rect x="22" y="14" width="4" height="4" fill="#111"/>
+          <rect x="28" y="14" width="4" height="4" fill="#111"/>
+          <rect x="22" y="22" width="4" height="4" fill="#111"/>
+          <rect x="28" y="22" width="4" height="4" fill="#111"/>
+          <rect x="34" y="22" width="4" height="4" fill="#111"/>
+          <rect x="39" y="22" width="4" height="4" fill="#111"/>
+          <rect x="45" y="22" width="4" height="4" fill="#111"/>
+          <rect x="51" y="22" width="4" height="4" fill="#111"/>
+          <rect x="22" y="28" width="4" height="4" fill="#111"/>
+          <rect x="34" y="28" width="4" height="4" fill="#111"/>
+          <rect x="45" y="28" width="4" height="4" fill="#111"/>
+          <rect x="22" y="34" width="4" height="4" fill="#111"/>
+          <rect x="28" y="34" width="4" height="4" fill="#111"/>
+          <rect x="39" y="34" width="4" height="4" fill="#111"/>
+          <rect x="51" y="34" width="4" height="4" fill="#111"/>
+          <rect x="28" y="39" width="4" height="4" fill="#111"/>
+          <rect x="34" y="39" width="4" height="4" fill="#111"/>
+          <rect x="45" y="39" width="4" height="4" fill="#111"/>
+          <rect x="22" y="45" width="4" height="4" fill="#111"/>
+          <rect x="34" y="45" width="4" height="4" fill="#111"/>
+          <rect x="39" y="45" width="4" height="4" fill="#111"/>
+          <rect x="51" y="45" width="4" height="4" fill="#111"/>
+          <rect x="22" y="51" width="4" height="4" fill="#111"/>
+          <rect x="28" y="51" width="4" height="4" fill="#111"/>
+          <rect x="39" y="51" width="4" height="4" fill="#111"/>
+          <rect x="45" y="51" width="4" height="4" fill="#111"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BACKGROUND IMAGE ── -->
+  <div class="hero">
+    <img src="background.png" alt="From Human Vision to Machine Vision — workshop visual">
+  </div>
+
+  <!-- ── SPEAKERS ── -->
+  <div class="speakers-strip">
+    <div class="speakers-row">
+
+      <div class="speaker-card" id="card-wilcox"
+        onclick="toggleBio('wilcox')" role="button" tabindex="0"
+        onkeydown="if(event.key==='Enter'||event.key===' ')toggleBio('wilcox')">
+        <div class="speaker-photo"><img src="laurie.png" alt="Laurie Wilcox"></div>
+        <button class="speaker-name" tabindex="-1">Laurie Wilcox</button>
+        <div class="speaker-aff">York University</div>
+      </div>
+
+      <div class="speaker-card" id="card-mantiuk"
+        onclick="toggleBio('mantiuk')" role="button" tabindex="0"
+        onkeydown="if(event.key==='Enter'||event.key===' ')toggleBio('mantiuk')">
+        <div class="speaker-photo"><img src="rafal.jpg" alt="Rafal Mantiuk"></div>
+        <button class="speaker-name" tabindex="-1">Rafal Mantiuk</button>
+        <div class="speaker-aff">University of Cambridge</div>
+      </div>
+
+      <div class="speaker-card" id="card-hertzmann"
+        onclick="toggleBio('hertzmann')" role="button" tabindex="0"
+        onkeydown="if(event.key==='Enter'||event.key===' ')toggleBio('hertzmann')">
+        <div class="speaker-photo"><img src="aaron.jpg" alt="Aaron Hertzmann"></div>
+        <button class="speaker-name" tabindex="-1">Aaron Hertzmann</button>
+        <div class="speaker-aff">Adobe</div>
+      </div>
+
+      <div class="speaker-card" id="card-zhang"
+        onclick="toggleBio('zhang')" role="button" tabindex="0"
+        onkeydown="if(event.key==='Enter'||event.key===' ')toggleBio('zhang')">
+        <div class="speaker-photo"><img src="richard.jpg" alt="Richard Zhang"></div>
+        <button class="speaker-name" tabindex="-1">Richard Zhang</button>
+        <div class="speaker-aff">Adobe</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── BIO DRAWER (inside flyer) ── -->
+  <div class="bio-drawer" id="bio-drawer">
+    <div class="bio-inner">
+      <button class="bio-close" onclick="closeBio()">✕ close</button>
+      <div class="bio-photo"><img id="bio-img" src="" alt=""></div>
+      <div>
+        <div class="bio-name" id="bio-name"></div>
+        <div class="bio-aff"  id="bio-aff"></div>
+        <p   class="bio-text" id="bio-text"></p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /flyer -->
+
+<!-- Blurb below the flyer -->
+<div class="blurb-section">
+  <p>Human vision and machine vision share deep roots in visual perception, yet the two research communities rarely converge. This half-day workshop brings researchers from both fields together to explore how insights from biological vision can improve computational systems — and vice versa — across rendering, displays, scene understanding, and perceptual modeling.</p>
+  <p style="margin-top:0.75rem; font-size:0.72rem; color:#999;">
+    <strong style="color:#666;">Organizers:</strong>
+    Kenneth Chen (NYU) · Niall L. Williams (U. Zaragoza) · Colin Groth (NYU) · Jenna Kang (NYU) · Alexandre Chapiro (Meta Reality Labs) · Qi Sun (NYU)
+  </p>
+</div>
+
+<script>
+const bios = {
+  wilcox:    { name: 'Prof. Laurie M. Wilcox', aff: 'York University', photo: 'laurie.png',  text: 'Prof. Wilcox is the York Research Chair in 3D Vision at York University, specializing in the neural mechanisms of depth perception in real and virtual environments. She uses VR and AR devices to probe the mechanics of human vision, directly aligning with the workshop\'s goal of leveraging biological vision to improve visual computing. A past president of the Vision Sciences Society, she has collaborated with Meta, Qualcomm, and other industry leaders at the boundary between perceptual science and display engineering.' },
+  mantiuk:   { name: 'Prof. Rafal Mantiuk',    aff: 'University of Cambridge', photo: 'rafal.jpg',  text: 'Prof. Mantiuk works on psychophysics, applied visual perception, computational displays, and graphics. He has published pioneering work on high dynamic range imaging, image and video quality assessment, and perceptual rendering. His recent research directly evaluates whether computer vision foundation models — such as DINO and OpenCLIP — align with biological vision, making him an ideal voice on the convergence and persistent gaps between artificial and biological visual systems.' },
+  hertzmann: { name: 'Dr. Aaron Hertzmann',    aff: 'Adobe Research / University of Washington', photo: 'aaron.jpg',  text: 'Dr. Hertzmann is a Principal Scientist at Adobe Research and an Affiliate Professor at the University of Washington. His research lies at the intersection of machine learning, the psychology of art, and computational photography. He pioneered non-photorealistic rendering and computational imaging techniques that bridge physical camera optics and human aesthetic perception.' },
+  zhang:     { name: 'Dr. Richard Zhang',      aff: 'Adobe Research', photo: 'richard.jpg', text: 'Dr. Zhang is a Senior Research Scientist at Adobe Research working on computer vision, deep learning, and graphics. He is the 2017 Adobe Research Fellow and was named an MIT Technology Review Innovator Under 35 in 2023. He developed the Learned Perceptual Image Patch Similarity (LPIPS) metric and the DreamSim metric, demonstrating that deep network representations align surprisingly well with human perceptual judgments.' }
+};
+
+let current = null;
+
+function toggleBio(id) {
+  if (current === id) { closeBio(); return; }
+  const s = bios[id];
+  document.getElementById('bio-name').textContent = s.name;
+  document.getElementById('bio-aff').textContent  = s.aff;
+  document.getElementById('bio-text').textContent = s.text;
+  const img = document.getElementById('bio-img');
+  img.src = s.photo; img.alt = s.name;
+  if (current) document.getElementById('card-' + current).classList.remove('active');
+  document.getElementById('card-' + id).classList.add('active');
+  current = id;
+  const drawer = document.getElementById('bio-drawer');
+  drawer.classList.add('open');
+  setTimeout(() => drawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+}
+
+function closeBio() {
+  document.getElementById('bio-drawer').classList.remove('open');
+  if (current) document.getElementById('card-' + current).classList.remove('active');
+  current = null;
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBio(); });
+</script>
+</body>
+</html>
