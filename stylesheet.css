@@ -57,6 +57,38 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Fontin Sans';
+    src: url('fonts/Fontin_Sans_R_45b.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fontin Sans';
+    src: url('fonts/Fontin_Sans_B_45b.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fontin Sans';
+    src: url('fonts/Fontin_Sans_I_45b.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fontin Sans';
+    src: url('fonts/Fontin_Sans_BI_45b.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
 * {
 	/* font-family: Times New Roman; */
 	font-family: 'Fontin', serif;
