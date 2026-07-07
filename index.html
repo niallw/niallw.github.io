@@ -41,7 +41,32 @@
 					</p>
 
 					<table border=0 cellpadding=0 cellspacing=0><tr>
-						<td>e-mail: <img src="img/email.png" alt="Contact Email" class="email-img">
+						<span class="email-obfuscated" style="font-family: 'Courier New', Consolas, monospace; background-color: #f4f4f4; border: 1px solid #ccc; border-radius: 4px; padding: 4px 10px; font-size: 0.9em; display: inline-flex; align-items: center; line-height: 1.4; margin: 2px 0; vertical-align: middle;">
+							<span style="display:none">xnospamx</span>nlw<span style="display:none">notreal</span>@<span style="display:none">spamtrap</span>barnard<span style="display:none">fake</span>.edu
+						</span>
+						<span style="position: relative; display: inline-flex; vertical-align: middle;">
+							<button onclick="copyEmailToClipboard()" style="font-family: inherit; font-size: 0.9em; padding: 4px 10px; margin-left: 6px; cursor: pointer; border: 1px solid #ccc; border-radius: 4px; background-color: #f4f4f4; display: inline-flex; align-items: center; gap: 6px; vertical-align: middle; line-height: 1.4;" aria-label="Copy email address to clipboard">
+								<i class="fa-regular fa-clipboard"></i> Copy to Clipboard
+							</button>
+							<span id="copy-confirmation" style="position: absolute; top: -28px; left: 50%; transform: translateX(-50%); background-color: #333; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 0.75em; opacity: 0; transition: opacity 0.3s; pointer-events: none; white-space: nowrap;">Copied!</span>
+						</span>
+
+						<script>
+						function copyEmailToClipboard() {
+							const emailUser = "nlw";
+							const emailDomain = "barnard.edu";
+							const emailAddress = emailUser + "@" + emailDomain;
+							navigator.clipboard.writeText(emailAddress).then(() => {
+								const confirmationPopup = document.getElementById("copy-confirmation");
+								confirmationPopup.style.opacity = "1";
+								setTimeout(() => {
+									confirmationPopup.style.opacity = "0";
+								}, 1500);
+							}).catch((error) => {
+								console.error("Failed to copy email:", error);
+							});
+						}
+						</script>
 						</tr><tr>
 						
 						<td> [<a href="cv.pdf" target="_blank"><i class="fa fa-fw fa-file"></i>CV</a>] 
