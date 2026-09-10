@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Niall L. Williams" />
+<meta name="description" content="COMS BC3122: Data Visualization — Barnard College, Fall 2026. Syllabus and course schedule." />
+
+<title>Data Visualization</title>
+
+<style type="text/css">
+
+/* ---------------------------------------------------------------
+   Fontin — served from the site's shared fonts/ directory
+   --------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Fontin';
+  src: url('../../../fonts/Fontin-Regular.woff2') format('woff2'),
+       url('../../../fonts/Fontin-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fontin';
+  src: url('../../../fonts/Fontin-Bold.woff2') format('woff2'),
+       url('../../../fonts/Fontin-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fontin';
+  src: url('../../../fonts/Fontin-Italic.woff2') format('woff2'),
+       url('../../../fonts/Fontin-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------------------------------------------------------------
+   Base
+   --------------------------------------------------------------- */
+
+*, *:before, *:after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body {
+  font-family: 'Fontin', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #ffffff;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: normal;
+  line-height: 1.1;
+  color: inherit;
+}
+
+h1, h2, h3 { margin-top: 21px; margin-bottom: 10.5px; }
+h4, h5, h6 { margin-top: 10.5px; margin-bottom: 10.5px; }
+
+h1 { font-size: 34px; }
+h1.title { font-size: 38px; }
+h2 { font-size: 30px; }
+h3 { font-size: 24px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; }
+h6 { font-size: 12px; }
+
+p { margin: 0 0 10.5px; }
+
+a { color: #2780e3; text-decoration: none; }
+a:hover, a:focus { color: #165ba8; text-decoration: underline; }
+
+ul, ol { margin-top: 0; margin-bottom: 10.5px; padding-left: 26px; }
+ul ul, ul ol, ol ul, ol ol { margin-bottom: 0; }
+li { margin-bottom: 4px; }
+
+strong { font-weight: bold; }
+
+code {
+  padding: 2px 4px;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 90%;
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 0;
+}
+
+blockquote {
+  padding: 10.5px 21px;
+  margin: 0 0 21px;
+  font-size: 18.75px;
+  border-left: 5px solid #e6e6e6;
+}
+blockquote p:last-child { margin-bottom: 0; }
+
+img { max-width: 100%; height: auto; vertical-align: middle; border: 0; }
+
+hr {
+  margin-top: 21px;
+  margin-bottom: 21px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+
+/* ---------------------------------------------------------------
+   Layout: fixed table of contents + main content
+   --------------------------------------------------------------- */
+
+.main-container {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.row { display: flex; flex-wrap: wrap; margin-left: -15px; margin-right: -15px; }
+
+.col-toc { width: 25%; padding-left: 15px; padding-right: 15px; }
+.toc-content { width: 75%; padding-left: 15px; padding-right: 15px; padding-bottom: 60px; }
+
+.tocify {
+  position: sticky;
+  top: 21px;
+  max-height: calc(100vh - 42px);
+  overflow: auto;
+  margin-top: 21px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.tocify ul, .tocify li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  line-height: 30px;
+}
+
+.tocify-subheader { display: none; }
+.tocify-subheader li { font-size: 12px; }
+.tocify-header.active > .tocify-subheader,
+.tocify-header.open > .tocify-subheader { display: block; }
+
+.tocify li a {
+  display: block;
+  padding: 5px 10px 5px 15px;
+  color: #2780e3;
+  text-decoration: none;
+}
+
+.tocify-subheader li a { padding-left: 27px; }
+
+.tocify li a:hover { background-color: #f5f5f5; text-decoration: none; }
+
+.tocify li.active > a {
+  background-color: #2780e3;
+  color: #ffffff;
+}
+
+.tocify-title {
+  padding: 8px 15px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #999;
+  border-bottom: 1px solid #eee;
+  list-style: none;
+  /* The TOC only collapses on narrow screens; see the media query below. */
+  pointer-events: none;
+}
+
+.tocify-title::-webkit-details-marker { display: none; }
+
+/* ---------------------------------------------------------------
+   Header block
+   --------------------------------------------------------------- */
+
+#header { margin-top: 21px; }
+
+#header .title { margin-bottom: 4px; }
+
+h4.subtitle, h4.author, h4.date {
+  font-weight: normal;
+  color: #666;
+  margin: 0 0 4px;
+}
+
+h4.subtitle { font-size: 21px; color: #333; }
+
+#header + .logistics { margin-top: 21px; }
+
+.figure { margin: 21px 0; }
+.figure img { border: 1px solid #eee; }
+.caption {
+  font-size: 13px;
+  color: #777;
+  margin-top: 7px;
+}
+
+/* ---------------------------------------------------------------
+   Tables
+   --------------------------------------------------------------- */
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 21px;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+table > thead > tr > th {
+  text-align: left;
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+  font-weight: bold;
+}
+
+table > tbody > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+table > tbody > tr:nth-of-type(odd) { background-color: #f9f9f9; }
+
+.table-wrap { overflow-x: auto; }
+
+#schedule-table td:first-child { white-space: nowrap; }
+#schedule-table .no-class { color: #999; }
+
+/* ---------------------------------------------------------------
+   Small screens: TOC stacks above the content
+   --------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .col-toc, .toc-content { width: 100%; }
+  .tocify {
+    position: static;
+    max-height: none;
+  }
+  .tocify-subheader { display: block; }
+  .tocify li.active > a { background-color: transparent; color: #2780e3; }
+  .tocify-title { pointer-events: auto; cursor: pointer; }
+  .tocify-title::after { content: " \25BE"; }
+  .tocify:not([open]) .tocify-title { border-bottom: 0; }
+  .tocify:not([open]) .tocify-title::after { content: " \25B8"; }
+  h1.title { font-size: 30px; }
+  h1 { font-size: 28px; }
+  h2 { font-size: 24px; }
+  body { font-size: 17px; }
+}
+
+@media print {
+  .col-toc { display: none; }
+  .toc-content { width: 100%; }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="main-container">
+
+<div class="row">
+
+<div class="col-toc">
+<details id="TOC" class="tocify" open>
+  <summary class="tocify-title">Contents</summary>
+  <ul id="toc-list"></ul>
+</details>
+</div>
+
+<div class="toc-content">
+
+<div id="header">
+<h1 class="title toc-ignore">Data Visualization</h1>
+<h4 class="subtitle">COMS BC3122 &middot; Barnard College</h4>
+<h4 class="author">Niall L. Williams</h4>
+<h4 class="date">Fall 2026</h4>
+</div>
+
+<div class="logistics">
+<p>Professor: Dr. Niall L. Williams<br />
+Office: Milbank 226B<br />
+Email: <a href="mailto:nlw@barnard.edu">nlw@barnard.edu</a><br />
+Office hours: TBD</p>
+<p>Class times: Mon, Wed 1:10pm &ndash; 2:25pm<br />
+Class location: 516 Milstein Center</p>
+</div>
+
+<p>Welcome to COMS BC3122: Data Visualization. Below is one of the most famous data visualizations of all time, about Napoleon&rsquo;s invasion of Russia. The time, weather, geography, total number of soldiers, their location, and the total loss of life over distance and time are visualized. This is an amazing amount of data shown in one simple image! This course provides an introduction to the science of data visualizations as a tool for communication.</p>
+
+<div class="figure">
+<img src="img/minard.jpg" alt="Charles Joseph Minard's 1869 figurative map of the successive losses of the French Army in the Russian campaign of 1812-1813." />
+<p class="caption">Charles Joseph Minard (1869), <em>Carte figurative des pertes successives en
+hommes de l&rsquo;Arm&eacute;e Fran&ccedil;aise dans la campagne de Russie 1812&ndash;1813</em>.</p>
+</div>
+
+<div id="course-description" class="section level1">
+<h1>Course Description</h1>
+<p>Data visualizations are a powerful tool for gaining knowledge, discovering hidden relationships and patterns, communicating messages, and influencing others&rsquo; opinions and values. Visualizations help inform our personal decisions (Where will I go to college? Can I afford this housing?), community decisions, and societal decisions (How do we respond to climate change? Pandemics?). But if we cannot communicate our message clearly, a visualization&rsquo;s usefulness decreases and it can even be detrimental to our goals. In this course, students learn the fundamentals behind using graphs and charts to visually communicate ideas and gain practical experience with creating their own visualizations. We discuss the theory of visual communication, how the brain processes visual information, technical aspects of visualization implementation, ethics of data visualization, and data visualization research. Assignments consist of programming projects in Javascript with the D3 library. The class has a midterm and a final project (no final exam).</p>
+<p><strong>Prerequisites:</strong> COMS W3134 (or equivalent). Experience with programming in Javascript is strongly recommended.</p>
+</div>
+
+<div id="learning-objectives" class="section level1">
+<h1>Learning Objectives</h1>
+<ul>
+<li>Analyze novel datasets to identify key characteristics and formulate investigative,
+data-driven questions.</li>
+<li>Explain the mechanisms of human visual perception and assess how these mechanisms constrain or
+enhance the interpretation of a visualization.</li>
+<li>Design visualizations that leverage established principles of visual processing to maximize
+communicative clarity and effectiveness.</li>
+<li>Construct interactive, web-based visualizations using JavaScript and the D3 library to answer
+specific inquiries.</li>
+<li>Critique and defend visualization design decisions by articulating the logical connection
+between quantitative evidence and visual encoding choices.</li>
+</ul>
+</div>
+
+<div id="schedule" class="section level1">
+<h1>Schedule</h1>
+<p>Note that the schedule is subject to change &ndash; depending on the class&rsquo; learning pace and interests, topics may be added, removed, or rearranged.</p>
+<div class="table-wrap">
+<table id="schedule-table">
+<colgroup>
+<col width="14%" />
+<col width="12%" />
+<col width="30%" />
+<col width="22%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr>
+<th>Week</th>
+<th>Date</th>
+<th>Topic</th>
+<th>Event</th>
+<th>Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Week 1 (Wed)</td>
+<td>Sep 9, 2026</td>
+<td>Class overview</td>
+<td>Intake survey released</td>
+<td></td>
+</tr>
+<tr>
+<td>Week 2 (Mon)</td>
+<td>Sep 14, 2026</td>
+<td>Data types, visualization techniques</td>
+<td></td>
+<td>Munzner 2015, Chapter 2</td>
+</tr>
+<tr>
+<td>Week 2 (Wed)</td>
+<td>Sep 16, 2026</td>
+<td>Introduction to programming tools</td>
+<td>Intake survey due<br />Assignment 1 released</td>
+<td></td>
+</tr>
+<tr>
+<td>Week 3 (Mon)</td>
+<td>Sep 21, 2026</td>
+<td>The human visual system</td>
+<td></td>
+<td>Ware 2020, pp. 31&ndash;62</td>
+</tr>
+<tr>
+<td>Week 3 (Wed)</td>
+<td>Sep 23, 2026</td>
+<td>Visual encoding of data</td>
+<td>Assignment 1 due</td>
+<td><a href="https://medium.com/@kennelliott/39-studies-about-human-perception-in-30-minutes-4728f9e31a73">39
+studies about human perception in 30 minutes</a></td>
+</tr>
+<tr>
+<td>Week 4 (Mon)</td>
+<td>Sep 28, 2026</td>
+<td>Spatial data</td>
+<td>Assignment 2 released</td>
+<td>Munzner 2015, Chapter 8</td>
+</tr>
+<tr>
+<td>Week 4 (Wed)</td>
+<td>Sep 30, 2026</td>
+<td>Spatial data</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 5 (Mon)</td>
+<td>Oct 5, 2026</td>
+<td>Storytelling, ethics, and misinformation</td>
+<td></td>
+<td>Ware 2020, Chapter 9</td>
+</tr>
+<tr>
+<td>Week 5 (Wed)</td>
+<td>Oct 7, 2026</td>
+<td>Storytelling, ethics, and misinformation</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 6 (Mon)</td>
+<td>Oct 12, 2026</td>
+<td>Temporal data</td>
+<td>Assignment 2 due<br />Assignment 3 released</td>
+<td>Ware 2020, pp. 183&ndash;203</td>
+</tr>
+<tr>
+<td>Week 6 (Wed)</td>
+<td>Oct 14, 2026</td>
+<td>Temporal data</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 7 (Mon)</td>
+<td>Oct 19, 2026</td>
+<td>Final Project: Proposals</td>
+<td>Project proposals due</td>
+<td></td>
+</tr>
+<tr>
+<td>Week 7 (Wed)</td>
+<td>Oct 21, 2026</td>
+<td><strong>Midterm</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 8 (Mon)</td>
+<td>Oct 26, 2026</td>
+<td>Network data</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 8 (Wed)</td>
+<td>Oct 28, 2026</td>
+<td>Network data</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 9 (Mon)</td>
+<td>Nov 2, 2026</td>
+<td class="no-class">No class</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 9 (Wed)</td>
+<td>Nov 4, 2026</td>
+<td>Catch-up day / Project working session</td>
+<td>Assignment 3 due<br />Assignment 4 released</td>
+<td></td>
+</tr>
+<tr>
+<td>Week 10 (Mon)</td>
+<td>Nov 9, 2026</td>
+<td>Animation &amp; interaction</td>
+<td></td>
+<td>Ware 2020, Chapter 10</td>
+</tr>
+<tr>
+<td>Week 10 (Wed)</td>
+<td>Nov 11, 2026</td>
+<td>Animation &amp; interaction</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 11 (Mon)</td>
+<td>Nov 16, 2026</td>
+<td>Uncertainty visualization</td>
+<td></td>
+<td><a href="https://friendly.github.io/6135/papers/Uncertainty_Visualization_Padilla_Kay_Hullman_2020.pdf">Padilla,
+Kay, Hullman (2022). Uncertainty Visualization.</a></td>
+</tr>
+<tr>
+<td>Week 11 (Wed)</td>
+<td>Nov 18, 2026</td>
+<td>Uncertainty visualization</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 12 (Mon)</td>
+<td>Nov 23, 2026</td>
+<td>Final Project: Progress Check</td>
+<td>Assignment 4 due</td>
+<td></td>
+</tr>
+<tr>
+<td>Week 12 (Wed)</td>
+<td>Nov 25, 2026</td>
+<td class="no-class">No class</td>
+<td>&#127831;Thanksgiving break &#127831;</td>
+<td></td>
+</tr>
+<tr>
+<td>Week 13 (Mon)</td>
+<td>Nov 30, 2026</td>
+<td>3D visualization: Projections and graphics</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 13 (Wed)</td>
+<td>Dec 2, 2026</td>
+<td>3D visualization: Projections and graphics</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 14 (Mon)</td>
+<td>Dec 7, 2026</td>
+<td>Modern topics: deep learning, immersive visualization, human-computer interaction</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 14 (Wed)</td>
+<td>Dec 9, 2026</td>
+<td>Final Project: Work session</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Week 15 (Mon)</td>
+<td>Dec 14, 2026</td>
+<td>Final Project: Work session</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="coursework-and-grading" class="section level1">
+<h1>Coursework and Grading</h1>
+<p>This is a lecture-type course. Evaluation consists of a collection of assignments, quizzes, a midterm, a final project, and class participation.</p>
+
+<div id="grading-overview" class="section level2">
+<h2>Grading Overview</h2>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Grade Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assignments</td>
+<td>35% (A1: 5%, A2: 10%, A3: 10%, A4: 10%)</td>
+</tr>
+<tr>
+<td>Final Project</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>Pop Quizzes</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>Midterm</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>Class Participation &amp; Engagement</td>
+<td>10%</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="assignments" class="section level2">
+<h2>Assignments (35%)</h2>
+<p>There are four assignments in this class. Assignments are to be completed individually by each student; you will not have a partner for any assignments. The first assignment serves as an introduction to the tooling used in the class, and the next three are designed to develop your skills in exploring data, asking interesting questions, and answering those questions using visualizations. Additionally, each assignment includes a written portion where you explain the questions you sought to answer with visualizations and the rationale behind your design decisions. Finally, each assignment asks you to provide constructive criticism on a professional visualization that you find in the wild. Some assignments have opportunities for extra credit.</p>
+<ul>
+<li><strong>Assignment 1 (5%):</strong> Tutorial on web programming and D3.</li>
+<li><strong>Assignment 2 (10%):</strong> Exploring a dataset and asking interesting questions.</li>
+<li><strong>Assignment 3 (10%):</strong> Multiple datasets + coordinated views.</li>
+<li><strong>Assignment 4 (10%):</strong> Interaction and animation.</li>
+</ul>
+</div>
+
+<div id="final-project" class="section level2">
+<h2>Final Project (25%)</h2>
+<p>The final project for this course is to be completed in groups of two and will be due at the end of the semester on the final day of exams. You will identify a topic of interest and find one or more datasets that will be used to explore your chosen topic. The final submission is in the form of a webpage of visualizations and discussions on your topic, a presentation on the final day of class, and a written report detailing your process of finding and processing a dataset and creating your visualizations. The written report will be due at the end of the course&rsquo;s final exam slot. You and your partner will propose a topic near the middle of the semester, and there will be progress updates throughout the remaining weeks of the semester that will contribute to your final project grade.</p>
+</div>
+
+<div id="pop-quizzes" class="section level2">
+<h2>Pop Quizzes (15%)</h2>
+<p>There are short quizzes throughout the semester to assess your theoretical understanding of the course material. These quizzes are given in class and without prior announcement. New quizzes will include repeated (or slightly modified) questions from previous quizzes, so you are highly encouraged to correct your quizzes and check the answers with me or your classmates. There are no make-up pop quizzes, but your lowest quiz grade will be dropped at the end of the semester.</p>
+</div>
+
+<div id="midterm" class="section level2">
+<h2>Midterm (15%)</h2>
+<p>There is an in-class, written exam on <strong>October 21</strong>. The exam will test your understanding of the theoretical concepts of data visualization and your programming skills with D3. More details will be shared closer to the exam date.</p>
+</div>
+
+<div id="class-participation-and-engagement" class="section level2">
+<h2>Class Participation &amp; Engagement (10%)</h2>
+<p>Visualization design is an iterative and creative process that requires practice to get good at. To help you practice your visualization skills, we frequently hold discussions, case studies, and &ldquo;lab&rdquo; sessions during class. Bouncing ideas off of others and providing constructive criticism is a core element of these in-class exercises. Therefore, attendance is crucial not only for your learning but for your classmates&rsquo;, too.</p> <p>Your participation grade is based on your effort and engagement with the course. Things like showing up to class, volunteering to critique a visualization you like at the start of class, coming to office hours, doing quiz corrections, filling out feedback surveys, and putting in an honest effort to engage with the material will yield full credit for this portion of your grade. I recognize that not everyone will feel comfortable asking and answering questions in the public classroom setting, so you will not be graded simply on how often you raise your hand. But, we will have many in-class exercises and discussions which you are expected to earnestly participate in.</p>
+</div>
+</div>
+
+<div id="resources-and-materials" class="section level1">
+<h1>Resources and Materials</h1>
+
+<div id="textbooks" class="section level2">
+<h2>Textbooks</h2>
+<p>The following books provide good background information and greater detail on the topics covered in the lectures. The schedule points to specific sections of these books that you should read before the associated lecture. If a lecture assigns a reading not available in these textbooks, a link to the reading is provided in the schedule. The textbooks are available on
+<a href="https://clio.columbia.edu/">CLIO</a>.</p>
+<ul>
+<li><a href="https://clio.columbia.edu/catalog/ocn897069361"><em>Visualization analysis and
+design</em></a> by Tamara Munzner</li>
+<li><a href="https://clio.columbia.edu/catalog/ebs23829298e?counter=3"><em>Information
+visualization: perception for design</em></a> by Colin Ware</li>
+</ul>
+</div>
+
+<div id="data-sources" class="section level2">
+<h2>Data sources</h2>
+<p>For the assignments and final project, you will need to find one or more datasets to create visualizations of. Below are some helpful resources for finding datasets, but you are also free to look elsewhere for datasets.</p>
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/1t8l82KdZIb31UPMWdq_B0hbAYTGr0DhSYC018rfjZUw/edit?gid=463259032#gid=463259032">Data
+Visualization Society curated list</a></li>
+<li><a href="https://opendata.cityofnewyork.us/">NYC Open Data</a></li>
+<li><a href="https://www.kaggle.com/datasets">Kaggle Datasets</a></li>
+<li><a href="https://www.tableau.com/learn/articles/free-public-data-sets">Tableau Datasets</a></li>
+</ul>
+</div>
+</div>
+
+<div id="course-policies" class="section level1">
+<h1>Course Policies</h1>
+
+<div id="late-submissions" class="section level2">
+<h2>Late Submissions</h2>
+<p>Submissions are generally due at 11:59pm on their due date. A total of three late credits are given, which allow you to extend your submission deadline on an assignment by 24 hours each. You cannot use any late credits on submissions related to the final project.</p>
+<p>A linear late penalty will be applied to late assignments, up to 3 days. For example, if your assignment is 12 hours late, you will receive a 16.66% penalty (12/72 = 0.1666). Late assignments due to illness or unexpected events can be excused with doctor&rsquo;s notes or other appropriate forms of documentation.</p>
+</div>
+
+<div id="collaborations" class="section level2">
+<h2>Collaborations</h2>
+<p>Learning does not happen in a vacuum, and working with others is often one of the most effective ways to deepen your own understanding of a concept. While I am always ready to work with you, I also strongly encourage you to seek out your classmates and collaborate with them as you move through the course material. Note that quizzes must be completed solo, without any input from another person. However, it is a good idea to study for such a quiz by first working with another person or two. Students must include a written acknowledgment in their assignment submissions if they consulted anyone else about their work.</p>
+<p>Copying analyses of a dataset from other people is not collaboration and is not allowed. You may browse the many visualization examples online (e.g.,
+<a href="https://observablehq.com/@d3/gallery">[1]</a>,
+<a href="https://vega.github.io/vega/examples/">[2]</a>,
+<a href="https://seaborn.pydata.org/examples/index.html">[3]</a>) to get inspiration for your own visualization designs, but the questions you ask about a dataset and the subsequent work to create the visualizations to answer those questions must be your own.</p>
+</div>
+
+<div id="generative-ai" class="section level2">
+<h2>Generative AI</h2>
+<p>The use of generative AI in this class is prohibited. Students must complete all assignments through their own critical thinking, analysis, and writing. The use of AI systems (including but not limited to ChatGPT, Claude, Gemini, or similar platforms) is not permitted for any phase of assigned work.</p>
+<p>For many of you, this class may be your first experience with designing and creating visualizations. Therefore, taking the time to carefully work through the material (reading, taking notes, attending lectures, doing the assignments, studying for quizzes) is crucial for building the foundational skills necessary to become visualization experts. If you find yourself having difficulty with understanding the concepts covered in class or with finishing assignments on time, you should reach out to me (via office hours or email) so we can work out a plan to resolve these issues.</p>
+</div>
+
+<div id="student-professor-partnership" class="section level2">
+<h2>Student-Professor Partnership</h2>
+<p>To reach the goals of the course&rsquo;s learning outcomes, we need to work together. I highly encourage you to ask questions in class where all students can benefit from hearing questions and answers. If further clarification is needed, please make use of my office hours&ndash;I am fascinated by the course material so it is fun for me to talk about it with you! Office hours are also a good time to talk over questions you have about computer science, graduate school, career options, etc. Don&rsquo;t be surprised if we also get talking about what interests you outside of academics, because I enjoy getting to know each of my students. Should you wish to discuss study strategies for this course and/or others, please come by my office hours.</p>
+<p>Finally, I realize that talking with professors can be intimidating at times, but making use of office hours to have such conversations helps you practice skills needed to interact as a young professional. In other words, it is another way to prepare for post-Barnard life.</p>
+</div>
+
+<div id="barnard-honor-code" class="section level2">
+<h2>Barnard Honor Code</h2>
+<p>You are expected to hold yourself to the highest standard of academic integrity and honesty, asreflected in the Barnard Honor Code. Approved by the student body in 1912 and updated in 2016, theCode states:</p>
+<blockquote>
+<p><em>We, the students of Barnard College, resolve to uphold the honor of the College by engaging with integrity in all of our academic pursuits. We affirm that academic integrity is the honorable creation and presentation of our own work. We acknowledge that it is our responsibility to seek clarification of proper forms of collaboration and use of academic resources in all assignments or exams. We consider academic integrity to include the proper use and care for all print, electronic, or other academic resources. We will respect the rights of others to engage in pursuit of learning in order to uphold our commitment to honor. We pledge to do all that is in our power to create a spirit of honesty and honor for its own sake.</em></p>
+</blockquote>
+</div>
+</div>
+
+<div id="center-for-accessibility-resources-and-disability-services" class="section level1">
+<h1>Center for Accessibility Resources &amp; Disability Services</h1>
+<p>If you anticipate barriers to your academic experience due to a documented disability or emerging health challenge, please contact your instructor and/or the Center for Accessibility Resources &amp; Disability Services (CARDS) as early as possible. If you have questions regarding registering a disability or receiving accommodations for the semester, contact CARDS at (212) 854-4634 or <a href="mailto:cards@barnard.edu">cards@barnard.edu</a>. You can learn more about on-campus support at <a href="http://barnard.edu/disability-services">barnard.edu/disability-services</a>. CARDS is located in 101 Altschul Hall.</p>
+</div>
+
+<div id="wellness-statement" class="section level1">
+<h1>Wellness Statement</h1>
+<p>It is important for you as undergraduates to recognize and identify the different pressures, burdens, and stressors you may be facing, whether personal, emotional, physical, financial, mental, or academic. As a community, we urge you to prioritize yourself&mdash;your health, sanity, and wellness&mdash;throughout your career on campus. Sleep, exercise, and eating well are all part of a healthy regimen to cope with stress. Resources exist to support you, and we encourage you to make use of them. Should you have any questions about navigating these resources, please visit these sites:</p>
+<ul>
+<li><a href="http://barnard.edu/primarycare">Primary care services</a></li>
+<li><a href="https://barnard.edu/about-counseling">Rosemary Furman Counseling Center</a></li>
+<li><a href="https://barnard.edu/TheWellnessSpot/about">The Wellness Spot</a></li>
+</ul>
+</div>
+
+<div id="affordable-access-to-course-texts-and-materials" class="section level1">
+<h1>Affordable Access to Course Texts &amp; Materials</h1>
+<p>All students deserve to be able to study and make use of course texts and materials regardless of cost. Barnard librarians have partnered with students, faculty, and staff to find ways to increase student access to textbooks. By the first day of advance registration for each term, faculty are expected to provide information about required texts for each course on CourseWorks (including ISBN or author, title, publisher, copyright date, and price), which can be viewed by students. A number of cost-free or low-cost methods for accessing some types of course texts are detailed in the <a href="http://library.barnard.edu/textbook-affordability">Barnard Library Textbook Affordability Guide</a>. Undergraduate students who identify as first-generation and/or low-income may check out items from the FLIP lending libraries in the <a href="http://library.barnard.edu/flip">Barnard Library</a> and in <a href="https://library.columbia.edu/libraries/undergraduate/FLI_partnership_library.html">Butler Library</a> for an entire semester. Students may also consult with their professors, librarians, the Dean of Studies, and the Financial Aid Office about additional affordable alternatives for access to course texts.</p>
+</div>
+
+<div id="thanks-and-credit" class="section level1">
+<h1>Thanks and Credit</h1>
+<p>This course benefits from material and wisdom from several professors, including Evan Peck, Tamara Munzner, and Tabitha Peck.</p>
+</div>
+
+</div><!-- /.toc-content -->
+</div><!-- /.row -->
+</div><!-- /.main-container -->
+
+<script>
+(function () {
+  var toc = document.getElementById('TOC');
+  var content = document.querySelector('.toc-content');
+  var tocList = document.getElementById('toc-list');
+  var headings = content.querySelectorAll('h1:not(.toc-ignore), h2');
+  var entries = [];
+  var currentSubList = null;
+
+  headings.forEach(function (h) {
+    if (!h.id) {
+      var container = h.closest('.section');
+      if (container && container.id) { h.id = container.id; }
+    }
+    if (!h.id) { return; }
+
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+
+    if (h.tagName === 'H1') {
+      li.className = 'tocify-item tocify-header';
+      currentSubList = document.createElement('ul');
+      currentSubList.className = 'tocify-subheader';
+      li.appendChild(currentSubList);
+      tocList.appendChild(li);
+    } else if (currentSubList) {
+      li.className = 'tocify-item';
+      currentSubList.appendChild(li);
+    } else {
+      return;
+    }
+
+    entries.push({ heading: h, li: li, level: h.tagName });
+  });
+
+  // Smooth scrolling for in-page links.
+  tocList.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (!a) { return; }
+    var target = document.getElementById(a.getAttribute('href').slice(1));
+    if (!target) { return; }
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(null, '', a.getAttribute('href'));
+  });
+
+  // Highlight the section currently in view, and reveal its subsections.
+  function refresh() {
+    var active = null;
+    for (var i = 0; i < entries.length; i++) {
+      if (entries[i].heading.getBoundingClientRect().top <= 80) {
+        active = entries[i];
+      } else {
+        break;
+      }
+    }
+    if (!active && entries.length) { active = entries[0]; }
+
+    entries.forEach(function (entry) {
+      var isActive = entry === active;
+      var isAncestor = !isActive && active && entry.level === 'H1' &&
+        entry.li.contains(active.li);
+      entry.li.classList.toggle('active', isActive);
+      entry.li.classList.toggle('open', !!isAncestor);
+    });
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) { return; }
+    ticking = true;
+    window.requestAnimationFrame(function () { refresh(); ticking = false; });
+  }, { passive: true });
+
+  window.addEventListener('resize', refresh, { passive: true });
+  refresh();
+
+  // Start collapsed on narrow screens so the TOC does not bury the content.
+  var narrow = window.matchMedia('(max-width: 900px)');
+  if (narrow.matches) { toc.open = false; }
+  narrow.addEventListener('change', function (e) { toc.open = !e.matches; });
+})();
+</script>
+
+</body>
+</html>
