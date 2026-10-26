@@ -1,0 +1,7 @@
+@article{kam2026attention,
+  title={Attention Drives Cybersickness in Augmented Reality},
+  author={Kam, Henry and Williams, Niall L and Lubin, Jeffrey and Bergen, James R and Sizintsev, Mikhail and Sun, Qi and Groth, Colin},
+  journal={IEEE Transactions on Visualization and Computer Graphics},
+  year={2026},
+  publisher={IEEE}
+}
