@@ -1,5 +1,5 @@
 @article{terry2021pettingzoo,
-  title={{PettingZoo}: Gym for Multi-Agent Reinforcement Learning}
+  title={{PettingZoo}: Gym for Multi-Agent Reinforcement Learning},
   author={Terry, J K and Black, Benjamin and Grammel, Nathaniel and Jayakumar, Mario and Hari, Ananth and Sullivan, Ryan and Santos, Luis S and Dieffendahl, Clemens and Horsch, Caroline and Perez-Vicente, Rodrigo and Williams, Niall L and Lokesh, Yashas and Ravi, Praveen},
   journal={Advances in Neural Information Processing Systems},
   volume={34},
