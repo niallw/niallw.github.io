@@ -1,9 +1,9 @@
 @article{williams2021arc,
-  title={A{R}{C}: Alignment-based {R}edirection {C}ontroller for {R}edirected {W}alking in {C}omplex {E}nvironments},
+  title={Arc: Alignment-based redirection controller for redirected walking in complex environments},
   author={Williams, Niall L and Bera, Aniket and Manocha, Dinesh},
-  journal={IEEE Transactions on Visualization \& Computer Graphics},
+  journal={IEEE Transactions on Visualization and Computer Graphics},
   volume={27},
-  number={05},
+  number={5},
   pages={2535--2544},
   year={2021},
   publisher={IEEE}
