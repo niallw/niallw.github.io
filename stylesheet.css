@@ -1,6 +1,8 @@
 
 @charset "ISO-8859-1";
 
+.highlight { background-color: #ffffd0; }
+
 @font-face {
     font-family: 'Fontin';
     src: url('fonts/Fontin-Regular.woff2') format('woff2'),
