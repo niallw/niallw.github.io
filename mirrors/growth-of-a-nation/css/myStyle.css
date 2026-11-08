@@ -1,0 +1,211 @@
+body{
+    font-family: 'PT Sans', sans-serif;
+    background-color: #E9E9E9;
+}
+.axis text {
+    font: 10px sans-serif;
+}
+
+.axis line,
+.axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axis.prio path {
+  display: none;
+}
+
+ .description text {
+  font-weight: 700;
+  background-color: red;
+}
+  .description rect {
+    fill: #d3d3d3;  
+}
+
+.boundingBox{
+    cursor: pointer;
+    fill: grey;
+    fill-opacity: .3;
+    pointer-events: all;
+}
+
+.brush{
+    fill: darkgrey;
+    fill-opacity: .5;
+    pointer-events: none;
+}
+
+.city-circle{
+    fill: white;
+}
+text.type-label{
+    font-size: 10px;
+}
+.subbar{
+    opacity: 0.25;
+}
+
+.desc_header{
+    font-weight: 700;
+}
+
+line{
+  stroke-width:6;
+}
+
+.bargroup0{
+    stroke: rgb(255,255,255);
+    fill: rgb(255,255,255);
+}
+
+.bargroup4{
+    stroke: rgb(158,202,225);
+    fill: rgb(158,202,225);
+}
+
+.info-heading{
+    font-size: 26px;
+    font-weight:700;
+    stroke: rgb(33,113,181);
+    fill: rgb(33,113,181);
+
+}
+
+.summaryDesc{
+  font-size:13px;
+  font-weight:200;
+  stroke: rgb(33,113,181);
+  fill: rgb(33,113,181);
+
+
+}
+
+input[type=range]{
+    width: 100px;
+    display: inline;
+}
+.summaryTitle, .chartTitle{
+
+  font-size:18px;
+  font-weight:700;
+  stroke: rgb(8,48,107);
+  fill: rgb(8,48,107);
+
+}
+
+.invis{
+    fill: none;
+    stroke: none;
+}
+
+.wrongcolor{
+    fill: red;
+}
+.color0{
+    stroke: rgb(255,255,255);
+    fill: rgb(255,255,255);
+}
+
+.color1{
+    stroke:  rgb(247,251,255);
+    fill: rgb(247,251,255);
+}
+
+.color2{ 
+    stroke: rgb(222,235,247);
+    fill: rgb(222,235,247);
+}
+
+.color3{
+    stroke: rgb(198,219,239);
+    fill: rgb(198,219,239);
+}
+
+.color4{
+    stroke: rgb(158,202,225);
+    fill: rgb(158,202,225);
+}
+
+.color5{
+    stroke: rgb(107,174,214);
+    fill: rgb(107,174,214);
+}
+
+.color6{
+    stroke: rgb(66,146,198);
+    fill: rgb(66,146,198);
+}
+
+.color7{
+    stroke: rgb(33,113,181);
+    fill: rgb(33,113,181);
+}
+
+.color8{
+    stroke: rgb(8,81,156);
+    fill: rgb(8,81,156);
+}
+
+.color9{
+    stroke: rgb(8,48,107);
+    fill: rgb(8,48,107);
+}
+
+.color10{
+    stroke: rgb(0,0,0);
+    fill: rgb(0,0,0);
+}
+
+.nocolor{
+  fill: #FFFFFF;
+}
+
+.country{
+  stroke: rgb(8,48,107);
+  stroke-width: 3px;
+  fill: none;
+}
+
+.incorporated{
+  stroke: #d3d3d3;
+  stroke-width: 2px;
+  fill: none;
+}
+
+.notincorporated{
+  stroke: white;
+  stroke-width: 1px;
+  fill: none;
+}
+
+.legend-desc{
+   stroke:black;
+   font-size:12px;
+   font-weight:700;
+}
+
+.statesSummary{
+    stroke: black;
+	font-size: 13px;
+	font-weight:normal;
+}
+.counties{
+    stroke: #d3d3d3;
+    stroke-width: 0.5px;
+}
+
+.rails{
+    stroke: black;
+    stroke-width: 3px;
+}
+
+.footer{
+    stroke: black;
+	font-size: 10px;
+	font-weight:normal;
+	text-align: center;
+}
+
